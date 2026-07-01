@@ -1,3 +1,4 @@
+import Branches from "@/components/student/home/Branches";
 import MainLayout from "@/layout/MainLayout";
 import About from "@/pages/About";
 import Courses from "@/pages/Courses";
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/courses",
         element: (<Courses />)
+      },
+      {
+        path: "/branches",
+        element: (<Branches />)
       }
     ]
   }

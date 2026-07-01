@@ -1,7 +1,7 @@
-import BranchBanner from "@/components/website/branches/BranchBanner";
-import BranchList from "@/components/website/branches/BranchList";
-import WhyVisit from "@/components/website/branches/WhyVisit";
-import BranchCTA from "@/components/website/branches/BranchCTA";
+import BranchBanner from "@/components/student/branches/BranchBanner";
+import BranchList from "@/components/student/branches/BranchList";
+import WhyVisit from "@/components/student/branches/WhyVisit";
+import BranchCTA from "@/components/student/branches/BranchCTA";
 
 const Branches = () => {
   return (
