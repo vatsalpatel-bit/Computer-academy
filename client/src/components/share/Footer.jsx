@@ -13,7 +13,7 @@ import logo from "@/svg/logo.png"
 
 const quickLinks = [
   { name: "Home", path: "/" },
-  { name: "About Us", path: "/about" },
+  { name: "About Us", path: "/about-us" },
   { name: "Courses", path: "/courses" },
   { name: "Gallery", path: "/gallery" },
   { name: "Events", path: "/events" },

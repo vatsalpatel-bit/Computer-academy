@@ -4,7 +4,7 @@ import TopBar from "./TopBar";
 const Navbar = () => {
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "About", path: "/about-us" },
     { name: "Courses", path: "/courses" },
     { name: "Branches", path: "/branches" },
     { name: "Gallery", path: "/gallery" },
