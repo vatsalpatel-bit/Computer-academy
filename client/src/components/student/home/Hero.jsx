@@ -44,7 +44,7 @@ const Hero = () => {
           <SwiperSlide key={slide.id}>
             <div className="relative h-[90vh]">
               {/* Background Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700" />
+              <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-800 to-slate-700" />
 
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/50" />
