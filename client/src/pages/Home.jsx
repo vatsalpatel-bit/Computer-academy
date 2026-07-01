@@ -1,5 +1,6 @@
 import Branches from '@/components/student/home/Branches';
 import CallToAction from '@/components/student/home/CallToAction';
+import Faq from '@/components/student/home/Faq';
 import Features from '@/components/student/home/Features';
 import Gallery from '@/components/student/home/Gallery';
 import Hero from '@/components/student/home/Hero';
@@ -17,6 +18,7 @@ const Home = () => {
             <Gallery />
             <Testimonials />
             <CallToAction />
+            <Faq />
         </>
     );
 };

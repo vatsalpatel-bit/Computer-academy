@@ -2,7 +2,7 @@ import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 
 const CallToAction = () => {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-r from-[#0B1E45] via-[#15356F] to-[#0B1E45]">
+    <section className="relative py-20 overflow-hidden bg-linear-to-r from-[#0B1E45] via-[#15356F] to-[#0B1E45]">
       {/* Decorative Circles */}
       <div className="absolute w-80 h-80 bg-red-500/10 rounded-full -top-32 -left-20"></div>
       <div className="absolute w-96 h-96 bg-white/5 rounded-full -bottom-44 -right-32"></div>
