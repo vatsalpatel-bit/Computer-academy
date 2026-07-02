@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import TopBar from "./TopBar";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about-us" },
@@ -43,10 +44,9 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 className={({ isActive }) =>
-                  `font-medium transition ${
-                    isActive
-                      ? "text-red-600"
-                      : "text-gray-700 hover:text-red-600"
+                  `font-medium transition ${isActive
+                    ? "text-red-600"
+                    : "text-gray-700 hover:text-red-600"
                   }`
                 }
               >
@@ -56,7 +56,9 @@ const Navbar = () => {
           </nav>
 
           {/* CTA Button */}
-          <button className="hidden lg:block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition">
+          <button
+            onClick={() => navigate("/enquiry")}
+            className="hidden lg:block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition">
             Enquire Now
           </button>
         </div>
