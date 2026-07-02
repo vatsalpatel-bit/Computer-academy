@@ -1,6 +1,7 @@
 import Branches from "@/components/student/home/Branches";
 import MainLayout from "@/layout/MainLayout";
 import About from "@/pages/About";
+import Contact from "@/pages/Contact";
 import Courses from "@/pages/Courses";
 import Home from "@/pages/Home";
 import { RouterProvider } from "react-router";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/branches",
         element: (<Branches />)
+      },
+      {
+        path: "/contact",
+        element: (<Contact />)
       }
     ]
   }
