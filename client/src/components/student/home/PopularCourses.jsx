@@ -6,6 +6,7 @@ import {
   FaDatabase,
   FaArrowRight,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const courses = [
   {
@@ -46,6 +47,7 @@ const courses = [
 ];
 
 const PopularCourses = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
@@ -86,7 +88,9 @@ const PopularCourses = () => {
                 {course.description}
               </p>
 
-              <button className="mt-8 flex items-center gap-2 text-red-600 font-semibold group-hover:gap-3 transition-all">
+              <button 
+              onClick={()=>navigate("/course-detail")}
+              className="mt-8 flex items-center gap-2 text-red-600 font-semibold group-hover:gap-3 transition-all">
                 View Details
                 <FaArrowRight />
               </button>
@@ -96,7 +100,9 @@ const PopularCourses = () => {
 
         {/* Button */}
         <div className="text-center mt-14">
-          <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition">
+          <button
+            onClick={() =>navigate("/courses")}
+            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition">
             View All Courses
           </button>
         </div>

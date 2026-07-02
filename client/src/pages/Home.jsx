@@ -1,7 +1,7 @@
 import Branches from '@/components/student/home/Branches';
 import CallToAction from '@/components/student/home/CallToAction';
-import Faq from '@/components/student/home/Faq';
 import Features from '@/components/student/home/Features';
+import FeedbackForm from '@/components/student/home/FeedbackForm';
 import Gallery from '@/components/student/home/Gallery';
 import Hero from '@/components/student/home/Hero';
 import PopularCourses from '@/components/student/home/PopularCourses';
@@ -18,7 +18,7 @@ const Home = () => {
             <Gallery />
             <Testimonials />
             <CallToAction />
-            <Faq />
+            <FeedbackForm />
         </>
     );
 };

@@ -1,6 +1,8 @@
 import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const CallToAction = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative py-20 overflow-hidden bg-linear-to-r from-[#0B1E45] via-[#15356F] to-[#0B1E45]">
       {/* Decorative Circles */}
@@ -9,7 +11,7 @@ const CallToAction = () => {
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-2xl p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-10">
-          
+
           {/* Left */}
           <div className="max-w-2xl">
             <span className="text-red-600 uppercase tracking-widest font-semibold">
@@ -30,7 +32,9 @@ const CallToAction = () => {
 
           {/* Right */}
           <div className="flex flex-col sm:flex-row gap-5">
-            <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition">
+            <button
+              onClick={()=>navigate("/enquiry")}
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition">
               Enquire Now
               <FaArrowRight />
             </button>

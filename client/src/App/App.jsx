@@ -2,6 +2,7 @@ import Branches from "@/components/student/home/Branches";
 import MainLayout from "@/layout/MainLayout";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import CourseDetails from "@/pages/CourseDetails";
 import Courses from "@/pages/Courses";
 import Enquiry from "@/pages/Enquiry";
 import Home from "@/pages/Home";
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/enquiry",
         element: (<Enquiry />)
+      },
+      {
+        path: "/course-detail",
+        element: (<CourseDetails />)
       }
     ]
   }

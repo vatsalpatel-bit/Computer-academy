@@ -38,10 +38,6 @@ const Gallery = () => {
                         </p>
                     </div>
 
-                    <button className="hidden md:flex items-center gap-2 bg-[#0B1E45] hover:bg-red-600 transition text-white px-6 py-3 rounded-xl font-semibold">
-                        See More
-                        <FaArrowRight />
-                    </button>
                 </div>
 
                 {/* Gallery Grid */}

@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -27,6 +28,7 @@ const slides = [
 ];
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative">
       <Swiper
@@ -65,11 +67,15 @@ const Hero = () => {
                   </p>
 
                   <div className="mt-10 flex gap-5">
-                    <button className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-semibold transition">
+                    <button
+                      onClick={() => navigate("/courses")}
+                      className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-semibold transition">
                       Explore Courses
                     </button>
 
-                    <button className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl font-semibold transition">
+                    <button
+                      onClick={() => navigate("/contact")}
+                      className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl font-semibold transition">
                       Contact Us
                     </button>
                   </div>
