@@ -11,9 +11,7 @@ const FeedbackForm = () => {
         comment: "",
     });
     const dispatch = useDispatch();
-
-    const feedback = useSelector((state) => state.feedback.allFeedback);
-    console.log(feedback)
+    const allFeedback = useSelector((state) => state.feedback.allFeedback);
     const eventHandler = (e) => {
         const { name, value } = e.target;
         setInput((prev) => ({
@@ -25,8 +23,15 @@ const FeedbackForm = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
         const data = await feedbackApi(input, Number(rating));
-        // console.log(data)
-        dispatch(setAllFeddback(data.feedback))
+        dispatch(setAllFeddback([...allFeedback,
+        data.feedback
+        ]))
+        setInput({
+            name: "",
+            comment: "",
+        });
+
+        setRating(0);
     }
 
     return (
@@ -61,7 +66,7 @@ const FeedbackForm = () => {
                         ))}
                     </div>
 
-                    <form className="mt-8 space-y-6">
+                    <form onSubmit={submitHandler} className="mt-8 space-y-6">
 
                         <input
                             name="name"
@@ -82,7 +87,7 @@ const FeedbackForm = () => {
                         />
 
                         <button
-                            onClick={submitHandler}
+                            type="submit"
                             className="w-full bg-red-600 hover:bg-red-700 text-white py-4 rounded-xl font-semibold transition"
                         >
                             Submit Feedback

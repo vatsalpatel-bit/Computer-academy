@@ -35,6 +35,7 @@ export const feedback = async (req, res) => {
         })
 
         return res.status(200).json({
+            feedback,
             message: "feedback sent",
             success: true
         });
@@ -50,7 +51,6 @@ export const feedback = async (req, res) => {
 export const getAllFeedback = async (req, res) => {
     try {
         const allFeedback = await Feedback.find();
-        console.log(allFeedback);
         return res.status(200).json({
             allFeedback,
             success: true,

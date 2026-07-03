@@ -14,7 +14,6 @@ import { setAllFeddback } from "@/redux/slices/feedbackSlices";
 const Testimonials = () => {
   const testimonials = useSelector((state) => state.feedback.allFeedback);
   const dispatch = useDispatch();
-
   useEffect(() => {
     const fetchFeedbackApi = async () => {
       try {
