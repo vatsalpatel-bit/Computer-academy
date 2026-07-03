@@ -1,6 +1,6 @@
 const CourseBanner = () => {
   return (
-    <section className="bg-gradient-to-r from-[#0B1E45] to-[#1F4B99] py-24">
+    <section className="bg-linear-to-r from-[#0B1E45] to-[#1F4B99] py-24">
       <div className="max-w-7xl mx-auto px-6 text-white">
 
         <span className="bg-red-600 px-4 py-2 rounded-full text-sm">

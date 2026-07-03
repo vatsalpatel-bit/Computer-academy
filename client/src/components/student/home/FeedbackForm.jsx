@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
+import { feedbackApi } from "@/services/feedbackApi";
+import { useDispatch, useSelector } from "react-redux";
+import { setAllFeddback } from "@/redux/slices/feedbackSlices";
 
 const FeedbackForm = () => {
     const [rating, setRating] = useState(0);
     const [input, setInput] = useState({
         name: "",
         comment: "",
-    })
+    });
+    const dispatch = useDispatch();
+
+    const feedback = useSelector((state) => state.feedback.allFeedback);
+    console.log(feedback)
     const eventHandler = (e) => {
         const { name, value } = e.target;
         setInput((prev) => ({
@@ -14,12 +21,14 @@ const FeedbackForm = () => {
             [name]: value
         }))
     }
-    console.log(input);
-    console.log(rating)
 
-    const submitHandler = async () => { 
-        
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        const data = await feedbackApi(input, Number(rating));
+        // console.log(data)
+        dispatch(setAllFeddback(data.feedback))
     }
+
     return (
         <section className="py-20 bg-slate-50">
             <div className="max-w-3xl mx-auto px-6">

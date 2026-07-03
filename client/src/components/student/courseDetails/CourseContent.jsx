@@ -12,7 +12,7 @@ const CourseContent = () => {
 
         {/* Image */}
 
-        <div className="h-[420px] rounded-3xl bg-slate-200 flex items-center justify-center">
+        <div className="h-105 rounded-3xl bg-slate-200 flex items-center justify-center">
           Course Image
         </div>
 
