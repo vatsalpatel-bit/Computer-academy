@@ -1,3 +1,6 @@
+import { setLatestCourse } from "@/redux/slices/courseSlices";
+import { getLatestCourse } from "@/services/coursesApi";
+import { useEffect } from "react";
 import {
   FaCode,
   FaJava,
@@ -6,53 +9,29 @@ import {
   FaDatabase,
   FaArrowRight,
 } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const courses = [
-  {
-    id: 1,
-    slug: "full-stack-development",
-    title: "Web Development",
-    description: "HTML, CSS, JavaScript, React, Node.js & MongoDB.",
-    icon: <FaCode />,
-    color: "bg-blue-50 text-blue-600",
-  },
-  {
-    id: 2,
-    slug: "java-programming",
-    title: "Java Programming",
-    description: "Core Java, OOP, JDBC, Collections & Projects.",
-    icon: <FaJava />,
-    color: "bg-red-50 text-red-600",
-  },
-  {
-    id: 3,
-    slug: "python-programming",
-    title: "Python Programming",
-    description: "Python, Django, Flask & Automation.",
-    icon: <FaPython />,
-    color: "bg-yellow-50 text-yellow-600",
-  },
-  {
-    id: 4,
-    slug: "android-app-development",
-    title: "App Development",
-    description: "Android, Flutter & Firebase Development.",
-    icon: <FaMobileAlt />,
-    color: "bg-green-50 text-green-600",
-  },
-  {
-    id: 5,
-    slug: "database-management",
-    title: "Database",
-    description: "SQL, MySQL, MongoDB & Databas e Design.",
-    icon: <FaDatabase />,
-    color: "bg-purple-50 text-purple-600",
-  },
-];
-
 const PopularCourses = () => {
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const allCourses = useSelector((state) => state.course.latestCourse);
+  
+
+  useEffect(() => {
+    const fetchLatestCourse = async () => {
+      try {
+        const data = await getLatestCourse();
+        // console.log(data)
+        dispatch(setLatestCourse(data.course))
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchLatestCourse();
+  })
+
   return (
     <section className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
@@ -73,31 +52,64 @@ const PopularCourses = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-7 mt-14">
-          {courses.map((course) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-14">
+          {allCourses?.map((course) => (
             <div
-              key={course.id}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 group"
+              key={course._id}
+              className="group bg-white border border-gray-200 rounded-3xl p-7 hover:border-red-500 hover:shadow-2xl transition-all duration-300"
             >
-              <div
-                className={`w-16 h-16 rounded-xl flex items-center justify-center text-3xl ${course.color}`}
-              >
-                {course.icon}
-              </div>
+              {/* Category */}
 
-              <h3 className="text-xl font-bold mt-6">
+              <span className="inline-block bg-red-50 text-red-600 text-xs font-semibold px-3 py-2 rounded-full">
+                Professional Course
+              </span>
+
+              {/* Title */}
+
+              <h3 className="text-2xl font-bold text-slate-900 mt-6">
                 {course.title}
               </h3>
 
-              <p className="text-gray-600 mt-3 text-sm leading-7">
+              {/* Description */}
+
+              <p className="text-gray-600 leading-7 mt-4 line-clamp-3">
                 {course.description}
               </p>
 
+              {/* Details */}
+
+              <div className="border-t mt-8 pt-6 space-y-3 text-sm">
+
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Duration</span>
+                  <span className="font-semibold">
+                    {course.duration}
+                  </span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Level</span>
+                  <span className="font-semibold">
+                    {course.level}
+                  </span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Fees</span>
+                  <span className="font-semibold text-red-600">
+                    ₹{course.fees}
+                  </span>
+                </div>
+
+              </div>
+
+              {/* Button */}
+
               <button
                 onClick={() => navigate(`/course-detail/${course.slug}`)}
-                className="mt-8 flex items-center gap-2 text-red-600 font-semibold group-hover:gap-3 transition-all">
-                View Details
-                <FaArrowRight />
+                className="w-full mt-8 bg-slate-900 hover:bg-red-600 text-white py-3 rounded-xl font-semibold transition"
+              >
+                View Details →
               </button>
             </div>
           ))}
