@@ -6,6 +6,10 @@ export const getCourseApi = async (slug) => {
 }
 
 export const getLatestCourse = async () => {
-    const res = await axios.get("http://localhost:3000/api/v1/get/course");
+    const res = await axios.get("http://localhost:3000/api/v1/get/courses");
+    return res.data;
+}
+export const getAllCourse = async () => {
+    const res = await axios.get("http://localhost:3000/api/v1/get/all/courses");
     return res.data;
 }
