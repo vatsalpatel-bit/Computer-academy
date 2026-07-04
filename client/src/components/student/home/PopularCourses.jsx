@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 const courses = [
   {
     id: 1,
+    slug: "full-stack-development",
     title: "Web Development",
     description: "HTML, CSS, JavaScript, React, Node.js & MongoDB.",
     icon: <FaCode />,
@@ -18,6 +19,7 @@ const courses = [
   },
   {
     id: 2,
+    slug: "java-programming",
     title: "Java Programming",
     description: "Core Java, OOP, JDBC, Collections & Projects.",
     icon: <FaJava />,
@@ -25,6 +27,7 @@ const courses = [
   },
   {
     id: 3,
+    slug: "python-programming",
     title: "Python Programming",
     description: "Python, Django, Flask & Automation.",
     icon: <FaPython />,
@@ -32,6 +35,7 @@ const courses = [
   },
   {
     id: 4,
+    slug: "android-app-development",
     title: "App Development",
     description: "Android, Flutter & Firebase Development.",
     icon: <FaMobileAlt />,
@@ -39,8 +43,9 @@ const courses = [
   },
   {
     id: 5,
+    slug: "database-management",
     title: "Database",
-    description: "SQL, MySQL, MongoDB & Database Design.",
+    description: "SQL, MySQL, MongoDB & Databas e Design.",
     icon: <FaDatabase />,
     color: "bg-purple-50 text-purple-600",
   },
@@ -88,9 +93,9 @@ const PopularCourses = () => {
                 {course.description}
               </p>
 
-              <button 
-              onClick={()=>navigate("/course-detail")}
-              className="mt-8 flex items-center gap-2 text-red-600 font-semibold group-hover:gap-3 transition-all">
+              <button
+                onClick={() => navigate(`/course-detail/${course.slug}`)}
+                className="mt-8 flex items-center gap-2 text-red-600 font-semibold group-hover:gap-3 transition-all">
                 View Details
                 <FaArrowRight />
               </button>
@@ -101,7 +106,7 @@ const PopularCourses = () => {
         {/* Button */}
         <div className="text-center mt-14">
           <button
-            onClick={() =>navigate("/courses")}
+            onClick={() => navigate("/courses")}
             className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition">
             View All Courses
           </button>

@@ -3,9 +3,13 @@ import { Star } from "lucide-react";
 import { feedbackApi } from "@/services/feedbackApi";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllFeddback } from "@/redux/slices/feedbackSlices";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 const FeedbackForm = () => {
     const [rating, setRating] = useState(0);
+    const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState({})
     const [input, setInput] = useState({
         name: "",
         comment: "",
@@ -18,20 +22,52 @@ const FeedbackForm = () => {
             ...prev,
             [name]: value
         }))
+        setErrors((prev) => {
+            const newError = { ...prev };
+            delete newError[name];
+            return newError;
+        })
     }
 
     const submitHandler = async (e) => {
-        e.preventDefault();
-        const data = await feedbackApi(input, Number(rating));
-        dispatch(setAllFeddback([...allFeedback,
-        data.feedback
-        ]))
-        setInput({
-            name: "",
-            comment: "",
-        });
+        try {
+            setLoading(true)
+            e.preventDefault();
+            const data = await feedbackApi(input, Number(rating));
+            dispatch(setAllFeddback([...allFeedback,
+            data.feedback
+            ]))
+            setInput({
+                name: "",
+                comment: "",
+            });
 
-        setRating(0);
+            setRating(0);
+            toast.success("Feedback submited");
+        } catch (error) {
+            const data = error.response?.data;
+            if (data?.error) {
+                const allErrors = {};
+
+                data.error.forEach((err, index) => {
+                    allErrors[err.path[0]] = err.message;
+                    setTimeout(() => {
+                        toast.error(err.message);
+                    }, index * 1000);
+                });
+
+                setErrors(allErrors);
+
+            } else if (data?.message) {
+                toast.error(data?.message);
+            }
+            else {
+                toast.error("Something went wrong");
+            }
+        } finally {
+            setLoading(false);
+        }
+
     }
 
     return (
@@ -64,8 +100,13 @@ const FeedbackForm = () => {
                                 />
                             </button>
                         ))}
-                    </div>
 
+                    </div>
+                    {errors.rating && (
+                        <p className="text-red-500 text-sm ">
+                            {errors.rating}
+                        </p>
+                    )}
                     <form onSubmit={submitHandler} className="mt-8 space-y-6">
 
                         <input
@@ -76,7 +117,11 @@ const FeedbackForm = () => {
                             placeholder="Your Name"
                             className="w-full border rounded-xl p-4 outline-none focus:border-red-500"
                         />
-
+                        {errors.name && (
+                            <p className="text-red-500 text-sm">
+                                {errors.name}
+                            </p>
+                        )}
                         <textarea
                             name="comment"
                             value={input.comment}
@@ -85,12 +130,34 @@ const FeedbackForm = () => {
                             placeholder="Write your feedback..."
                             className="w-full border rounded-xl p-4 outline-none focus:border-red-500"
                         />
-
+                        {errors.comment && (
+                            <p className="text-red-500 text-sm">
+                                {errors.comment}
+                            </p>
+                        )}
                         <button
                             type="submit"
-                            className="w-full bg-red-600 hover:bg-red-700 text-white py-4 rounded-xl font-semibold transition"
+                            disabled={loading}
+                            className="
+    w-full
+    bg-red-600 hover:bg-red-700
+    text-white
+    py-4
+    rounded-xl
+    font-semibold
+    transition
+    disabled:opacity-50
+    disabled:pointer-events-none
+  "
                         >
-                            Submit Feedback
+                            {loading ? (
+                                <span className="flex items-center justify-center gap-2">
+                                    <Loader2 className="h-5 w-5 animate-spin" />
+                                    Submitting...
+                                </span>
+                            ) : (
+                                "Submit Feedback"
+                            )}
                         </button>
 
                     </form>
@@ -100,6 +167,6 @@ const FeedbackForm = () => {
             </div>
         </section>
     );
-};
+}
 
 export default FeedbackForm;

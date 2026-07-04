@@ -11,6 +11,7 @@ const branches = [
     address:
       "First Floor, Opp HP Petrol Pump, Chikhli, Navsari, Gujarat",
     phone: "+91 98765 43210",
+    mapLink: "https://maps.google.com/?q=First+Floor+Opp+HP+Petrol+Pump+Chikhli+Navsari",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const branches = [
     address:
       "K.K Plaza, Opp Bus Depot, Navsari, Gujarat",
     phone: "+91 98765 43211",
+    mapLink: "https://maps.google.com/?q=KK+Plaza+Navsari",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const branches = [
     address:
       "Main Road, Dharampur, Valsad, Gujarat",
     phone: "+91 98765 43212",
+    mapLink: "https://maps.google.com/?q=Dharampur+Valsad",
   },
 ];
 
@@ -86,10 +89,15 @@ const Branches = () => {
                   <p>{branch.phone}</p>
                 </div>
 
-                <button className="mt-6 bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-xl flex items-center gap-3 font-semibold">
+                <a
+                  href={branch.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-xl font-semibold"
+                >
                   <FaLocationArrow />
                   View on Map
-                </button>
+                </a>
               </div>
             </div>
           ))}

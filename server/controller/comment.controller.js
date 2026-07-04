@@ -10,7 +10,7 @@ export const feedback = async (req, res) => {
                 .max(100, "name title cannot exceed 100 characters"),
             comment: z
                 .string()
-                .min(20, "comment must be at least 20 characters")
+                .min(40, "comment must be at least 20 characters")
                 .max(2000, "comment cannot exceed 2000 characters"),
             rating: z
                 .number()

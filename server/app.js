@@ -4,7 +4,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import feedbackRouter from "./router/feedback.router.js"
-
+import courseRouter from "./router/course.router.js"
 
 const app = express();
 
@@ -22,6 +22,7 @@ app.use(
 );
 
 app.use("/api/v1", feedbackRouter);
+app.use("/api/v1", courseRouter);
 
 export default app;
 

@@ -1,16 +1,11 @@
-import CourseBanner from "@/components/student/courseDetails/CourseBanner";
-import CourseContent from "@/components/student/courseDetails/CourseContent";
-import LearnSection from "@/components/student/courseDetails/LearnSection";
-import CourseCTA from "@/components/student/courseDetails/CourseCTA";
+import CourseView from "@/components/student/courseDetails/ViewPage";
 
 const CourseDetails = () => {
   return (
     <>
-      <CourseBanner />
-      <CourseContent />
-      <LearnSection />
-      <CourseCTA />
+      <CourseView />
     </>
+
   );
 };
 
