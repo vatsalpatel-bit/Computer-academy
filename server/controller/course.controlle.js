@@ -52,19 +52,39 @@ export const getLatestCourse = async (req, res) => {
 
 export const getAllCourse = async (req, res) => {
     try {
-        const course = await Course.find();
+        const { page = 1, duration, debounceSearch = "", limit = 8 } = req.query;
 
-        if (!course) {
-            return res.status(404).json({
-                message: "Course not found",
-                success: false,
-            })
+        const pageNumber = Number(page);
+        const limitNumber = Number(limit);
+
+        const skip = (pageNumber - 1) * limitNumber;
+
+        const query = {};
+
+        if (debounceSearch) {
+            query.title = {
+                $regex: debounceSearch,
+                $options: "i",
+            };
         }
 
+        if (duration) {
+            query.duration = duration;
+        }
+
+        const course = await Course.find(query)
+            .skip(skip)
+            .limit(limitNumber);
+
+        const total = await Course.countDocuments(query);
+
         return res.status(200).json({
-            course,
             success: true,
-        })
+            course,
+            total,
+            totalPage: Math.ceil(total / limitNumber),
+            currentPage: pageNumber,
+        });
     } catch (error) {
         console.log(error);
         return res.status(500).json({
