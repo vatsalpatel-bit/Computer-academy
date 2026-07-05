@@ -1,4 +1,4 @@
-import { setAllCourses, setLatestCourse } from "@/redux/slices/courseSlices";
+import { setAllCourses,} from "@/redux/slices/courseSlices";
 import { getAllCourse } from "@/services/coursesApi";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
