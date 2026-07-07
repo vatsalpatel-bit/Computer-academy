@@ -1,5 +1,4 @@
 import Branches from '@/components/student/home/Branches';
-import CallToAction from '@/components/student/home/CallToAction';
 import Features from '@/components/student/home/Features';
 import FeedbackForm from '@/components/student/home/FeedbackForm';
 import Gallery from '@/components/student/home/Gallery';
@@ -17,7 +16,6 @@ const Home = () => {
             <Branches />
             <Gallery />
             <Testimonials />
-            <CallToAction />
             <FeedbackForm />
         </>
     );

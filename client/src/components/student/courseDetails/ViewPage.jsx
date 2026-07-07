@@ -21,26 +21,14 @@ const CourseView = () => {
     const navigate = useNavigate();
     const course = useSelector((state) => state.course.singleCourse)
 
-    console.log(course)
-
     useEffect(() => {
-
         const fetchCourseApi = async () => {
-
             try {
-
                 const data = await getCourseApi(slug);
-
-                // console.log(data.course);
-
                 dispatch(setSingleCourse(data.course));
-
             } catch (error) {
-
                 console.log(error);
-
             }
-
         }
 
         fetchCourseApi();
@@ -139,9 +127,9 @@ const CourseView = () => {
 
                             <div className="mt-10 flex flex-wrap gap-4">
 
-                                <button 
-                                onClick={()=>navigate("/enquiry")}
-                                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition">
+                                <button
+                                    onClick={() => navigate("/enquiry")}
+                                    className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition">
                                     Enquire Now
                                 </button>
 
@@ -204,7 +192,10 @@ const CourseView = () => {
                             and gain practical skills with expert trainers.
                         </p>
 
-                        <button className="mt-10 bg-red-600 hover:bg-red-700 px-10 py-4 rounded-xl font-semibold transition">
+
+                        <button
+                            onClick={() => navigate("/enquiry")}
+                            className="mt-10 bg-red-600 hover:bg-red-700 px-10 py-4 rounded-xl font-semibold transition">
                             Enquire Now
                         </button>
 
