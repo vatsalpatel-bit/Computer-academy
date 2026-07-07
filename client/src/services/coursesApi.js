@@ -23,3 +23,8 @@ export const getAllCourse = async (debounceSearch,
     });
     return res.data;
 }
+
+export const getAllCourseTitleApi = async () => {
+    const res = await axios.get("http://localhost:3000/api/v1/get/all/courses/title");
+    return res.data;
+}

@@ -93,3 +93,27 @@ export const getAllCourse = async (req, res) => {
         })
     }
 }
+
+export const getAllCourseTitle = async (req, res) => {
+    try {
+        const course = await Course.find().select("title");
+       
+        if (!course) {
+            return res.status(404).json({
+                success: false,
+                message: "Course not found",
+            })
+        }
+
+        return res.status(200).json({
+            course,
+            success: true,
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            success: false,
+            message: "Server error",
+        })
+    }
+}
