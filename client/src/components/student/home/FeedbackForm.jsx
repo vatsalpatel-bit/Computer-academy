@@ -51,12 +51,12 @@ const FeedbackForm = () => {
 
                 data.error.forEach((err, index) => {
                     allErrors[err.path[0]] = err.message;
-                    setTimeout(() => {
-                        toast.error(err.message);
-                    }, index * 1000);
                 });
 
                 setErrors(allErrors);
+
+                toast.error("Please fix the highlighted fields.");
+                return;
 
             } else if (data?.message) {
                 toast.error(data?.message);

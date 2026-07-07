@@ -1,13 +1,16 @@
+import instituteImage from "@/svg/gallery/institute.png"
+
 const AboutInstitute = () => {
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Image Placeholder */}
-        <div className="h-112.5 rounded-3xl bg-slate-200 flex items-center justify-center">
-          Institute Image
-        </div>
-
+        <img
+          src={instituteImage}
+          alt="Computer Academy Classroom"
+          className="w-full h-112.5 rounded-3xl object-cover"
+        />
         {/* Content */}
         <div>
           <span className="text-red-600 uppercase font-semibold">

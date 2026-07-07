@@ -44,11 +44,11 @@ const ContactForm = () => {
       [name]: value,
     }));
 
-    setErrors((prev) => ({
-      ...prev,
-      [name]: "",
-    }));
-  };
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    };
 
   const submitHandler = async (e) => {
     e.preventDefault();
