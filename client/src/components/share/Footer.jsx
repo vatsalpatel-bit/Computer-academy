@@ -122,7 +122,7 @@ const Footer = () => {
           <p>
             Designed & Developed by{" "}
             <span className="text-red-500 font-semibold">
-              Batman
+              Vatsal
             </span>
           </p>
         </div>
