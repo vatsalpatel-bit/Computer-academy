@@ -1,9 +1,9 @@
 import z from 'zod';
 import { Feedback } from '../utils/feedback.model.js';
 
-export const feedback = async (req, res) => {
+export const feedback = async (req, res,next) => {
   try {
-    const feedbackSchema = z.object({
+                           const feedbackSchema = z.object({
       name: z
         .string()
         .min(3, 'name must be at least 3 characters')
@@ -20,7 +20,7 @@ export const feedback = async (req, res) => {
       return res.status(400).json({
         success: false,
         error: result.error.issues,
-      });
+      })
     }
 
     const { name, comment, rating } = result.data;
