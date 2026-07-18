@@ -1,20 +1,20 @@
-import { setAllCoursesTitle } from "@/redux/slices/courseSlices";
-import { getAllCourseTitleApi } from "@/services/coursesApi";
-import { sendEnquiryApi } from "@/services/enquiry";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toast } from "sonner";
+import { setAllCoursesTitle } from '@/redux/slices/courseSlices';
+import { getAllCourseTitleApi } from '@/services/coursesApi';
+import { sendEnquiryApi } from '@/services/enquiry';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 
 const EnquiryForm = () => {
   const [input, setInput] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    course: "",
-    batch: "",
-    city: "",
-    message: "",
-  })
+    name: '',
+    email: '',
+    phone: '',
+    course: '',
+    batch: '',
+    city: '',
+    message: '',
+  });
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const courseTitle = useSelector((state) => state.course.allCoursesTitle);
@@ -23,13 +23,13 @@ const EnquiryForm = () => {
     const { name, value } = e.target;
     setInput((prev) => ({
       ...prev,
-      [name]: value
-    }))
+      [name]: value,
+    }));
     setErrors((prev) => ({
       ...prev,
-      [name]: "",
+      [name]: '',
     }));
-  }
+  };
 
   useEffect(() => {
     const fetchAllCourseTitleApi = async () => {
@@ -40,15 +40,16 @@ const EnquiryForm = () => {
       } catch (error) {
         console.error(error);
       }
-    }
+    };
     fetchAllCourseTitleApi();
   }, [dispatch]);
 
   const submitHandler = async (e) => {
     try {
+      setLoading(true);
       e.preventDefault();
       await sendEnquiryApi(input);
-      toast.success("Mail sent successfully")
+      toast.success('Mail sent successfully');
     } catch (error) {
       const data = error.response?.data;
       if (data?.error) {
@@ -59,29 +60,25 @@ const EnquiryForm = () => {
         });
 
         setErrors(allErrors);
-        toast.error("Please fix the highlighted fields.");
+        toast.error('Please fix the highlighted fields.');
 
         return;
       } else if (data?.message) {
         toast.error(data?.message);
+      } else {
+        toast.error('Something went wrong');
       }
-      else {
-        toast.error("Something went wrong");
-      }
+    } finally {
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <section className="py-20 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6">
-
         <div className="bg-white rounded-3xl shadow-xl p-10">
-
-          <h2 className="text-4xl font-bold text-center">
-            Admission Enquiry Form
-          </h2>
+          <h2 className="text-4xl font-bold text-center">Admission Enquiry Form</h2>
           <form onSubmit={submitHandler} className="grid md:grid-cols-2 gap-6 mt-10">
-
             {/* Name */}
             <div>
               <input
@@ -90,12 +87,11 @@ const EnquiryForm = () => {
                 onChange={eventHandler}
                 type="text"
                 placeholder="Full Name"
-                className={`w-full border rounded-xl p-4 outline-none ${errors.name ? "border-red-500" : "focus:border-red-500"
-                  }`}
+                className={`w-full border rounded-xl p-4 outline-none ${
+                  errors.name ? 'border-red-500' : 'focus:border-red-500'
+                }`}
               />
-              <p className="text-red-500 text-sm mt-1 h-5">
-                {errors.name}
-              </p>
+              <p className="text-red-500 text-sm mt-1 h-5">{errors.name}</p>
             </div>
 
             {/* Email */}
@@ -106,12 +102,11 @@ const EnquiryForm = () => {
                 onChange={eventHandler}
                 type="email"
                 placeholder="Email Address"
-                className={`w-full border rounded-xl p-4 outline-none ${errors.email ? "border-red-500" : "focus:border-red-500"
-                  }`}
+                className={`w-full border rounded-xl p-4 outline-none ${
+                  errors.email ? 'border-red-500' : 'focus:border-red-500'
+                }`}
               />
-              <p className="text-red-500 text-sm mt-1 h-5">
-                {errors.email}
-              </p>
+              <p className="text-red-500 text-sm mt-1 h-5">{errors.email}</p>
             </div>
 
             {/* Phone */}
@@ -122,12 +117,11 @@ const EnquiryForm = () => {
                 onChange={eventHandler}
                 type="tel"
                 placeholder="Mobile Number"
-                className={`w-full border rounded-xl p-4 outline-none ${errors.phone ? "border-red-500" : "focus:border-red-500"
-                  }`}
+                className={`w-full border rounded-xl p-4 outline-none ${
+                  errors.phone ? 'border-red-500' : 'focus:border-red-500'
+                }`}
               />
-              <p className="text-red-500 text-sm mt-1 h-5">
-                {errors.phone}
-              </p>
+              <p className="text-red-500 text-sm mt-1 h-5">{errors.phone}</p>
             </div>
 
             {/* Course */}
@@ -136,8 +130,9 @@ const EnquiryForm = () => {
                 name="course"
                 value={input.course}
                 onChange={eventHandler}
-                className={`w-full border rounded-xl p-4 outline-none ${errors.course ? "border-red-500" : "focus:border-red-500"
-                  }`}
+                className={`w-full border rounded-xl p-4 outline-none ${
+                  errors.course ? 'border-red-500' : 'focus:border-red-500'
+                }`}
               >
                 <option value="">Select Course</option>
 
@@ -148,9 +143,7 @@ const EnquiryForm = () => {
                 ))}
               </select>
 
-              <p className="text-red-500 text-sm mt-1 h-5">
-                {errors.course}
-              </p>
+              <p className="text-red-500 text-sm mt-1 h-5">{errors.course}</p>
             </div>
 
             {/* Batch */}
@@ -159,8 +152,9 @@ const EnquiryForm = () => {
                 name="batch"
                 value={input.batch}
                 onChange={eventHandler}
-                className={`w-full border rounded-xl p-4 outline-none ${errors.batch ? "border-red-500" : "focus:border-red-500"
-                  }`}
+                className={`w-full border rounded-xl p-4 outline-none ${
+                  errors.batch ? 'border-red-500' : 'focus:border-red-500'
+                }`}
               >
                 <option value="">Preferred Batch</option>
                 <option value="Morning">Morning</option>
@@ -168,9 +162,7 @@ const EnquiryForm = () => {
                 <option value="Evening">Evening</option>
               </select>
 
-              <p className="text-red-500 text-sm mt-1 h-5">
-                {errors.batch}
-              </p>
+              <p className="text-red-500 text-sm mt-1 h-5">{errors.batch}</p>
             </div>
 
             {/* City */}
@@ -181,13 +173,12 @@ const EnquiryForm = () => {
                 onChange={eventHandler}
                 type="text"
                 placeholder="City"
-                className={`w-full border rounded-xl p-4 outline-none ${errors.city ? "border-red-500" : "focus:border-red-500"
-                  }`}
+                className={`w-full border rounded-xl p-4 outline-none ${
+                  errors.city ? 'border-red-500' : 'focus:border-red-500'
+                }`}
               />
 
-              <p className="text-red-500 text-sm mt-1 h-5">
-                {errors.city}
-              </p>
+              <p className="text-red-500 text-sm mt-1 h-5">{errors.city}</p>
             </div>
 
             {/* Message */}
@@ -198,23 +189,21 @@ const EnquiryForm = () => {
                 onChange={eventHandler}
                 rows="5"
                 placeholder="Your Message"
-                className={`w-full border rounded-xl p-4 outline-none resize-none ${errors.message ? "border-red-500" : "focus:border-red-500"
-                  }`}
+                className={`w-full border rounded-xl p-4 outline-none resize-none ${
+                  errors.message ? 'border-red-500' : 'focus:border-red-500'
+                }`}
               />
 
-              <p className="text-red-500 text-sm mt-1 h-5">
-                {errors.message}
-              </p>
+              <p className="text-red-500 text-sm mt-1 h-5">{errors.message}</p>
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
-              className={`md:col-span-2 py-4 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${loading
-                ? "bg-red-500 cursor-not-allowed"
-                : "bg-red-600 hover:bg-red-700"
-                } text-white`}
+              className={`md:col-span-2 py-4 rounded-xl font-semibold transition flex items-center justify-center gap-2 ${
+                loading ? 'bg-red-500 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700'
+              } text-white`}
             >
               {loading ? (
                 <>
@@ -222,14 +211,11 @@ const EnquiryForm = () => {
                   Submitting...
                 </>
               ) : (
-                "Submit Enquiry"
+                'Submit Enquiry'
               )}
             </button>
-
           </form>
-
         </div>
-
       </div>
     </section>
   );

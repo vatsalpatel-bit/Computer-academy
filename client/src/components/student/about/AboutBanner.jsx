@@ -5,8 +5,8 @@ const AboutBanner = () => {
         <h1 className="text-5xl font-bold">About Us</h1>
 
         <p className="mt-4 text-lg text-gray-200 max-w-2xl mx-auto">
-          Empowering students with quality computer education,
-          practical skills, and career-focused training.
+          Empowering students with quality computer education, practical skills, and career-focused
+          training.
         </p>
       </div>
     </section>

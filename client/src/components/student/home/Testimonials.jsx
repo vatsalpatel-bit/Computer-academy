@@ -1,15 +1,14 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-import { FaStar, FaQuoteLeft } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllFeedback } from "@/services/feedbackApi";
-import { setAllFeddback } from "@/redux/slices/feedbackSlices";
-
+import { FaStar, FaQuoteLeft } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getAllFeedback } from '@/services/feedbackApi';
+import { setAllFeddback } from '@/redux/slices/feedbackSlices';
 
 const Testimonials = () => {
   const testimonials = useSelector((state) => state.feedback.allFeedback);
@@ -24,7 +23,6 @@ const Testimonials = () => {
       }
     };
     fetchFeedbackApi();
-
   }, [dispatch]);
 
   return (
@@ -33,17 +31,12 @@ const Testimonials = () => {
         {/* Heading */}
 
         <div className="text-center mb-14">
-          <span className="text-red-500 uppercase font-semibold tracking-widest">
-            Testimonials
-          </span>
+          <span className="text-red-500 uppercase font-semibold tracking-widest">Testimonials</span>
 
-          <h2 className="text-4xl font-bold text-white mt-3">
-            What Our Students Say
-          </h2>
+          <h2 className="text-4xl font-bold text-white mt-3">What Our Students Say</h2>
 
           <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
-            Hear from our students about their learning journey and
-            experience at Computer Academy.
+            Hear from our students about their learning journey and experience at Computer Academy.
           </p>
         </div>
 
@@ -75,16 +68,11 @@ const Testimonials = () => {
               <div className="bg-white rounded-3xl p-8 shadow-xl h-full">
                 <FaQuoteLeft className="text-4xl text-red-600 mb-6" />
 
-                <p className="text-gray-600 leading-7">
-                  {student?.comment}
-                </p>
+                <p className="text-gray-600 leading-7">{student?.comment}</p>
 
                 <div className="flex mt-6 mb-5">
                   {[...Array(student?.rating)].map((_, index) => (
-                    <FaStar
-                      key={index}
-                      className="text-yellow-400 mr-1"
-                    />
+                    <FaStar key={index} className="text-yellow-400 mr-1" />
                   ))}
                 </div>
 
@@ -96,10 +84,7 @@ const Testimonials = () => {
                   /> */}
 
                   <div>
-                    <h3 className="font-bold text-lg">
-                      {student.name}
-                    </h3>
-
+                    <h3 className="font-bold text-lg">{student.name}</h3>
                   </div>
                 </div>
               </div>

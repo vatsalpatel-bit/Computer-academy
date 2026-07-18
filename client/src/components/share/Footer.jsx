@@ -7,18 +7,17 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaChevronRight,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
-import logo from "@/svg/logo.png"
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import logo from '@/svg/logo.png';
 
 const quickLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/about-us" },
-  { name: "Courses", path: "/courses" },
-  { name: "Branches", path: "/branches" },
-  { name: "Contact", path: "/contact" },
-  { name: "Enquiry Now", path: "/enquiry" },
-  
+  { name: 'Home', path: '/' },
+  { name: 'About Us', path: '/about-us' },
+  { name: 'Courses', path: '/courses' },
+  { name: 'Branches', path: '/branches' },
+  { name: 'Contact', path: '/contact' },
+  { name: 'Enquiry Now', path: '/enquiry' },
 ];
 
 const Footer = () => {
@@ -31,30 +30,26 @@ const Footer = () => {
           <img src={logo} alt="Computer Academy" className="w-40 mb-4" />
 
           <p className="text-gray-300 leading-7">
-            Empowering students with industry-ready skills through quality
-            computer education and practical learning.
+            Empowering students with industry-ready skills through quality computer education and
+            practical learning.
           </p>
 
           <div className="flex gap-4 mt-6">
-            {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map(
-              (Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-red-600 transition duration-300 flex items-center justify-center"
-                >
-                  <Icon />
-                </a>
-              )
-            )}
+            {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map((Icon, index) => (
+              <a
+                key={index}
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-red-600 transition duration-300 flex items-center justify-center"
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-2xl font-bold mb-5 text-red-500">
-            Quick Links
-          </h3>
+          <h3 className="text-2xl font-bold mb-5 text-red-500">Quick Links</h3>
 
           <ul className="space-y-3">
             {quickLinks.map((item) => (
@@ -73,9 +68,7 @@ const Footer = () => {
 
         {/* Contact */}
         <div>
-          <h3 className="text-2xl font-bold mb-5 text-red-500">
-            Contact Info
-          </h3>
+          <h3 className="text-2xl font-bold mb-5 text-red-500">Contact Info</h3>
 
           <div className="space-y-5">
             <div className="flex gap-3">
@@ -92,9 +85,7 @@ const Footer = () => {
 
         {/* Address */}
         <div>
-          <h3 className="text-2xl font-bold mb-5 text-red-500">
-            Address
-          </h3>
+          <h3 className="text-2xl font-bold mb-5 text-red-500">Address</h3>
 
           <div className="flex gap-3">
             <FaMapMarkerAlt className="mt-1 text-red-500" />
@@ -115,15 +106,10 @@ const Footer = () => {
       {/* Bottom Footer */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-gray-300 text-sm">
-          <p>
-            © {new Date().getFullYear()} Computer Academy. All Rights Reserved.
-          </p>
+          <p>© {new Date().getFullYear()} Computer Academy. All Rights Reserved.</p>
 
           <p>
-            Designed & Developed by{" "}
-            <span className="text-red-500 font-semibold">
-              Vatsal
-            </span>
+            Designed & Developed by <span className="text-red-500 font-semibold">Vatsal</span>
           </p>
         </div>
       </div>

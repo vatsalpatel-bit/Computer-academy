@@ -1,1 +1,1 @@
-export const FEEDBACK_API_END_PORT = "/api/v1";
+export const FEEDBACK_API_END_PORT = '/api/v1';

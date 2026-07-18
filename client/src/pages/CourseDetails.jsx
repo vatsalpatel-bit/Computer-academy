@@ -1,11 +1,10 @@
-import CourseView from "@/components/student/courseDetails/ViewPage";
+import CourseView from '@/components/student/courseDetails/ViewPage';
 
 const CourseDetails = () => {
   return (
     <>
       <CourseView />
     </>
-
   );
 };
 

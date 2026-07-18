@@ -1,15 +1,13 @@
-import CourseBanner from '@/components/student/courses/CourseBanner'
-import CourseList from '@/components/student/courses/CourseList'
-
-import React from 'react'
+import CourseBanner from '@/components/student/courses/CourseBanner';
+import CourseList from '@/components/student/courses/CourseList';
 
 const Courses = () => {
-    return (
-        <>
-            <CourseBanner />
-            <CourseList />
-        </>
-    )
-}
+  return (
+    <>
+      <CourseBanner />
+      <CourseList />
+    </>
+  );
+};
 
-export default Courses
+export default Courses;

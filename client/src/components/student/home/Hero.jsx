@@ -1,29 +1,27 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { useNavigate } from "react-router-dom";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { useNavigate } from 'react-router-dom';
 
 const slides = [
   {
     id: 1,
-    title: "Build Your Career In IT",
-    subtitle:
-      "Join industry-oriented courses and become job-ready with practical learning.",
+    title: 'Build Your Career In IT',
+    subtitle: 'Join industry-oriented courses and become job-ready with practical learning.',
   },
   {
     id: 2,
-    title: "Learn From Industry Experts",
+    title: 'Learn From Industry Experts',
     subtitle:
-      "Master programming, web development, and modern technologies through hands-on projects.",
+      'Master programming, web development, and modern technologies through hands-on projects.',
   },
   {
     id: 3,
-    title: "Start Your Success Journey",
-    subtitle:
-      "Upgrade your skills with professional courses and placement assistance.",
+    title: 'Start Your Success Journey',
+    subtitle: 'Upgrade your skills with professional courses and placement assistance.',
   },
 ];
 
@@ -58,24 +56,22 @@ const Hero = () => {
                     Welcome to Computer Academy
                   </span>
 
-                  <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                    {slide.title}
-                  </h1>
+                  <h1 className="text-5xl md:text-7xl font-bold leading-tight">{slide.title}</h1>
 
-                  <p className="mt-6 text-lg text-gray-200 leading-8">
-                    {slide.subtitle}
-                  </p>
+                  <p className="mt-6 text-lg text-gray-200 leading-8">{slide.subtitle}</p>
 
                   <div className="mt-10 flex gap-5">
                     <button
-                      onClick={() => navigate("/courses")}
-                      className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-semibold transition">
+                      onClick={() => navigate('/courses')}
+                      className="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-semibold transition"
+                    >
                       Explore Courses
                     </button>
 
                     <button
-                      onClick={() => navigate("/contact")}
-                      className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl font-semibold transition">
+                      onClick={() => navigate('/contact')}
+                      className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl font-semibold transition"
+                    >
                       Contact Us
                     </button>
                   </div>
@@ -83,30 +79,18 @@ const Hero = () => {
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-8 mt-16">
                     <div>
-                      <h2 className="text-4xl font-bold text-red-500">
-                        15+
-                      </h2>
-                      <p className="text-gray-300 mt-2">
-                        Years Experience
-                      </p>
+                      <h2 className="text-4xl font-bold text-red-500">15+</h2>
+                      <p className="text-gray-300 mt-2">Years Experience</p>
                     </div>
 
                     <div>
-                      <h2 className="text-4xl font-bold text-red-500">
-                        5000+
-                      </h2>
-                      <p className="text-gray-300 mt-2">
-                        Students
-                      </p>
+                      <h2 className="text-4xl font-bold text-red-500">5000+</h2>
+                      <p className="text-gray-300 mt-2">Students</p>
                     </div>
 
                     <div>
-                      <h2 className="text-4xl font-bold text-red-500">
-                        100%
-                      </h2>
-                      <p className="text-gray-300 mt-2">
-                        Support
-                      </p>
+                      <h2 className="text-4xl font-bold text-red-500">100%</h2>
+                      <p className="text-gray-300 mt-2">Support</p>
                     </div>
                   </div>
                 </div>

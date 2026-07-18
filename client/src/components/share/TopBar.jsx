@@ -1,11 +1,11 @@
-    import {
+import {
   FaPhoneAlt,
   FaEnvelope,
   FaFacebookF,
   FaInstagram,
   FaYoutube,
   FaTwitter,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 const TopBar = () => {
   return (
@@ -26,9 +26,7 @@ const TopBar = () => {
 
         {/* Right Side */}
         <div className="flex items-center gap-3 text-sm">
-          <span className="hidden md:block font-medium">
-            Follow us :
-          </span>
+          <span className="hidden md:block font-medium">Follow us :</span>
 
           <FaFacebookF className="cursor-pointer hover:text-blue-300 transition" />
           <FaInstagram className="cursor-pointer hover:text-pink-300 transition" />

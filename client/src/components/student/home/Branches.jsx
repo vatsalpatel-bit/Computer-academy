@@ -1,33 +1,26 @@
-import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaLocationArrow,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaLocationArrow } from 'react-icons/fa';
 
 const branches = [
   {
     id: 1,
-    city: "Chikhli (Head Office)",
-    address:
-      "First Floor, Opp HP Petrol Pump, Chikhli, Navsari, Gujarat",
-    phone: "+91 98765 43210",
-    mapLink: "https://maps.google.com/?q=First+Floor+Opp+HP+Petrol+Pump+Chikhli+Navsari",
+    city: 'Chikhli (Head Office)',
+    address: 'First Floor, Opp HP Petrol Pump, Chikhli, Navsari, Gujarat',
+    phone: '+91 98765 43210',
+    mapLink: 'https://maps.google.com/?q=First+Floor+Opp+HP+Petrol+Pump+Chikhli+Navsari',
   },
   {
     id: 2,
-    city: "Navsari",
-    address:
-      "K.K Plaza, Opp Bus Depot, Navsari, Gujarat",
-    phone: "+91 98765 43211",
-    mapLink: "https://maps.google.com/?q=KK+Plaza+Navsari",
+    city: 'Navsari',
+    address: 'K.K Plaza, Opp Bus Depot, Navsari, Gujarat',
+    phone: '+91 98765 43211',
+    mapLink: 'https://maps.google.com/?q=KK+Plaza+Navsari',
   },
   {
     id: 3,
-    city: "Dharampur",
-    address:
-      "Main Road, Dharampur, Valsad, Gujarat",
-    phone: "+91 98765 43212",
-    mapLink: "https://maps.google.com/?q=Dharampur+Valsad",
+    city: 'Dharampur',
+    address: 'Main Road, Dharampur, Valsad, Gujarat',
+    phone: '+91 98765 43212',
+    mapLink: 'https://maps.google.com/?q=Dharampur+Valsad',
   },
 ];
 
@@ -38,17 +31,13 @@ const Branches = () => {
         {/* Heading */}
 
         <div className="text-center">
-          <span className="text-red-600 font-semibold uppercase tracking-widest">
-            Our Branches
-          </span>
+          <span className="text-red-600 font-semibold uppercase tracking-widest">Our Branches</span>
 
-          <h2 className="text-4xl font-bold mt-3 text-slate-900">
-            Visit Our Training Centers
-          </h2>
+          <h2 className="text-4xl font-bold mt-3 text-slate-900">Visit Our Training Centers</h2>
 
           <p className="mt-4 max-w-2xl mx-auto text-gray-600">
-            We have multiple branches equipped with modern labs,
-            experienced faculty and a comfortable learning environment.
+            We have multiple branches equipped with modern labs, experienced faculty and a
+            comfortable learning environment.
           </p>
         </div>
 
@@ -63,28 +52,18 @@ const Branches = () => {
               {/* Badge */}
 
               <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-red-600 px-8 py-3 rounded-b-2xl">
-                <h3 className="font-semibold">
-                  {branch.city}
-                </h3>
+                <h3 className="font-semibold">{branch.city}</h3>
               </div>
 
               <div className="mt-20 space-y-6">
                 <div className="flex gap-4">
-                  <FaMapMarkerAlt
-                    size={22}
-                    className="text-red-500 mt-1"
-                  />
+                  <FaMapMarkerAlt size={22} className="text-red-500 mt-1" />
 
-                  <p className="text-gray-200 leading-7">
-                    {branch.address}
-                  </p>
+                  <p className="text-gray-200 leading-7">{branch.address}</p>
                 </div>
 
                 <div className="flex gap-4">
-                  <FaPhoneAlt
-                    size={18}
-                    className="text-red-500 mt-1"
-                  />
+                  <FaPhoneAlt size={18} className="text-red-500 mt-1" />
 
                   <p>{branch.phone}</p>
                 </div>
