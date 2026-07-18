@@ -1,7 +1,7 @@
 import z from 'zod';
 import { Feedback } from '../utils/feedback.model.js';
 
-export const feedback = async (req, res,next) => {
+export const feedback = async (req, res) => {
   try {
                            const feedbackSchema = z.object({
       name: z
@@ -20,7 +20,7 @@ export const feedback = async (req, res,next) => {
       return res.status(400).json({
         success: false,
         error: result.error.issues,
-      })
+      });
     }
 
     const { name, comment, rating } = result.data;
