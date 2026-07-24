@@ -67,7 +67,6 @@ const Hero = () => {
                     >
                       Explore Courses
                     </button>
-
                     <button
                       onClick={() => navigate('/contact')}
                       className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl font-semibold transition"

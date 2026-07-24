@@ -14,14 +14,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
-console.log('FRONTEND_URL =', process.env.FRONTEND_URL);
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
-
 app.use('/api/v1', feedbackRouter);
 app.use('/api/v1', courseRouter);
 app.use('/api/v1', enquiryRouter);
