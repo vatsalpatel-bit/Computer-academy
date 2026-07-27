@@ -26,10 +26,10 @@ const router = createBrowserRouter([
         path: '/courses',
         element: <Courses />,
       },
-      {
-        path: '/branches',
-        element: <Branches />,
-      },
+      // {
+      //   path: '/branches',
+      //   element: <Branches />,
+      // },
       {
         path: '/contact',
         element: <Contact />,

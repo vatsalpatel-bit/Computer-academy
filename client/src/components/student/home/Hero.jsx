@@ -53,7 +53,7 @@ const Hero = () => {
               <div className="relative z-10 max-w-7xl mx-auto h-full flex items-center px-6">
                 <div className="max-w-2xl text-white">
                   <span className="inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-5">
-                    Welcome to Computer Academy
+                    Welcome to Jankalyan Computer Center
                   </span>
 
                   <h1 className="text-5xl md:text-7xl font-bold leading-tight">{slide.title}</h1>

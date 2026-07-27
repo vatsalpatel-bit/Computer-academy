@@ -20,7 +20,7 @@ const CourseView = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const course = useSelector((state) => state.course.singleCourse);
-
+  console.log(course)
   useEffect(() => {
     const fetchCourseApi = async () => {
       try {
@@ -141,7 +141,7 @@ const CourseView = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-                  {course.topics.map((topic) => (
+                  {course.topic.map((topic) => (
                     <div
                       key={topic}
                       className="bg-white border rounded-2xl p-5 flex items-center gap-3 hover:shadow-lg transition"

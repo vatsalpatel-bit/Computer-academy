@@ -3,11 +3,8 @@ import { FaArrowRight } from 'react-icons/fa';
 import gallery1 from '@/svg/gallery/gallery1.jpg';
 import gallery2 from '@/svg/gallery/gallery2.jpg';
 import gallery3 from '@/svg/gallery/gallery3.jpg';
-import gallery4 from '@/svg/gallery/gallery4.jpg';
-import gallery5 from '@/svg/gallery/gallery5.jpg';
-import gallery6 from '@/svg/gallery/gallery6.jpg';
 
-const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6];
+const galleryImages = [gallery1, gallery2, gallery3];
 
 const Gallery = () => {
   return (

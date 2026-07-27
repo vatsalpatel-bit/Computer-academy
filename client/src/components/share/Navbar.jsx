@@ -1,5 +1,4 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import TopBar from './TopBar';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -7,13 +6,12 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about-us' },
     { name: 'Courses', path: '/courses' },
-    { name: 'Branches', path: '/branches' },
+    // { name: 'Branches', path: '/branches' },
     { name: 'Contact', path: '/contact' },
   ];
 
   return (
     <>
-      <TopBar />
 
       <header className="bg-white shadow-md sticky top-0 z-50 px-24">
         <div
@@ -22,10 +20,10 @@ const Navbar = () => {
         >
           {/* Logo */}
           <div className="flex items-center gap-10">
-            <img src="src/svg/logo.png" alt="Logo" className="w-24 h-24 object-contain" />
+            <img src="src/svg/logo.png" alt="Logo" className="w-16 h-16 object-contain" />
 
             <div>
-              <h1 className="text-2xl font-bold text-blue-900">Computer Academy</h1>
+              <h1 className="text-2xl font-bold text-blue-900">Jankalyan Computer Center</h1>
 
               <p className="text-sm text-gray-500">Learn • Build • Grow</p>
             </div>

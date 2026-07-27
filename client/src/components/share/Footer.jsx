@@ -15,7 +15,7 @@ const quickLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about-us' },
   { name: 'Courses', path: '/courses' },
-  { name: 'Branches', path: '/branches' },
+  // { name: 'Branches', path: '/branches' },
   { name: 'Contact', path: '/contact' },
   { name: 'Enquiry Now', path: '/enquiry' },
 ];
@@ -27,7 +27,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Logo */}
         <div>
-          <img src={logo} alt="Computer Academy" className="w-40 mb-4" />
+          <img src={logo} alt="Computer Academy" className="h-16 mb-4" />
 
           <p className="text-gray-300 leading-7">
             Empowering students with industry-ready skills through quality computer education and
@@ -106,7 +106,7 @@ const Footer = () => {
       {/* Bottom Footer */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-gray-300 text-sm">
-          <p>© {new Date().getFullYear()} Computer Academy. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Jankalyan Computer Center. All Rights Reserved.</p>
 
           <p>
             Designed & Developed by <span className="text-red-500 font-semibold">Vatsal</span>

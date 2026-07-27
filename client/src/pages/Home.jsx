@@ -1,4 +1,4 @@
-import Branches from '@/components/student/home/Branches';
+// import Branches from '@/components/student/home/Branches';
 import Features from '@/components/student/home/Features';
 import FeedbackForm from '@/components/student/home/FeedbackForm';
 import Gallery from '@/components/student/home/Gallery';
@@ -12,7 +12,7 @@ const Home = () => {
       <Hero />
       <Features />
       <PopularCourses />
-      <Branches />
+      {/* <Branches /> */}
       <Gallery />
       <Testimonials />
       <FeedbackForm />
