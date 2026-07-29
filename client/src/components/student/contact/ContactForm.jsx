@@ -1,16 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
 const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [input, setInput] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    course: '',
-    message: '',
+  const [input, setInput] = useState(() => {
+    const saveInput = localStorage.getItem("contactForm");
+    return saveInput ? JSON.parse(saveInput) : {
+      name: '',
+      email: '',
+      phone: '',
+      course: '',
+      message: '',
+    }
   });
 
   const contactSchema = z.object({
@@ -30,6 +33,10 @@ const ContactForm = () => {
       .min(20, 'Message must be at least 20 characters')
       .max(1000, 'Message cannot exceed 1000 characters'),
   });
+
+  useEffect(() => {
+    localStorage.setItem("contactForm", JSON.stringify(input))
+  }, [input]);
 
   const eventHandler = (e) => {
     const { name, value } = e.target;
@@ -85,7 +92,7 @@ ${input.message}
 `;
 
       window.open(`https://wa.me/919876543210?text=${encodeURIComponent(text)}`, '_blank');
-
+      localStorage.removeItem("contactForm");
       setInput({
         name: '',
         email: '',
