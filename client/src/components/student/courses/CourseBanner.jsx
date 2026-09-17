@@ -1,12 +1,70 @@
 const CourseBanner = () => {
   return (
-    <section className="bg-linear-to-r from-[#0B1E45] to-[#1F4B99] py-24">
-      <div className="max-w-7xl mx-auto px-6 text-center text-white">
-        <h1 className="text-5xl font-bold">Our Courses</h1>
+    <section
+      className="
+        bg-[#111844]
+        py-14
+        sm:py-16
+        lg:py-20
+      "
+    >
+      <div
+        className="
+          max-w-7xl
+          mx-auto
+          px-5
+          sm:px-6
+          lg:px-8
+          text-center
+          text-white
+        "
+      >
+        {/* Small Label */}
+        <p
+          className="
+            text-xs
+            sm:text-sm
+            font-semibold
+            tracking-widest
+            uppercase
+            text-[#7288AE]
+            mb-3
+          "
+        >
+          Learn & Grow
+        </p>
 
-        <p className="mt-5 text-lg text-gray-200 max-w-2xl mx-auto">
-          Learn the latest technologies with practical training, experienced trainers and
-          industry-focused curriculum.
+        {/* Heading */}
+        <h1
+          className="
+            text-3xl
+            sm:text-4xl
+            lg:text-5xl
+            font-bold
+            text-[#EAE0CF]
+            leading-tight
+          "
+        >
+          Our Courses
+        </h1>
+
+        {/* Description */}
+        <p
+          className="
+            mt-4
+            sm:mt-5
+            text-sm
+            sm:text-base
+            lg:text-lg
+            text-white/75
+            leading-6
+            sm:leading-7
+            max-w-2xl
+            mx-auto
+          "
+        >
+          Learn the latest technologies with practical training,
+          experienced trainers and industry-focused curriculum.
         </p>
       </div>
     </section>

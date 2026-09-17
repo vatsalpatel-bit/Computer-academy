@@ -13,6 +13,7 @@ import { setAllFeddback } from '@/redux/slices/feedbackSlices';
 const Testimonials = () => {
   const testimonials = useSelector((state) => state.feedback.allFeedback);
   const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchFeedbackApi = async () => {
       try {
@@ -22,26 +23,53 @@ const Testimonials = () => {
         console.log(error);
       }
     };
+
     fetchFeedbackApi();
   }, [dispatch]);
 
   return (
-    <section className="py-20 bg-[#0B1E45]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-14 sm:py-16 lg:py-20 bg-[#F5F6FA]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-9 sm:mb-12 lg:mb-14">
 
-        <div className="text-center mb-14">
-          <span className="text-red-500 uppercase font-semibold tracking-widest">Testimonials</span>
+          <span className="
+            inline-flex items-center gap-2
+            text-[#4B5694]
+            text-xs sm:text-sm
+            uppercase
+            font-bold
+            tracking-[0.2em]
+          ">
+            <span className="w-6 sm:w-8 h-[2px] bg-[#4B5694]" />
+            Testimonials
+            <span className="w-6 sm:w-8 h-[2px] bg-[#4B5694]" />
+          </span>
 
-          <h2 className="text-4xl font-bold text-white mt-3">What Our Students Say</h2>
+          <h2 className="
+            text-3xl sm:text-4xl lg:text-5xl
+            font-bold
+            text-[#111844]
+            mt-3
+            leading-tight
+          ">
+            What Our Students Say
+          </h2>
 
-          <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
-            Hear from our students about their learning journey and experience at Computer Academy.
+          <p className="
+            text-gray-500
+            text-sm sm:text-base
+            mt-4
+            leading-6
+          ">
+            Hear from our students about their learning journey and
+            experience at Computer Academy.
           </p>
+
         </div>
 
         {/* Slider */}
-
         <Swiper
           modules={[Autoplay, Pagination]}
           autoplay={{
@@ -49,48 +77,128 @@ const Testimonials = () => {
             disableOnInteraction: false,
           }}
           pagination={{ clickable: true }}
-          loop
-          spaceBetween={30}
+          loop={testimonials?.length > 3}
+          spaceBetween={20}
           breakpoints={{
             0: {
               slidesPerView: 1,
             },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 24,
+            },
             768: {
               slidesPerView: 2,
+              spaceBetween: 24,
             },
             1200: {
               slidesPerView: 3,
+              spaceBetween: 28,
             },
           }}
+          className="testimonials-swiper !pb-12"
         >
           {testimonials?.map((student) => (
-            <SwiperSlide key={student?.id}>
-              <div className="bg-white rounded-3xl p-8 shadow-xl h-full">
-                <FaQuoteLeft className="text-4xl text-red-600 mb-6" />
+            <SwiperSlide key={student?._id} className="h-auto">
 
-                <p className="text-gray-600 leading-7">{student?.comment}</p>
+              <div className="
+                group
+                bg-white
+                rounded-2xl sm:rounded-3xl
+                border border-gray-100
+                shadow-sm
+                hover:shadow-xl
+                p-5 sm:p-7 lg:p-8
+                h-full
+                min-h-[300px]
+                flex flex-col
+                transition-all duration-300
+              ">
 
-                <div className="flex mt-6 mb-5">
-                  {[...Array(student?.rating)].map((_, index) => (
-                    <FaStar key={index} className="text-yellow-400 mr-1" />
-                  ))}
+                {/* Quote Icon */}
+                <div className="
+                  w-11 h-11
+                  sm:w-12 sm:h-12
+                  rounded-xl
+                  bg-[#EAE0CF]/70
+                  flex items-center justify-center
+                  text-[#4B5694]
+                  mb-5
+                ">
+                  <FaQuoteLeft className="text-lg sm:text-xl" />
                 </div>
 
-                <div className="flex items-center gap-4 mt-8">
-                  {/* <img
-                    src={student.image}
-                    alt={student.name}
-                    className="w-16 h-16 rounded-full object-cover border-4 border-red-100"
-                  /> */}
+                {/* Comment */}
+                <p className="
+                  text-gray-600
+                  text-sm sm:text-base
+                  leading-6 sm:leading-7
+                  flex-1
+                ">
+                  "{student?.comment}"
+                </p>
+
+                {/* Rating */}
+                <div className="flex items-center gap-1 mt-6">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <FaStar
+                      key={star}
+                      className={
+                        star <= student?.rating
+                          ? 'text-yellow-400'
+                          : 'text-gray-200'
+                      }
+                      size={15}
+                    />
+                  ))}
+
+                  <span className="ml-2 text-xs text-gray-400">
+                    {student?.rating}/5
+                  </span>
+                </div>
+
+                {/* Student */}
+                <div className="
+                  mt-6 pt-5
+                  border-t border-gray-100
+                  flex items-center gap-3
+                ">
+
+                  <div className="
+                    w-10 h-10
+                    sm:w-11 sm:h-11
+                    rounded-full
+                    bg-[#111844]
+                    text-white
+                    flex items-center justify-center
+                    font-bold
+                    text-sm
+                  ">
+                    {student?.name?.charAt(0)?.toUpperCase()}
+                  </div>
 
                   <div>
-                    <h3 className="font-bold text-lg">{student.name}</h3>
+                    <h3 className="
+                      font-bold
+                      text-sm sm:text-base
+                      text-[#111844]
+                    ">
+                      {student?.name}
+                    </h3>
+
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      Student
+                    </p>
                   </div>
+
                 </div>
+
               </div>
+
             </SwiperSlide>
           ))}
         </Swiper>
+
       </div>
     </section>
   );

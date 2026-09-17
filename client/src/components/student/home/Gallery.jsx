@@ -8,47 +8,127 @@ const galleryImages = [gallery1, gallery2, gallery3];
 
 const Gallery = () => {
   return (
-    <section className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-14 sm:py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Heading */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-9 sm:mb-12">
 
-        <div className="flex items-center justify-between mb-12">
-          <div>
-            <span className="text-red-600 uppercase font-semibold tracking-widest">Gallery</span>
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center gap-2 text-[#4B5694] text-xs sm:text-sm uppercase font-bold tracking-[0.2em]">
+              <span className="w-7 h-[2px] bg-[#4B5694]" />
+              Gallery
+            </span>
 
-            <h2 className="text-4xl font-bold mt-2 text-slate-900">Our Campus Moments</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 text-[#111844] leading-tight">
+              Our Campus Moments
+            </h2>
 
-            <p className="text-gray-600 mt-3 max-w-xl">
-              Explore classroom sessions, workshops, seminars, events and memorable moments from our
-              academy.
+            <p className="text-gray-500 text-sm sm:text-base mt-4 max-w-xl leading-6">
+              Explore classroom sessions, workshops, seminars, events and
+              memorable moments from our academy.
             </p>
           </div>
+
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {galleryImages.map((image, index) => (
-            <div key={index} className="group overflow-hidden rounded-3xl shadow-lg bg-white">
-              <div className="overflow-hidden">
+            <div
+              key={index}
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-2xl
+                bg-white
+                border border-gray-100
+                shadow-sm
+                hover:shadow-xl
+                transition-all duration-300
+              "
+            >
+              <div className="relative overflow-hidden">
+
                 <img
                   src={image}
-                  alt="Gallery"
-                  className="w-full h-72 object-cover group-hover:scale-110 transition duration-500"
+                  alt={`Jankalyan Computer Center gallery ${index + 1}`}
+                  className="
+                    w-full
+                    h-64 sm:h-72 lg:h-80
+                    object-cover
+                    transition-transform duration-500
+                    group-hover:scale-105
+                  "
                 />
+
+                {/* Subtle overlay */}
+                <div className="
+                  absolute inset-0
+                  bg-black/0
+                  group-hover:bg-black/10
+                  transition-all duration-500
+                " />
+
+                {/* Number */}
+                <div className="
+                  absolute
+                  top-4 left-4
+                  w-9 h-9
+                  rounded-lg
+                  bg-white/90
+                  backdrop-blur-sm
+                  flex items-center justify-center
+                  text-[#111844]
+                  text-xs
+                  font-bold
+                  shadow-sm
+                ">
+                  0{index + 1}
+                </div>
+
               </div>
             </div>
           ))}
+
         </div>
 
-        {/* Mobile Button */}
+        {/* See More */}
+        <div className="flex justify-center mt-9 sm:mt-12">
 
-        <div className="flex justify-center mt-12 md:hidden">
-          <button className="bg-[#0B1E45] hover:bg-red-600 transition text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
+          <button
+            className="
+              group
+              inline-flex
+              items-center
+              gap-2
+              px-6 sm:px-7
+              py-3
+              rounded-xl
+              bg-[#111844]
+              hover:bg-[#4B5694]
+              text-white
+              text-sm sm:text-base
+              font-semibold
+              transition-all duration-300
+              active:scale-[0.98]
+            "
+          >
             See More
-            <FaArrowRight />
+
+            <FaArrowRight
+              size={14}
+              className="
+                transition-transform duration-300
+                group-hover:translate-x-1
+              "
+            />
           </button>
+
         </div>
+
       </div>
     </section>
   );

@@ -1,2 +1,16 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+
+.testimonials-swiper .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  opacity: 1;
+  background: #7288AE;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 999px;
+  background: #111844;
+}

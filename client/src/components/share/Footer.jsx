@@ -7,112 +7,204 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaChevronRight,
-} from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import logo from '@/svg/logo.png';
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+import logo from "@/svg/logo.png";
 
 const quickLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about-us' },
-  { name: 'Courses', path: '/courses' },
-  // { name: 'Branches', path: '/branches' },
-  { name: 'Contact', path: '/contact' },
-  { name: 'Enquiry Now', path: '/enquiry' },
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about-us" },
+  { name: "Courses", path: "/courses" },
+  { name: "Contact", path: "/contact" },
+  { name: "Enquiry Now", path: "/enquiry" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0B1E45] text-white mt-20">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Logo */}
-        <div>
-          <img src={logo} alt="Computer Academy" className="h-16 mb-4" />
+    <footer className="bg-[#111844] text-white mt-16">
 
-          <p className="text-gray-300 leading-7">
-            Empowering students with industry-ready skills through quality computer education and
-            practical learning.
-          </p>
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
 
-          <div className="flex gap-4 mt-6">
-            {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map((Icon, index) => (
-              <a
-                key={index}
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-red-600 transition duration-300 flex items-center justify-center"
-              >
-                <Icon />
-              </a>
-            ))}
-          </div>
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-2xl font-bold mb-5 text-red-500">Quick Links</h3>
+          {/* Brand */}
+          <div className="lg:pr-6">
+            <div className="flex items-center gap-3 mb-5">
+              <img src={logo} alt="Jankalyan" className="w-14 h-14 object-contain" />
 
-          <ul className="space-y-3">
-            {quickLinks.map((item) => (
-              <li key={item.name}>
-                <Link
-                  to={item.path}
-                  className="flex items-center gap-2 hover:text-red-400 transition"
-                >
-                  <FaChevronRight size={12} />
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div>
-          <h3 className="text-2xl font-bold mb-5 text-red-500">Contact Info</h3>
-
-          <div className="space-y-5">
-            <div className="flex gap-3">
-              <FaPhoneAlt className="mt-1 text-red-500" />
-              <span>+91 98765 43210</span>
+              <div>
+                <h2 className="text-lg font-bold text-[#EAE0CF] leading-tight">
+                  Jankalyan
+                </h2>
+                <p className="text-sm text-[#7288AE]">
+                  Computer Center
+                </p>
+              </div>
             </div>
 
-            <div className="flex gap-3">
-              <FaEnvelope className="mt-1 text-red-500" />
-              <span>info@computeracademy.com</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Address */}
-        <div>
-          <h3 className="text-2xl font-bold mb-5 text-red-500">Address</h3>
-
-          <div className="flex gap-3">
-            <FaMapMarkerAlt className="mt-1 text-red-500" />
-
-            <p className="text-gray-300 leading-7">
-              Computer Academy,
-              <br />
-              First Floor, ABC Complex,
-              <br />
-              Chikhli, Navsari,
-              <br />
-              Gujarat - 396521
+            <p className="text-sm text-white/70 leading-7">
+              Empowering students with practical computer education,
+              professional guidance and career-oriented training.
             </p>
+
+            <div className="flex gap-3 mt-6">
+              {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map(
+                (Icon, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="
+                      w-10 h-10 rounded-xl
+                      bg-white/5
+                      border border-white/10
+                      hover:bg-[#4B5694]
+                      hover:border-[#4B5694]
+                      transition-all duration-300
+                      flex items-center justify-center
+                    "
+                  >
+                    <Icon size={15} />
+                  </a>
+                )
+              )}
+            </div>
           </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">
+              Quick Links
+            </h3>
+
+            <ul className="space-y-3">
+              {quickLinks.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.path}
+                    className="
+                      group
+                      flex items-center gap-2
+                      text-white/70
+                      hover:text-[#EAE0CF]
+                      transition
+                    "
+                  >
+                    <FaChevronRight
+                      size={10}
+                      className="text-[#7288AE] group-hover:translate-x-1 transition"
+                    />
+
+                    <span className="text-sm">{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">
+              Contact
+            </h3>
+
+            <div className="space-y-4">
+
+              <a
+                href="tel:+919876543210"
+                className="
+                  flex items-center gap-3
+                  p-3 rounded-xl
+                  bg-white/5
+                  border border-white/10
+                  hover:border-[#4B5694]
+                  transition
+                "
+              >
+                <FaPhoneAlt className="text-[#7288AE]" />
+
+                <span className="text-sm text-white/80">
+                  +91 98765 43210
+                </span>
+              </a>
+
+              <a
+                href="mailto:info@computeracademy.com"
+                className="
+                  flex items-center gap-3
+                  p-3 rounded-xl
+                  bg-white/5
+                  border border-white/10
+                  hover:border-[#4B5694]
+                  transition
+                "
+              >
+                <FaEnvelope className="text-[#7288AE]" />
+
+                <span className="text-sm text-white/80 break-all">
+                  info@computeracademy.com
+                </span>
+              </a>
+
+            </div>
+          </div>
+
+          {/* Address */}
+          <div>
+            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">
+              Visit Us
+            </h3>
+
+            <div
+              className="
+                flex gap-3
+                p-4 rounded-xl
+                bg-white/5
+                border border-white/10
+              "
+            >
+              <FaMapMarkerAlt className="text-[#7288AE] mt-1" />
+
+              <p className="text-sm text-white/70 leading-6">
+                Computer Academy,
+                <br />
+                First Floor, ABC Complex,
+                <br />
+                Chikhli, Navsari,
+                <br />
+                Gujarat – 396521
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      {/* Bottom Footer */}
+      {/* Bottom */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-gray-300 text-sm">
-          <p>© {new Date().getFullYear()} Jankalyan Computer Center. All Rights Reserved.</p>
+        <div
+          className="
+            max-w-7xl mx-auto
+            px-5 sm:px-6 lg:px-8
+            py-5
+            flex flex-col md:flex-row
+            justify-between
+            items-center
+            gap-3
+          "
+        >
+          <p className="text-xs sm:text-sm text-white/50 text-center md:text-left">
+            © {new Date().getFullYear()} Jankalyan Computer Center. All Rights Reserved.
+          </p>
 
-          <p>
-            Designed & Developed by <span className="text-red-500 font-semibold">Vatsal</span>
+          <p className="text-xs sm:text-sm text-white/50">
+            Designed & Developed by{" "}
+            <span className="text-[#EAE0CF] font-semibold">
+              Vatsal
+            </span>
           </p>
         </div>
       </div>
+
     </footer>
   );
 };
