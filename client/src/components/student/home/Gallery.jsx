@@ -4,6 +4,12 @@ import gallery1 from '@/svg/gallery/gallery1.jpg';
 import gallery2 from '@/svg/gallery/gallery2.jpg';
 import gallery3 from '@/svg/gallery/gallery3.jpg';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 const galleryImages = [gallery1, gallery2, gallery3];
 
 const Gallery = () => {
@@ -12,9 +18,9 @@ const Gallery = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-9 sm:mb-12">
-
+        <div className="mb-9 sm:mb-12">
           <div className="max-w-2xl">
+
             <span className="inline-flex items-center gap-2 text-[#4B5694] text-xs sm:text-sm uppercase font-bold tracking-[0.2em]">
               <span className="w-7 h-[2px] bg-[#4B5694]" />
               Gallery
@@ -28,106 +34,105 @@ const Gallery = () => {
               Explore classroom sessions, workshops, seminars, events and
               memorable moments from our academy.
             </p>
-          </div>
 
+          </div>
         </div>
 
-        {/* Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {/* Gallery Swiper */}
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          loop={galleryImages.length > 3}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 24,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
+          }}
+          className="gallery-swiper !pb-12"
+        >
 
           {galleryImages.map((image, index) => (
-            <div
-              key={index}
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-2xl
-                bg-white
-                border border-gray-100
-                shadow-sm
-                hover:shadow-xl
-                transition-all duration-300
-              "
-            >
-              <div className="relative overflow-hidden">
+            <SwiperSlide key={index}>
 
-                <img
-                  src={image}
-                  alt={`Jankalyan Computer Center gallery ${index + 1}`}
-                  className="
-                    w-full
-                    h-64 sm:h-72 lg:h-80
-                    object-cover
-                    transition-transform duration-500
-                    group-hover:scale-105
-                  "
-                />
-
-                {/* Subtle overlay */}
-                <div className="
-                  absolute inset-0
-                  bg-black/0
-                  group-hover:bg-black/10
-                  transition-all duration-500
-                " />
-
-                {/* Number */}
-                <div className="
-                  absolute
-                  top-4 left-4
-                  w-9 h-9
-                  rounded-lg
-                  bg-white/90
-                  backdrop-blur-sm
-                  flex items-center justify-center
-                  text-[#111844]
-                  text-xs
-                  font-bold
+              <div
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-2xl
+                  bg-white
+                  border border-gray-100
                   shadow-sm
-                ">
-                  0{index + 1}
+                  hover:shadow-xl
+                  transition-all duration-300
+                "
+              >
+
+                <div className="relative overflow-hidden">
+
+                  <img
+                    src={image}
+                    alt={`Jankalyan Computer Center gallery ${index + 1}`}
+                    className="
+                      w-full
+                      h-64
+                      sm:h-72
+                      lg:h-80
+                      object-cover
+                      transition-transform
+                      duration-500
+                      group-hover:scale-105
+                    "
+                  />
+
+                  {/* Overlay */}
+                  <div
+                    className="
+                      absolute inset-0
+                      bg-black/0
+                      group-hover:bg-black/10
+                      transition-all duration-500
+                    "
+                  />
+
+                  {/* Number */}
+                  <div
+                    className="
+                      absolute
+                      top-4 left-4
+                      w-9 h-9
+                      rounded-lg
+                      bg-white/90
+                      backdrop-blur-sm
+                      flex items-center justify-center
+                      text-[#111844]
+                      text-xs
+                      font-bold
+                      shadow-sm
+                    "
+                  >
+                    0{index + 1}
+                  </div>
+
                 </div>
 
               </div>
-            </div>
+
+            </SwiperSlide>
           ))}
 
-        </div>
-
-        {/* See More */}
-        <div className="flex justify-center mt-9 sm:mt-12">
-
-          <button
-            className="
-              group
-              inline-flex
-              items-center
-              gap-2
-              px-6 sm:px-7
-              py-3
-              rounded-xl
-              bg-[#111844]
-              hover:bg-[#4B5694]
-              text-white
-              text-sm sm:text-base
-              font-semibold
-              transition-all duration-300
-              active:scale-[0.98]
-            "
-          >
-            See More
-
-            <FaArrowRight
-              size={14}
-              className="
-                transition-transform duration-300
-                group-hover:translate-x-1
-              "
-            />
-          </button>
-
-        </div>
+        </Swiper>
 
       </div>
     </section>

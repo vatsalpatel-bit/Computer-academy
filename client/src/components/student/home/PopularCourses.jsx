@@ -322,28 +322,34 @@ const PopularCourses = () => {
           <button
             onClick={() => navigate('/courses')}
             className="
-              inline-flex
-              items-center
-              justify-center
-              gap-2
-              bg-red-600
-              hover:bg-red-700
-              text-white
-              px-6
-              sm:px-8
-              py-3
-              sm:py-3.5
-              rounded-xl
-              text-sm
-              sm:text-base
-              font-semibold
-              transition-all
-              duration-300
-              shadow-sm
-            "
+    group
+    inline-flex
+    items-center
+    justify-center
+    gap-2
+    bg-[#111844]
+    hover:bg-[#4B5694]
+    text-white
+    px-6
+    sm:px-8
+    py-3
+    sm:py-3.5
+    rounded-xl
+    text-sm
+    sm:text-base
+    font-semibold
+    shadow-md
+    shadow-[#111844]/15
+    transition-all
+    duration-300
+    hover:-translate-y-0.5
+  "
           >
             View All Courses
-            <span>→</span>
+
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
           </button>
 
         </div>

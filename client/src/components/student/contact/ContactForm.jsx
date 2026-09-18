@@ -5,15 +5,19 @@ import { z } from 'zod';
 const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+
   const [input, setInput] = useState(() => {
-    const saveInput = localStorage.getItem("contactForm");
-    return saveInput ? JSON.parse(saveInput) : {
-      name: '',
-      email: '',
-      phone: '',
-      course: '',
-      message: '',
-    }
+    const saveInput = localStorage.getItem('contactForm');
+
+    return saveInput
+      ? JSON.parse(saveInput)
+      : {
+          name: '',
+          email: '',
+          phone: '',
+          course: '',
+          message: '',
+        };
   });
 
   const contactSchema = z.object({
@@ -24,7 +28,9 @@ const ContactForm = () => {
 
     email: z.email('Please enter a valid email address'),
 
-    phone: z.string().regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit phone number'),
+    phone: z
+      .string()
+      .regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit phone number'),
 
     course: z.string().min(1, 'Please select a course'),
 
@@ -35,7 +41,7 @@ const ContactForm = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem("contactForm", JSON.stringify(input))
+    localStorage.setItem('contactForm', JSON.stringify(input));
   }, [input]);
 
   const eventHandler = (e) => {
@@ -91,8 +97,13 @@ const ContactForm = () => {
 ${input.message}
 `;
 
-      window.open(`https://wa.me/919876543210?text=${encodeURIComponent(text)}`, '_blank');
-      localStorage.removeItem("contactForm");
+      window.open(
+        `https://wa.me/919876543210?text=${encodeURIComponent(text)}`,
+        '_blank'
+      );
+
+      localStorage.removeItem('contactForm');
+
       setInput({
         name: '',
         email: '',
@@ -105,88 +116,311 @@ ${input.message}
     }
   };
 
-  return (
-    <section className="py-20">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="bg-white rounded-3xl shadow-lg p-10">
-          <h2 className="text-4xl font-bold text-center">Send Us A Message</h2>
+  const inputClass = (field) => `
+    w-full
+    h-12
+    sm:h-14
+    px-4
+    rounded-xl
+    border
+    bg-white
+    text-[#111844]
+    placeholder:text-[#7288AE]/70
+    outline-none
+    transition-all
+    duration-200
+    text-sm
+    sm:text-base
+    ${
+      errors[field]
+        ? 'border-red-500 focus:ring-2 focus:ring-red-100'
+        : 'border-gray-200 focus:border-[#4B5694] focus:ring-2 focus:ring-[#4B5694]/10'
+    }
+  `;
 
-          <form onSubmit={submitHandler} className="grid md:grid-cols-2 gap-6 mt-10">
+  return (
+    <section className="relative bg-[#EAE0CF]/20 py-12 sm:py-16 lg:py-20 overflow-hidden">
+
+      {/* Subtle background glow */}
+      <div
+        className="
+          absolute
+          -top-32
+          -right-32
+          w-80
+          h-80
+          rounded-full
+          bg-[#4B5694]/10
+          blur-3xl
+          pointer-events-none
+        "
+      />
+
+      <div
+        className="
+          relative
+          max-w-4xl
+          mx-auto
+          px-4
+          sm:px-6
+        "
+      >
+        {/* Form Card */}
+        <div
+          className="
+            bg-white
+            rounded-2xl
+            sm:rounded-3xl
+            shadow-xl
+            shadow-[#111844]/5
+            border
+            border-gray-100
+            p-5
+            sm:p-8
+            lg:p-10
+          "
+        >
+
+          {/* Heading */}
+          <div className="text-center mb-7 sm:mb-10">
+
+            <span
+              className="
+                inline-block
+                px-3
+                py-1.5
+                rounded-full
+                bg-[#4B5694]/10
+                text-[#4B5694]
+                text-xs
+                sm:text-sm
+                font-semibold
+                mb-3
+              "
+            >
+              Get In Touch
+            </span>
+
+            <h2
+              className="
+                text-2xl
+                sm:text-3xl
+                lg:text-4xl
+                font-bold
+                text-[#111844]
+              "
+            >
+              Send Us A Message
+            </h2>
+
+            <p
+              className="
+                mt-2
+                text-sm
+                sm:text-base
+                text-[#7288AE]
+              "
+            >
+              Have a question? We'd love to hear from you.
+            </p>
+          </div>
+
+          {/* Form */}
+          <form
+            onSubmit={submitHandler}
+            className="
+              grid
+              grid-cols-1
+              md:grid-cols-2
+              gap-x-5
+              gap-y-1
+            "
+          >
+
+            {/* Name */}
             <div>
+              <label
+                htmlFor="name"
+                className="block mb-2 text-sm font-medium text-[#111844]"
+              >
+                Full Name
+              </label>
+
               <input
+                id="name"
                 name="name"
                 value={input.name}
                 onChange={eventHandler}
                 type="text"
-                placeholder="Full Name"
-                className={`w-full border rounded-xl p-4 outline-none transition
-      ${errors.name ? 'border-red-500' : 'focus:border-red-500'}`}
+                placeholder="Enter your name"
+                className={inputClass('name')}
               />
 
-              <p className="text-red-500 text-sm mt-1 h-5">{errors.name}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">
+                {errors.name}
+              </p>
             </div>
+
+            {/* Email */}
             <div>
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-[#111844]"
+              >
+                Email Address
+              </label>
+
               <input
+                id="email"
                 name="email"
                 value={input.email}
                 onChange={eventHandler}
                 type="email"
-                placeholder="Email"
-                className={`w-full border rounded-xl p-4 outline-none transition
-      ${errors.email ? 'border-red-500' : 'focus:border-red-500'}`}
+                placeholder="Enter your email"
+                className={inputClass('email')}
               />
 
-              <p className="text-red-500 text-sm mt-1 h-5">{errors.email}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">
+                {errors.email}
+              </p>
             </div>
+
+            {/* Phone */}
             <div>
+              <label
+                htmlFor="phone"
+                className="block mb-2 text-sm font-medium text-[#111844]"
+              >
+                Phone Number
+              </label>
+
               <input
+                id="phone"
                 name="phone"
                 value={input.phone}
                 onChange={eventHandler}
                 type="tel"
-                placeholder="Phone Number"
-                className={`w-full border rounded-xl p-4 outline-none transition
-      ${errors.phone ? 'border-red-500' : 'focus:border-red-500'}`}
+                inputMode="numeric"
+                maxLength="10"
+                placeholder="10-digit phone number"
+                className={inputClass('phone')}
               />
 
-              <p className="text-red-500 text-sm mt-1 h-5">{errors.phone}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">
+                {errors.phone}
+              </p>
             </div>
+
+            {/* Course */}
             <div>
+              <label
+                htmlFor="course"
+                className="block mb-2 text-sm font-medium text-[#111844]"
+              >
+                Course
+              </label>
+
               <input
+                id="course"
                 name="course"
                 value={input.course}
                 onChange={eventHandler}
                 type="text"
-                placeholder="Course"
-                className={`w-full border rounded-xl p-4 outline-none transition
-      ${errors.course ? 'border-red-500' : 'focus:border-red-500'}`}
+                placeholder="Interested course"
+                className={inputClass('course')}
               />
 
-              <p className="text-red-500 text-sm mt-1 h-5">{errors.course}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">
+                {errors.course}
+              </p>
             </div>
-            <div className="md:col-span-2">
+
+            {/* Message */}
+            <div className="md:col-span-2 mt-1">
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm font-medium text-[#111844]"
+              >
+                Your Message
+              </label>
+
               <textarea
+                id="message"
                 name="message"
                 value={input.message}
                 onChange={eventHandler}
-                rows="6"
-                placeholder="Your Message"
-                className={`w-full border rounded-xl p-4 outline-none resize-none transition
-      ${errors.message ? 'border-red-500' : 'focus:border-red-500'}`}
+                rows="5"
+                placeholder="Tell us how we can help..."
+                className={`
+                  w-full
+                  px-4
+                  py-3.5
+                  rounded-xl
+                  border
+                  bg-white
+                  text-[#111844]
+                  placeholder:text-[#7288AE]/70
+                  outline-none
+                  resize-none
+                  transition-all
+                  duration-200
+                  text-sm
+                  sm:text-base
+                  ${
+                    errors.message
+                      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
+                      : 'border-gray-200 focus:border-[#4B5694] focus:ring-2 focus:ring-[#4B5694]/10'
+                  }
+                `}
               />
 
-              <p className="text-red-500 text-sm mt-1 h-5">{errors.message}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">
+                {errors.message}
+              </p>
             </div>
 
+            {/* Submit */}
             <button
               type="submit"
               disabled={loading}
-              className={`md:col-span-2 py-4 rounded-xl font-semibold transition flex items-center justify-center gap-2
-    ${loading ? 'bg-red-500 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700'} text-white`}
+              className="
+                md:col-span-2
+                w-full
+                mt-3
+                h-12
+                sm:h-14
+                rounded-xl
+                bg-red-600
+                hover:bg-red-700
+                disabled:bg-red-400
+                disabled:cursor-not-allowed
+                text-white
+                font-semibold
+                text-sm
+                sm:text-base
+                transition-all
+                duration-300
+                shadow-md
+                hover:shadow-lg
+                flex
+                items-center
+                justify-center
+                gap-2
+              "
             >
               {loading ? (
                 <>
-                  <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  <span
+                    className="
+                      w-5
+                      h-5
+                      border-2
+                      border-white
+                      border-t-transparent
+                      rounded-full
+                      animate-spin
+                    "
+                  />
                   Sending...
                 </>
               ) : (

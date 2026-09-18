@@ -75,7 +75,7 @@ const FeedbackForm = () => {
   };
 
   return (
-    <section className="py-14 sm:py-16 lg:py-20 bg-[#F5F6FA]">
+    <section className="pt-0 pb-8 sm:pb-10 lg:pb-12 bg-[#F5F6FA]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Card */}
@@ -153,11 +153,10 @@ const FeedbackForm = () => {
                 >
                   <Star
                     size={30}
-                    className={`transition ${
-                      star <= rating
-                        ? 'fill-yellow-400 text-yellow-400'
-                        : 'text-gray-300'
-                    }`}
+                    className={`transition ${star <= rating
+                      ? 'fill-yellow-400 text-yellow-400'
+                      : 'text-gray-300'
+                      }`}
                   />
                 </button>
               ))}
@@ -262,20 +261,24 @@ const FeedbackForm = () => {
               type="submit"
               disabled={loading}
               className="
-                w-full
-                flex items-center justify-center gap-2
-                bg-red-600
-                hover:bg-red-700
-                text-white
-                py-3.5
-                rounded-xl
-                text-sm sm:text-base
-                font-semibold
-                transition-all duration-300
-                active:scale-[0.98]
-                disabled:opacity-50
-                disabled:pointer-events-none
-              "
+    group
+    w-full
+    flex items-center justify-center gap-2
+    bg-[#111844]
+    hover:bg-[#4B5694]
+    text-white
+    py-3.5
+    rounded-xl
+    text-sm sm:text-base
+    font-semibold
+    shadow-md
+    shadow-[#111844]/15
+    transition-all duration-300
+    hover:-translate-y-0.5
+    active:scale-[0.98]
+    disabled:opacity-50
+    disabled:pointer-events-none
+  "
             >
               {loading ? (
                 <>
@@ -283,10 +286,14 @@ const FeedbackForm = () => {
                   Submitting...
                 </>
               ) : (
-                'Submit Feedback'
+                <>
+                  Submit Feedback
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </>
               )}
             </button>
-
           </form>
 
         </div>

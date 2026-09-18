@@ -1,4 +1,4 @@
-import Branches from '@/components/student/home/Branches';
+import Branches from '@/pages/Branches';
 import MainLayout from '@/layout/MainLayout';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
@@ -26,18 +26,18 @@ const router = createBrowserRouter([
         path: '/courses',
         element: <Courses />,
       },
-      // {
-      //   path: '/branches',
-      //   element: <Branches />,
-      // },
+      {
+        path: '/branches',
+        element: <Branches />
+      },
       {
         path: '/contact',
         element: <Contact />,
       },
-      {
-        path: '/enquiry',
-        element: <Enquiry />,
-      },
+      // {
+      //   path: '/enquiry',
+      //   element: <Enquiry />,
+      // },
       {
         path: '/course-detail/:slug',
         element: <CourseDetails />,

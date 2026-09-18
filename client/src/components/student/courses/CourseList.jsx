@@ -52,7 +52,7 @@ const CourseList = () => {
 
         {/* Search + Filter */}
         <div className="bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 shadow-sm">
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <div className="flex flex-row items-center gap-2 sm:gap-4">
 
             {/* Search */}
             <div className="relative flex-1">
@@ -72,22 +72,22 @@ const CourseList = () => {
                 onChange={(e) => setSearch(e.target.value)}
                 type="text"
                 placeholder="Search course..."
-                className="
-                  w-full
-                  h-12
-                  pl-11
-                  pr-4
-                  rounded-xl
-                  border border-gray-200
-                  bg-gray-50
-                  text-sm
-                  text-[#111844]
-                  outline-none
-                  placeholder:text-gray-400
-                  focus:bg-white
-                  focus:border-[#4B5694]
-                  transition
-                "
+               className="
+  w-full
+  h-12
+  pl-11
+  pr-4
+  rounded-xl
+  border border-gray-200
+  bg-gray-50
+  text-sm
+  text-[#111844]
+  outline-none
+  placeholder:text-gray-400
+  focus:bg-white
+  focus:border-[#4B5694]
+  transition
+"
               />
             </div>
 
@@ -95,21 +95,24 @@ const CourseList = () => {
             <select
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
-              className="
-                w-full
-                sm:w-48
-                h-12
-                px-4
-                rounded-xl
-                border border-gray-200
-                bg-gray-50
-                text-sm
-                text-[#111844]
-                outline-none
-                focus:bg-white
-                focus:border-[#4B5694]
-                transition
-              "
+             className="
+  shrink-0
+  w-[105px]
+  sm:w-44
+  h-12
+  px-3
+  sm:px-4
+  rounded-xl
+  border border-gray-200
+  bg-gray-50
+  text-xs
+  sm:text-sm
+  text-[#111844]
+  outline-none
+  focus:bg-white
+  focus:border-[#4B5694]
+  transition
+"
             >
               <option value="">All Durations</option>
               <option value="1 Months">1 month</option>

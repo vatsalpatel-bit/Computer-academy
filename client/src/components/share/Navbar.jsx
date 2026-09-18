@@ -7,14 +7,14 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about-us' },
     { name: 'Courses', path: '/courses' },
+    { name: 'Branches', path: '/branches' },
     { name: 'Contact', path: '/contact' },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+      <header className="sticky top-0 z-50 relative bg-white/95 backdrop-blur-md shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="h-[72px] lg:h-20 flex items-center justify-between">
 
@@ -53,6 +53,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
+            {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <NavLink
@@ -60,28 +61,32 @@ const Navbar = () => {
                   to={item.path}
                   className={({ isActive }) =>
                     `
-                    relative py-2
-                    font-medium
-                    transition-colors
-                    ${
-                      isActive
-                        ? 'text-[#111844]'
-                        : 'text-gray-600 hover:text-[#4B5694]'
+        relative
+        py-2
+        text-sm
+        xl:text-base
+        font-semibold
+        transition-colors
+        duration-300
+        ${isActive
+                      ? 'text-[#111844]'
+                      : 'text-[#111844]/70 hover:text-[#4B5694]'
                     }
 
-                    after:absolute
-                    after:left-0
-                    after:bottom-0
-                    after:h-[2px]
-                    after:bg-[#4B5694]
-                    after:transition-all
+        after:absolute
+        after:left-0
+        after:-bottom-1
+        after:h-[2px]
+        after:rounded-full
+        after:bg-[#4B5694]
+        after:transition-all
+        after:duration-300
 
-                    ${
-                      isActive
-                        ? 'after:w-full'
-                        : 'after:w-0 hover:after:w-full'
+        ${isActive
+                      ? 'after:w-full'
+                      : 'after:w-0 hover:after:w-full'
                     }
-                    `
+        `
                   }
                 >
                   {item.name}
@@ -90,22 +95,26 @@ const Navbar = () => {
             </nav>
 
             {/* Desktop CTA */}
-            <button
+            {/* <button
               onClick={() => navigate('/enquiry')}
               className="
-                hidden lg:block
-                bg-red-600
-                hover:bg-red-700
-                text-white
-                px-6 py-3
-                rounded-lg
-                font-semibold
-                transition
-                shadow-sm
-              "
+    hidden lg:inline-flex
+    items-center justify-center
+    bg-[#111844]
+    hover:bg-[#4B5694]
+    text-white
+    px-6 py-3
+    rounded-xl
+    font-semibold
+    shadow-md
+    shadow-[#111844]/15
+    transition-all duration-300
+    hover:-translate-y-0.5
+    active:scale-[0.98]
+  "
             >
               Enquire Now
-            </button>
+            </button> */}
 
             {/* Mobile Menu Button */}
             <button
@@ -148,8 +157,22 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden border-t border-gray-100 py-3">
-              <nav className="flex flex-col gap-1">
+            <div
+              className="
+      lg:hidden
+      absolute
+      top-full
+      left-0
+      right-0
+      bg-white
+      border-t
+      border-gray-100
+      shadow-lg
+      py-3
+      z-50
+    "
+            >
+              <nav className="flex flex-col gap-1 px-4">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.name}
@@ -157,16 +180,15 @@ const Navbar = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className={({ isActive }) =>
                       `
-                      px-4 py-3
-                      rounded-lg
-                      font-medium
-                      transition
-                      ${
-                        isActive
-                          ? 'bg-[#EAE0CF]/50 text-[#111844]'
-                          : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
+            px-4 py-3
+            rounded-lg
+            font-medium
+            transition
+            ${isActive
+                        ? 'bg-[#EAE0CF]/50 text-[#111844]'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
                       }
-                      `
+            `
                     }
                   >
                     {item.name}

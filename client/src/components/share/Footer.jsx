@@ -16,12 +16,12 @@ const quickLinks = [
   { name: "About Us", path: "/about-us" },
   { name: "Courses", path: "/courses" },
   { name: "Contact", path: "/contact" },
-  { name: "Enquiry Now", path: "/enquiry" },
+  // { name: "Enquiry Now", path: "/enquiry" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#111844] text-white mt-16">
+    <footer className="bg-[#111844] text-white">
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
 

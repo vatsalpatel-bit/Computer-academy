@@ -1,5 +1,6 @@
 import { setSingleCourse } from '@/redux/slices/courseSlices';
 import { getCourseApi } from '@/services/coursesApi';
+
 import {
   BadgeCheck,
   Clock3,
@@ -8,19 +9,25 @@ import {
   Languages,
   Users,
   CheckCircle,
+  ArrowLeft,
+  ArrowRight,
 } from 'lucide-react';
+
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 
 const CourseView = () => {
   const { slug } = useParams();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const course = useSelector((state) => state.course.singleCourse);
-  console.log(course)
+
+  const courseData = useSelector((state) => state.course.singleCourse);
+
+  // Your current API appears to return an array
+  const course = Array.isArray(courseData) ? courseData[0] : courseData;
+
   useEffect(() => {
     const fetchCourseApi = async () => {
       try {
@@ -33,151 +40,398 @@ const CourseView = () => {
 
     fetchCourseApi();
   }, [dispatch, slug]);
+
+  if (!course) {
+    return (
+      <div className="min-h-[70vh] flex items-center justify-center bg-[#F5F6FA] px-4">
+        <div className="text-center">
+          <h2 className="text-xl font-semibold text-[#111844]">
+            Course not found
+          </h2>
+
+          <button
+            onClick={() => navigate('/courses')}
+            className="
+              mt-5
+              inline-flex items-center gap-2
+              px-5 py-3
+              rounded-xl
+              bg-[#111844]
+              text-white
+              text-sm font-semibold
+              hover:bg-[#4B5694]
+              transition
+            "
+          >
+            <ArrowLeft size={17} />
+            Back to Courses
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const details = [
+    {
+      icon: Clock3,
+      label: 'Duration',
+      value: course.duration,
+    },
+    {
+      icon: GraduationCap,
+      label: 'Level',
+      value: course.level,
+    },
+    {
+      icon: Languages,
+      label: 'Language',
+      value: course.language,
+    },
+    {
+      icon: Users,
+      label: 'Batch',
+      value: course.batch,
+    },
+    {
+      icon: BadgeCheck,
+      label: 'Certificate',
+      value: course.certificate ? 'Included' : 'Not Included',
+    },
+  ];
+
   return (
-    <>
-      {course?.map((course) => (
-        <>
-          <div>
-            {/* Hero */}
-            <section className="bg-linear-to-r from-[#0B1E45] to-[#1F4B99] py-24">
-              <div className="max-w-7xl mx-auto px-6 text-white">
+    <main className="bg-white">
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+      <section className="relative bg-[#111844] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="py-12 sm:py-16 lg:py-20">
+
+            {/* Back */}
+            <button
+              onClick={() => navigate('/courses')}
+              className="
+                inline-flex items-center gap-2
+                text-white/70
+                hover:text-white
+                text-sm
+                font-medium
+                transition
+              "
+            >
+              <ArrowLeft size={17} />
+              Back to Courses
+            </button>
+
+            {/* Hero Content */}
+            <div className="mt-8 sm:mt-10 max-w-4xl">
+
+              <span className="
+                inline-flex
+                px-3 py-1.5
+                rounded-full
+                bg-white/10
+                border border-white/10
+                text-[#EAE0CF]
+                text-xs sm:text-sm
+                font-semibold
+              ">
+                Professional Course
+              </span>
+
+              <h1 className="
+                mt-5
+                text-3xl sm:text-4xl lg:text-5xl
+                font-bold
+                text-white
+                leading-tight
+              ">
+                {course.title}
+              </h1>
+
+              <p className="
+                mt-5
+                max-w-3xl
+                text-sm sm:text-base lg:text-lg
+                text-white/65
+                leading-6 sm:leading-7
+              ">
+                {course.description}
+              </p>
+
+              {/* Hero Actions */}
+              <div className="mt-7 flex flex-col sm:flex-row gap-3">
+
                 <button
-                  onClick={() => navigate(-1)}
-                  className="inline-flex items-center gap-2 bg-white/10 text-white border border-white/20 px-5 py-3 rounded-xl hover:bg-white hover:text-[#0B1E45] transition"
+                  onClick={() => navigate('/contact')}
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
+                    px-6
+                    py-3.5
+                    rounded-xl
+                    bg-red-600
+                    hover:bg-red-700
+                    text-white
+                    text-sm sm:text-base
+                    font-semibold
+                    transition
+                  "
                 >
-                  <ArrowLeft size={18} />
-                  Back to Courses
+                  Contact
+                  <ArrowRight size={17} />
                 </button>
 
-                <h1 className="text-5xl font-bold mt-6">{course.title}</h1>
-
-                <p className="mt-6 max-w-3xl text-lg text-gray-200 leading-8">
-                  {course.description}
-                </p>
-              </div>
-            </section>
-
-            {/* Course Details */}
-
-            <section className="py-20 bg-slate-50">
-              <div className="max-w-7xl mx-auto px-6">
-                <div className="bg-white rounded-3xl shadow-lg p-10">
-                  <h2 className="text-3xl font-bold">Course Details</h2>
-
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-                    <div className="flex items-center gap-4">
-                      <Clock3 className="text-red-600" />
-                      <div>
-                        <p className="text-gray-500 text-sm">Duration</p>
-                        <h4 className="font-semibold">{course.duration}</h4>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <IndianRupee className="text-red-600" />
-                      <div>
-                        <p className="text-gray-500 text-sm">Fees</p>
-                        <h4 className="font-semibold">₹{course.fees}</h4>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <GraduationCap className="text-red-600" />
-                      <div>
-                        <p className="text-gray-500 text-sm">Level</p>
-                        <h4 className="font-semibold">{course.level}</h4>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <Languages className="text-red-600" />
-                      <div>
-                        <p className="text-gray-500 text-sm">Language</p>
-                        <h4 className="font-semibold">{course.language}</h4>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <Users className="text-red-600" />
-                      <div>
-                        <p className="text-gray-500 text-sm">Batch</p>
-                        <h4 className="font-semibold">{course.batch}</h4>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <BadgeCheck className="text-red-600" />
-                      <div>
-                        <p className="text-gray-500 text-sm">Certificate</p>
-                        <h4 className="font-semibold">{course.certificate ? 'Included' : 'No'}</h4>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-10 flex flex-wrap gap-4">
-                    <button
-                      onClick={() => navigate('/enquiry')}
-                      className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold transition"
-                    >
-                      Enquire Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Topics */}
-
-            <section className="py-20">
-              <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center">
-                  <span className="text-red-600 uppercase tracking-widest font-semibold">
-                    Course Curriculum
+                <div className="
+                  flex items-center justify-center
+                  px-6 py-3.5
+                  rounded-xl
+                  bg-white/5
+                  border border-white/10
+                  text-white
+                ">
+                  <IndianRupee size={18} className="mr-1 text-[#EAE0CF]" />
+                  <span className="text-lg font-bold">
+                    {course.fees}
                   </span>
 
-                  <h2 className="text-4xl font-bold mt-3">{"What You'll Learn"}</h2>
-
-                  <p className="text-gray-500 mt-4">Practical topics covered in this course.</p>
+                  <span className="ml-1 text-sm text-white/50">
+                    course fee
+                  </span>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-                  {course.topic.map((topic) => (
-                    <div
-                      key={topic}
-                      className="bg-white border rounded-2xl p-5 flex items-center gap-3 hover:shadow-lg transition"
-                    >
-                      <CheckCircle className="text-green-500" />
-
-                      <span>{topic}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
-            </section>
 
-            {/* CTA */}
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <section className="py-20 bg-[#0B1E45]">
-              <div className="max-w-5xl mx-auto px-6 text-center text-white">
-                <h2 className="text-5xl font-bold">Ready To Build Your Career?</h2>
 
-                <p className="mt-6 text-lg text-gray-300">
-                  Join our <span className="font-semibold">{course.title}</span> course and gain
-                  practical skills with expert trainers.
+      {/* =====================================================
+          COURSE OVERVIEW
+      ===================================================== */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#F5F6FA]">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Section Header */}
+          <div className="mb-8 sm:mb-10">
+
+            <span className="
+              text-[#4B5694]
+              text-xs sm:text-sm
+              uppercase
+              font-bold
+              tracking-[0.2em]
+            ">
+              Course Information
+            </span>
+
+            <h2 className="
+              mt-2
+              text-2xl sm:text-3xl
+              font-bold
+              text-[#111844]
+            ">
+              Course Overview
+            </h2>
+
+          </div>
+
+
+          {/* Details Grid */}
+          <div className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-4
+          ">
+
+            {details.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.label}
+                  className="
+                    bg-white
+                    rounded-2xl
+                    border border-gray-100
+                    p-5
+                    flex items-center gap-4
+                    shadow-sm
+                    hover:shadow-md
+                    transition
+                  "
+                >
+                  <div className="
+                    w-11 h-11
+                    shrink-0
+                    rounded-xl
+                    bg-[#EAE0CF]/60
+                    text-[#4B5694]
+                    flex items-center justify-center
+                  ">
+                    <Icon size={20} />
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="text-xs text-gray-400 uppercase tracking-wide">
+                      {item.label}
+                    </p>
+
+                    <p className="
+                      mt-1
+                      text-sm sm:text-base
+                      font-semibold
+                      text-[#111844]
+                      truncate
+                    ">
+                      {item.value}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Fee Card */}
+            <div className="
+              bg-[#111844]
+              rounded-2xl
+              p-5
+              flex items-center gap-4
+              shadow-sm
+            ">
+              <div className="
+                w-11 h-11
+                shrink-0
+                rounded-xl
+                bg-white/10
+                text-[#EAE0CF]
+                flex items-center justify-center
+              ">
+                <IndianRupee size={20} />
+              </div>
+
+              <div>
+                <p className="text-xs text-white/50 uppercase tracking-wide">
+                  Course Fee
                 </p>
 
-                <button
-                  onClick={() => navigate('/enquiry')}
-                  className="mt-10 bg-red-600 hover:bg-red-700 px-10 py-4 rounded-xl font-semibold transition"
-                >
-                  Enquire Now
-                </button>
+                <p className="mt-1 text-xl font-bold text-white">
+                  ₹{course.fees}
+                </p>
               </div>
-            </section>
+            </div>
+
           </div>
-        </>
-      ))}
-    </>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          CURRICULUM
+      ===================================================== */}
+      <section className="py-14 sm:py-16 lg:py-20 bg-white">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Header */}
+          <div className="max-w-2xl">
+
+            <span className="
+              inline-flex items-center gap-2
+              text-[#4B5694]
+              text-xs sm:text-sm
+              uppercase
+              font-bold
+              tracking-[0.2em]
+            ">
+              <span className="w-7 h-[2px] bg-[#4B5694]" />
+              Course Curriculum
+            </span>
+
+            <h2 className="
+              mt-3
+              text-3xl sm:text-4xl
+              font-bold
+              text-[#111844]
+            ">
+              What You'll Learn
+            </h2>
+
+            <p className="
+              mt-3
+              text-sm sm:text-base
+              text-gray-500
+              leading-6
+            ">
+              Explore the practical topics covered throughout this course.
+            </p>
+
+          </div>
+
+
+          {/* Topics */}
+          <div className="
+            mt-8 sm:mt-10
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-4
+          ">
+
+            {course.topic?.map((topic, index) => (
+              <div
+                key={`${topic}-${index}`}
+                className="
+                  group
+                  flex items-start gap-3
+                  p-4 sm:p-5
+                  rounded-2xl
+                  bg-[#F5F6FA]
+                  border border-transparent
+                  hover:border-[#EAE0CF]
+                  hover:bg-white
+                  hover:shadow-sm
+                  transition-all duration-300
+                "
+              >
+                <div className="
+                  mt-0.5
+                  shrink-0
+                  text-[#4B5694]
+                ">
+                  <CheckCircle size={19} />
+                </div>
+
+                <span className="
+                  text-sm sm:text-base
+                  font-medium
+                  text-[#111844]
+                  leading-6
+                ">
+                  {topic}
+                </span>
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+    </main>
   );
 };
 

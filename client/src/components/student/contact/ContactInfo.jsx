@@ -2,32 +2,183 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 const ContactInfo = () => {
   return (
-    <section className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-3xl p-8 shadow text-center">
-            <MapPin className="mx-auto text-red-600" size={45} />
+    <section className="py-12 sm:py-16 lg:py-20 bg-[#EAE0CF]/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <h3 className="text-2xl font-bold mt-6">Address</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
 
-            <p className="text-gray-600 mt-4">Chikhli, Navsari, Gujarat, India</p>
+          {/* Address */}
+          <div
+            className="
+          bg-white
+          rounded-2xl sm:rounded-3xl
+          p-6 sm:p-8
+          shadow-sm
+          border border-gray-100
+          text-center
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-lg
+        "
+          >
+            <div
+              className="
+            mx-auto
+            w-14 h-14
+            sm:w-16 sm:h-16
+            rounded-full
+            bg-[#111844]/10
+            flex items-center justify-center
+          "
+            >
+              <MapPin
+                className="text-[#111844]"
+                size={28}
+              />
+            </div>
+
+            <h3
+              className="
+            text-xl
+            sm:text-2xl
+            font-bold
+            text-[#111844]
+            mt-5
+          "
+            >
+              Address
+            </h3>
+
+            <p
+              className="
+            text-sm
+            sm:text-base
+            text-[#7288AE]
+            mt-3
+            leading-6
+          "
+            >
+              Chikhli, Navsari, Gujarat, India
+            </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow text-center">
-            <Phone className="mx-auto text-red-600" size={45} />
+          {/* Phone */}
+          <div
+            className="
+          bg-white
+          rounded-2xl sm:rounded-3xl
+          p-6 sm:p-8
+          shadow-sm
+          border border-gray-100
+          text-center
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-lg
+        "
+          >
+            <div
+              className="
+            mx-auto
+            w-14 h-14
+            sm:w-16 sm:h-16
+            rounded-full
+            bg-[#111844]/10
+            flex items-center justify-center
+          "
+            >
+              <Phone
+                className="text-[#111844]"
+                size={28}
+              />
+            </div>
 
-            <h3 className="text-2xl font-bold mt-6">Phone</h3>
+            <h3
+              className="
+            text-xl
+            sm:text-2xl
+            font-bold
+            text-[#111844]
+            mt-5
+          "
+            >
+              Phone
+            </h3>
 
-            <p className="text-gray-600 mt-4">+91 9876543210</p>
+            <a
+              href="tel:+919876543210"
+              className="
+            block
+            text-sm
+            sm:text-base
+            text-[#7288AE]
+            hover:text-[#4B5694]
+            mt-3
+            transition-colors
+          "
+            >
+              +91 9876543210
+            </a>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow text-center">
-            <Mail className="mx-auto text-red-600" size={45} />
+          {/* Email */}
+          <div
+            className="
+          bg-white
+          rounded-2xl sm:rounded-3xl
+          p-6 sm:p-8
+          shadow-sm
+          border border-gray-100
+          text-center
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-lg
+        "
+          >
+            <div
+              className="
+            mx-auto
+            w-14 h-14
+            sm:w-16 sm:h-16
+            rounded-full
+            bg-[#111844]/10
+            flex items-center justify-center
+          "
+            >
+              <Mail
+                className="text-[#111844]"
+                size={28}
+              />
+            </div>
 
-            <h3 className="text-2xl font-bold mt-6">Email</h3>
+            <h3
+              className="
+            text-xl
+            sm:text-2xl
+            font-bold
+            text-[#111844]
+            mt-5
+          "
+            >
+              Email
+            </h3>
 
-            <p className="text-gray-600 mt-4">info@computeracademy.com</p>
+            <a
+              href="mailto:info@computeracademy.com"
+              className="
+            block
+            text-sm
+            sm:text-base
+            text-[#7288AE]
+            hover:text-[#4B5694]
+            mt-3
+            transition-colors
+            break-all
+          "
+            >
+              info@computeracademy.com
+            </a>
           </div>
+
         </div>
       </div>
     </section>
