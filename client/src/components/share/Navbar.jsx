@@ -19,7 +19,7 @@ const Navbar = () => {
             {/* Logo + Brand */}
             <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <img
-                src="src/svg/logo.png"
+                src="/logo.png"
                 alt="Jankalyan Computer Center"
                 className="
                   w-11 h-11
