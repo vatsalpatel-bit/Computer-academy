@@ -62,6 +62,7 @@ const Hero = () => {
                 <img
                   src={slide.image}
                   alt=""
+                  loading="eager"
                   className="
                     absolute inset-0
                     w-full h-full
