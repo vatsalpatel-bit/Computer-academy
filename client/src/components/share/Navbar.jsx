@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-
+import logo from "@/svg/logo.png"
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,7 +19,7 @@ const Navbar = () => {
             {/* Logo + Brand */}
             <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <img
-                src="/logo.png"
+                src={logo}
                 alt="Jankalyan Computer Center"
                 className="
                   w-11 h-11
@@ -174,11 +174,10 @@ const Navbar = () => {
             rounded-lg
             font-medium
             transition
-            ${
-              isActive
-                ? 'bg-[#EAE0CF]/50 text-[#111844]'
-                : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
-            }
+            ${isActive
+                        ? 'bg-[#EAE0CF]/50 text-[#111844]'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
+                      }
             `
                     }
                   >
