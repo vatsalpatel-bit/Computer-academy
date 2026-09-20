@@ -7,53 +7,45 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaChevronRight,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
-import logo from "@/svg/logo.png";
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import logo from '@/svg/logo.png';
 
 const quickLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/about-us" },
-  { name: "Courses", path: "/courses" },
-  { name: "Contact", path: "/contact" },
+  { name: 'Home', path: '/' },
+  { name: 'About Us', path: '/about-us' },
+  { name: 'Courses', path: '/courses' },
+  { name: 'Contact', path: '/contact' },
   // { name: "Enquiry Now", path: "/enquiry" },
 ];
 
 const Footer = () => {
   return (
     <footer className="bg-[#111844] text-white">
-
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
           {/* Brand */}
           <div className="lg:pr-6">
             <div className="flex items-center gap-3 mb-5">
               <img src={logo} alt="Jankalyan" className="w-14 h-14 object-contain" />
 
               <div>
-                <h2 className="text-lg font-bold text-[#EAE0CF] leading-tight">
-                  Jankalyan
-                </h2>
-                <p className="text-sm text-[#7288AE]">
-                  Computer Center
-                </p>
+                <h2 className="text-lg font-bold text-[#EAE0CF] leading-tight">Jankalyan</h2>
+                <p className="text-sm text-[#7288AE]">Computer Center</p>
               </div>
             </div>
 
             <p className="text-sm text-white/70 leading-7">
-              Empowering students with practical computer education,
-              professional guidance and career-oriented training.
+              Empowering students with practical computer education, professional guidance and
+              career-oriented training.
             </p>
 
             <div className="flex gap-3 mt-6">
-              {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map(
-                (Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="
+              {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="
                       w-10 h-10 rounded-xl
                       bg-white/5
                       border border-white/10
@@ -62,19 +54,16 @@ const Footer = () => {
                       transition-all duration-300
                       flex items-center justify-center
                     "
-                  >
-                    <Icon size={15} />
-                  </a>
-                )
-              )}
+                >
+                  <Icon size={15} />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">
-              Quick Links
-            </h3>
+            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">Quick Links</h3>
 
             <ul className="space-y-3">
               {quickLinks.map((item) => (
@@ -103,12 +92,9 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">
-              Contact
-            </h3>
+            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">Contact</h3>
 
             <div className="space-y-4">
-
               <a
                 href="tel:+919876543210"
                 className="
@@ -122,9 +108,7 @@ const Footer = () => {
               >
                 <FaPhoneAlt className="text-[#7288AE]" />
 
-                <span className="text-sm text-white/80">
-                  +91 98765 43210
-                </span>
+                <span className="text-sm text-white/80">+91 98765 43210</span>
               </a>
 
               <a
@@ -140,19 +124,14 @@ const Footer = () => {
               >
                 <FaEnvelope className="text-[#7288AE]" />
 
-                <span className="text-sm text-white/80 break-all">
-                  info@computeracademy.com
-                </span>
+                <span className="text-sm text-white/80 break-all">info@computeracademy.com</span>
               </a>
-
             </div>
           </div>
 
           {/* Address */}
           <div>
-            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">
-              Visit Us
-            </h3>
+            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">Visit Us</h3>
 
             <div
               className="
@@ -175,7 +154,6 @@ const Footer = () => {
               </p>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -197,14 +175,10 @@ const Footer = () => {
           </p>
 
           <p className="text-xs sm:text-sm text-white/50">
-            Designed & Developed by{" "}
-            <span className="text-[#EAE0CF] font-semibold">
-              Vatsal
-            </span>
+            Designed & Developed by <span className="text-[#EAE0CF] font-semibold">Vatsal</span>
           </p>
         </div>
       </div>
-
     </footer>
   );
 };

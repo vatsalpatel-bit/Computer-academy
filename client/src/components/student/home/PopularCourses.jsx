@@ -9,9 +9,7 @@ const PopularCourses = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const allCourses = useSelector(
-    (state) => state.course.latestCourse
-  );
+  const allCourses = useSelector((state) => state.course.latestCourse);
 
   useEffect(() => {
     const fetchLatestCourse = async () => {
@@ -30,10 +28,8 @@ const PopularCourses = () => {
   return (
     <section className="bg-slate-50 py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto">
-
           <p
             className="
               text-xs
@@ -72,10 +68,9 @@ const PopularCourses = () => {
               sm:leading-7
             "
           >
-            Explore our industry-oriented courses designed to build
-            practical skills and prepare students for successful careers.
+            Explore our industry-oriented courses designed to build practical skills and prepare
+            students for successful careers.
           </p>
-
         </div>
 
         {/* Course Cards */}
@@ -116,10 +111,8 @@ const PopularCourses = () => {
               <div className="h-1 bg-[#4B5694]" />
 
               <div className="p-5 sm:p-6 flex flex-col flex-1">
-
                 {/* Category + Icon */}
                 <div className="flex items-center justify-between">
-
                   <span
                     className="
                       inline-flex
@@ -154,7 +147,6 @@ const PopularCourses = () => {
                   >
                     <GraduationCap size={18} />
                   </div>
-
                 </div>
 
                 {/* Title */}
@@ -196,7 +188,6 @@ const PopularCourses = () => {
                     gap-2
                   "
                 >
-
                   {/* Duration */}
                   <div
                     className="
@@ -206,9 +197,7 @@ const PopularCourses = () => {
                       py-3
                     "
                   >
-                    <p className="text-[11px] text-gray-400">
-                      Duration
-                    </p>
+                    <p className="text-[11px] text-gray-400">Duration</p>
 
                     <p
                       className="
@@ -232,9 +221,7 @@ const PopularCourses = () => {
                       py-3
                     "
                   >
-                    <p className="text-[11px] text-gray-400">
-                      Level
-                    </p>
+                    <p className="text-[11px] text-gray-400">Level</p>
 
                     <p
                       className="
@@ -248,7 +235,6 @@ const PopularCourses = () => {
                       {course.level}
                     </p>
                   </div>
-
                 </div>
 
                 {/* Fee */}
@@ -261,9 +247,7 @@ const PopularCourses = () => {
                     px-1
                   "
                 >
-                  <span className="text-sm text-gray-500">
-                    Course Fee
-                  </span>
+                  <span className="text-sm text-gray-500">Course Fee</span>
 
                   <span
                     className="
@@ -279,9 +263,7 @@ const PopularCourses = () => {
 
                 {/* View Course */}
                 <button
-                  onClick={() =>
-                    navigate(`/course-detail/${course.slug}`)
-                  }
+                  onClick={() => navigate(`/course-detail/${course.slug}`)}
                   className="
                     w-full
                     mt-5
@@ -310,7 +292,6 @@ const PopularCourses = () => {
                     →
                   </span>
                 </button>
-
               </div>
             </div>
           ))}
@@ -318,7 +299,6 @@ const PopularCourses = () => {
 
         {/* View All */}
         <div className="text-center mt-9 sm:mt-12">
-
           <button
             onClick={() => navigate('/courses')}
             className="
@@ -346,14 +326,9 @@ const PopularCourses = () => {
   "
           >
             View All Courses
-
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </button>
-
         </div>
-
       </div>
     </section>
   );

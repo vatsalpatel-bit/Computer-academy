@@ -12,9 +12,7 @@ import { getAllFeedback } from '@/services/feedbackApi';
 import { setAllFeddback } from '@/redux/slices/feedbackSlices';
 
 const Testimonials = () => {
-  const testimonials = useSelector(
-    (state) => state.feedback.allFeedback
-  );
+  const testimonials = useSelector((state) => state.feedback.allFeedback);
 
   const dispatch = useDispatch();
 
@@ -34,10 +32,8 @@ const Testimonials = () => {
   return (
     <section className="py-14 sm:py-16 lg:py-20 bg-[#F5F6FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-9 sm:mb-12 lg:mb-14">
-
           <span
             className="
               inline-flex items-center gap-2
@@ -73,10 +69,8 @@ const Testimonials = () => {
               leading-6
             "
           >
-            Hear from our students about their learning journey and
-            experience at Computer Academy.
+            Hear from our students about their learning journey and experience at Computer Academy.
           </p>
-
         </div>
 
         {/* Slider */}
@@ -107,10 +101,7 @@ const Testimonials = () => {
           className="testimonials-swiper !pb-12"
         >
           {testimonials?.map((student) => (
-            <SwiperSlide
-              key={student?._id}
-              className="!h-auto"
-            >
+            <SwiperSlide key={student?._id} className="!h-auto">
               <div
                 className="
                   group
@@ -131,7 +122,6 @@ const Testimonials = () => {
                   transition-all duration-300
                 "
               >
-
                 {/* Quote Icon */}
                 <div
                   className="
@@ -167,18 +157,12 @@ const Testimonials = () => {
                   {[1, 2, 3, 4, 5].map((star) => (
                     <FaStar
                       key={star}
-                      className={
-                        star <= student?.rating
-                          ? 'text-yellow-400'
-                          : 'text-gray-200'
-                      }
+                      className={star <= student?.rating ? 'text-yellow-400' : 'text-gray-200'}
                       size={15}
                     />
                   ))}
 
-                  <span className="ml-2 text-xs text-gray-400">
-                    {student?.rating}/5
-                  </span>
+                  <span className="ml-2 text-xs text-gray-400">{student?.rating}/5</span>
                 </div>
 
                 {/* Student */}
@@ -219,17 +203,13 @@ const Testimonials = () => {
                       {student?.name}
                     </h3>
 
-                    <p className="text-xs text-gray-400 mt-0.5">
-                      Student
-                    </p>
+                    <p className="text-xs text-gray-400 mt-0.5">Student</p>
                   </div>
                 </div>
-
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-
       </div>
     </section>
   );

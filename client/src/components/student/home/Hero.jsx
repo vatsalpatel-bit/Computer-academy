@@ -15,8 +15,7 @@ const slides = [
   {
     id: 1,
     title: 'Build Your Career In IT',
-    subtitle:
-      'Join industry-oriented courses and become job-ready with practical learning.',
+    subtitle: 'Join industry-oriented courses and become job-ready with practical learning.',
     image: image1,
     mobileImage: image1Mobile,
   },
@@ -56,13 +55,9 @@ const Hero = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="relative h-full overflow-hidden">
-
               {/* Background */}
               <picture className="absolute inset-0 block">
-                <source
-                  media="(max-width: 768px)"
-                  srcSet={slide.mobileImage}
-                />
+                <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
 
                 <img
                   src={slide.image}
@@ -127,7 +122,6 @@ const Hero = () => {
     sm:translate-y-0
   "
                 >
-
                   {/* Badge */}
                   <span
                     className="
@@ -379,7 +373,6 @@ const Hero = () => {
                       </p>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>

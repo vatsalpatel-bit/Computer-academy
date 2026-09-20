@@ -103,8 +103,7 @@ const ContactBanner = () => {
             mx-auto
           "
         >
-          We'd love to hear from you. Reach out for course details,
-          admissions or any queries.
+          We'd love to hear from you. Reach out for course details, admissions or any queries.
         </p>
       </div>
     </section>

@@ -5,7 +5,6 @@ const BranchCTA = () => {
 
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#111844]">
-
       {/* Subtle Galaxy Glow */}
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#4B5694]/20 rounded-full blur-3xl" />
       <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#7288AE]/15 rounded-full blur-3xl" />
@@ -16,7 +15,6 @@ const BranchCTA = () => {
       <div className="absolute bottom-16 left-[25%] w-1 h-1 bg-[#EAE0CF] rounded-full opacity-50" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-
         {/* Label */}
         <span
           className="
@@ -92,7 +90,6 @@ const BranchCTA = () => {
         >
           Contact Our Team
         </button>
-
       </div>
     </section>
   );

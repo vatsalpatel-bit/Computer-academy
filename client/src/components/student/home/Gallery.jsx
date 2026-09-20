@@ -16,11 +16,9 @@ const Gallery = () => {
   return (
     <section className="py-14 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Heading */}
         <div className="mb-9 sm:mb-12">
           <div className="max-w-2xl">
-
             <span className="inline-flex items-center gap-2 text-[#4B5694] text-xs sm:text-sm uppercase font-bold tracking-[0.2em]">
               <span className="w-7 h-[2px] bg-[#4B5694]" />
               Gallery
@@ -31,10 +29,9 @@ const Gallery = () => {
             </h2>
 
             <p className="text-gray-500 text-sm sm:text-base mt-4 max-w-xl leading-6">
-              Explore classroom sessions, workshops, seminars, events and
-              memorable moments from our academy.
+              Explore classroom sessions, workshops, seminars, events and memorable moments from our
+              academy.
             </p>
-
           </div>
         </div>
 
@@ -61,10 +58,8 @@ const Gallery = () => {
           }}
           className="gallery-swiper !pb-12"
         >
-
           {galleryImages.map((image, index) => (
             <SwiperSlide key={index}>
-
               <div
                 className="
                   group
@@ -78,9 +73,7 @@ const Gallery = () => {
                   transition-all duration-300
                 "
               >
-
                 <div className="relative overflow-hidden">
-
                   <img
                     src={image}
                     alt={`Jankalyan Computer Center gallery ${index + 1}`}
@@ -124,16 +117,11 @@ const Gallery = () => {
                   >
                     0{index + 1}
                   </div>
-
                 </div>
-
               </div>
-
             </SwiperSlide>
           ))}
-
         </Swiper>
-
       </div>
     </section>
   );

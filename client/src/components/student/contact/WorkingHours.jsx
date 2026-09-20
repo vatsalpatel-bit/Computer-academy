@@ -4,7 +4,6 @@ const WorkingHours = () => {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#EAE0CF]/20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-
         {/* Icon */}
         <div
           className="
@@ -16,10 +15,7 @@ const WorkingHours = () => {
             flex items-center justify-center
           "
         >
-          <Clock3
-            size={32}
-            className="text-[#111844] sm:w-10 sm:h-10"
-          />
+          <Clock3 size={32} className="text-[#111844] sm:w-10 sm:h-10" />
         </div>
 
         {/* Heading */}
@@ -50,7 +46,6 @@ const WorkingHours = () => {
           "
         >
           <div className="divide-y divide-gray-100">
-
             {/* Monday - Friday */}
             <div
               className="
@@ -64,13 +59,9 @@ const WorkingHours = () => {
                 text-left
               "
             >
-              <span className="font-semibold text-[#111844]">
-                Monday - Friday
-              </span>
+              <span className="font-semibold text-[#111844]">Monday - Friday</span>
 
-              <span className="text-sm sm:text-base text-[#7288AE]">
-                8:00 AM - 8:00 PM
-              </span>
+              <span className="text-sm sm:text-base text-[#7288AE]">8:00 AM - 8:00 PM</span>
             </div>
 
             {/* Saturday */}
@@ -86,13 +77,9 @@ const WorkingHours = () => {
                 text-left
               "
             >
-              <span className="font-semibold text-[#111844]">
-                Saturday
-              </span>
+              <span className="font-semibold text-[#111844]">Saturday</span>
 
-              <span className="text-sm sm:text-base text-[#7288AE]">
-                8:00 AM - 6:00 PM
-              </span>
+              <span className="text-sm sm:text-base text-[#7288AE]">8:00 AM - 6:00 PM</span>
             </div>
 
             {/* Sunday */}
@@ -108,18 +95,12 @@ const WorkingHours = () => {
                 text-left
               "
             >
-              <span className="font-semibold text-[#111844]">
-                Sunday
-              </span>
+              <span className="font-semibold text-[#111844]">Sunday</span>
 
-              <span className="text-sm sm:text-base font-medium text-red-600">
-                Closed
-              </span>
+              <span className="text-sm sm:text-base font-medium text-red-600">Closed</span>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );

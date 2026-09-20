@@ -77,54 +77,54 @@ const FeedbackForm = () => {
   return (
     <section className="pt-0 pb-8 sm:pb-10 lg:pb-12 bg-[#F5F6FA]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Card */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm p-5 sm:p-8 lg:p-10">
-
           {/* Header */}
           <div className="text-center">
-
-            <span className="
+            <span
+              className="
               inline-flex items-center gap-2
               text-[#4B5694]
               text-xs sm:text-sm
               uppercase
               font-bold
               tracking-[0.2em]
-            ">
+            "
+            >
               <span className="w-6 h-[2px] bg-[#4B5694]" />
               Feedback
               <span className="w-6 h-[2px] bg-[#4B5694]" />
             </span>
 
-            <h2 className="
+            <h2
+              className="
               mt-3
               text-2xl sm:text-3xl lg:text-4xl
               font-bold
               text-[#111844]
               leading-tight
-            ">
+            "
+            >
               Share Your Learning Experience
             </h2>
 
-            <p className="
+            <p
+              className="
               mt-4
               text-sm sm:text-base
               text-gray-500
               leading-6
               max-w-2xl
               mx-auto
-            ">
-              Have you completed a course at Computer Academy? We'd love
-              to hear about your learning experience. Your feedback helps
-              future students and helps us improve our training.
+            "
+            >
+              Have you completed a course at Computer Academy? We'd love to hear about your learning
+              experience. Your feedback helps future students and helps us improve our training.
             </p>
-
           </div>
 
           {/* Rating */}
           <div className="mt-8">
-
             <p className="text-center text-sm font-semibold text-[#111844] mb-3">
               How was your experience?
             </p>
@@ -153,32 +153,24 @@ const FeedbackForm = () => {
                 >
                   <Star
                     size={30}
-                    className={`transition ${star <= rating
-                      ? 'fill-yellow-400 text-yellow-400'
-                      : 'text-gray-300'
-                      }`}
+                    className={`transition ${
+                      star <= rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
+                    }`}
                   />
                 </button>
               ))}
             </div>
 
             {errors.rating && (
-              <p className="text-red-500 text-xs sm:text-sm text-center mt-2">
-                {errors.rating}
-              </p>
+              <p className="text-red-500 text-xs sm:text-sm text-center mt-2">{errors.rating}</p>
             )}
-
           </div>
 
           {/* Form */}
           <form onSubmit={submitHandler} className="mt-8 space-y-5">
-
             {/* Name */}
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-semibold text-[#111844] mb-2"
-              >
+              <label htmlFor="name" className="block text-sm font-semibold text-[#111844] mb-2">
                 Your Name
               </label>
 
@@ -208,18 +200,13 @@ const FeedbackForm = () => {
               />
 
               {errors.name && (
-                <p className="text-red-500 text-xs sm:text-sm mt-1.5">
-                  {errors.name}
-                </p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1.5">{errors.name}</p>
               )}
             </div>
 
             {/* Comment */}
             <div>
-              <label
-                htmlFor="comment"
-                className="block text-sm font-semibold text-[#111844] mb-2"
-              >
+              <label htmlFor="comment" className="block text-sm font-semibold text-[#111844] mb-2">
                 Your Feedback
               </label>
 
@@ -250,9 +237,7 @@ const FeedbackForm = () => {
               />
 
               {errors.comment && (
-                <p className="text-red-500 text-xs sm:text-sm mt-1.5">
-                  {errors.comment}
-                </p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1.5">{errors.comment}</p>
               )}
             </div>
 
@@ -295,7 +280,6 @@ const FeedbackForm = () => {
               )}
             </button>
           </form>
-
         </div>
       </div>
     </section>

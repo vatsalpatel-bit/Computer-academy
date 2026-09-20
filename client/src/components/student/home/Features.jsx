@@ -1,38 +1,29 @@
-import {
-  FaGraduationCap,
-  FaUserTie,
-  FaCertificate,
-  FaHeadset,
-} from 'react-icons/fa';
+import { FaGraduationCap, FaUserTie, FaCertificate, FaHeadset } from 'react-icons/fa';
 
 const features = [
   {
     id: 1,
     icon: <FaGraduationCap />,
     title: 'Industry Oriented Courses',
-    description:
-      'Learn practical skills with industry-standard curriculum.',
+    description: 'Learn practical skills with industry-standard curriculum.',
   },
   {
     id: 2,
     icon: <FaUserTie />,
     title: 'Placement Assistance',
-    description:
-      'Get career guidance and placement support from experts.',
+    description: 'Get career guidance and placement support from experts.',
   },
   {
     id: 3,
     icon: <FaCertificate />,
     title: 'Certified Programs',
-    description:
-      'Receive recognized certificates after course completion.',
+    description: 'Receive recognized certificates after course completion.',
   },
   {
     id: 4,
     icon: <FaHeadset />,
     title: 'Student Support',
-    description:
-      'Dedicated faculty and continuous learning support.',
+    description: 'Dedicated faculty and continuous learning support.',
   },
 ];
 
@@ -40,12 +31,9 @@ const Features = () => {
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
         {/* Section Heading */}
         <div className="text-center mb-9 sm:mb-12">
-          <p className="text-sm font-semibold text-[#4B5694] mb-2">
-            WHY CHOOSE US
-          </p>
+          <p className="text-sm font-semibold text-[#4B5694] mb-2">WHY CHOOSE US</p>
 
           <h2
             className="
@@ -70,8 +58,7 @@ const Features = () => {
               leading-6
             "
           >
-            Everything you need to build practical skills and move
-            confidently toward your career.
+            Everything you need to build practical skills and move confidently toward your career.
           </p>
         </div>
 

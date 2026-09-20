@@ -4,9 +4,7 @@ const ContactInfo = () => {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#EAE0CF]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-
           {/* Address */}
           <div
             className="
@@ -31,10 +29,7 @@ const ContactInfo = () => {
             flex items-center justify-center
           "
             >
-              <MapPin
-                className="text-[#111844]"
-                size={28}
-              />
+              <MapPin className="text-[#111844]" size={28} />
             </div>
 
             <h3
@@ -86,10 +81,7 @@ const ContactInfo = () => {
             flex items-center justify-center
           "
             >
-              <Phone
-                className="text-[#111844]"
-                size={28}
-              />
+              <Phone className="text-[#111844]" size={28} />
             </div>
 
             <h3
@@ -144,10 +136,7 @@ const ContactInfo = () => {
             flex items-center justify-center
           "
             >
-              <Mail
-                className="text-[#111844]"
-                size={28}
-              />
+              <Mail className="text-[#111844]" size={28} />
             </div>
 
             <h3
@@ -178,7 +167,6 @@ const ContactInfo = () => {
               info@computeracademy.com
             </a>
           </div>
-
         </div>
       </div>
     </section>

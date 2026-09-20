@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/branches',
-        element: <Branches />
+        element: <Branches />,
       },
       {
         path: '/contact',

@@ -16,18 +16,13 @@ const BranchCard = ({ branch }) => {
     >
       {/* Image */}
       <div className="h-48 sm:h-56 lg:h-64 bg-[#EAE0CF] flex items-center justify-center">
-        <span className="text-[#7288AE] font-medium">
-          Branch Image
-        </span>
+        <span className="text-[#7288AE] font-medium">Branch Image</span>
       </div>
 
       {/* Content */}
       <div className="p-5 sm:p-6 lg:p-7">
-
         {/* City */}
-        <span className="inline-block text-sm font-semibold text-[#4B5694]">
-          {branch.city}
-        </span>
+        <span className="inline-block text-sm font-semibold text-[#4B5694]">{branch.city}</span>
 
         {/* Branch Name */}
         <h3
@@ -45,16 +40,13 @@ const BranchCard = ({ branch }) => {
 
         {/* Details */}
         <div className="mt-5 sm:mt-6 space-y-4">
-
           {/* Address */}
           <div className="flex items-start gap-3">
             <div className="shrink-0 w-9 h-9 rounded-full bg-[#111844]/10 flex items-center justify-center">
               <MapPin size={18} className="text-[#111844]" />
             </div>
 
-            <p className="text-sm sm:text-base text-[#7288AE] leading-6 pt-1">
-              {branch.address}
-            </p>
+            <p className="text-sm sm:text-base text-[#7288AE] leading-6 pt-1">{branch.address}</p>
           </div>
 
           {/* Phone */}
@@ -81,7 +73,6 @@ const BranchCard = ({ branch }) => {
               Mon - Sat : 8:00 AM - 8:00 PM
             </span>
           </div>
-
         </div>
 
         {/* Google Map Button */}
@@ -103,13 +94,11 @@ const BranchCard = ({ branch }) => {
           "
         >
           View On Google Map
-
           <ArrowRight
             size={18}
             className="transition-transform duration-300 group-hover:translate-x-1"
           />
         </button>
-
       </div>
     </div>
   );

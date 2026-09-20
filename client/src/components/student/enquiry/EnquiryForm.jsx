@@ -78,7 +78,7 @@ const EnquiryForm = () => {
       <div className="max-w-5xl mx-auto px-6">
         <div className="bg-white rounded-3xl shadow-xl p-10">
           <h2 className="text-4xl font-bold text-center">Admission Enquiry Form</h2>
-          <form onSubmit={submitHandler} class  Name="grid md:grid-cols-2 gap-6 mt-10">
+          <form onSubmit={submitHandler} class Name="grid md:grid-cols-2 gap-6 mt-10">
             {/* Name */}
             <div>
               <input

@@ -28,9 +28,7 @@ const ContactForm = () => {
 
     email: z.email('Please enter a valid email address'),
 
-    phone: z
-      .string()
-      .regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit phone number'),
+    phone: z.string().regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit phone number'),
 
     course: z.string().min(1, 'Please select a course'),
 
@@ -97,10 +95,7 @@ const ContactForm = () => {
 ${input.message}
 `;
 
-      window.open(
-        `https://wa.me/919876543210?text=${encodeURIComponent(text)}`,
-        '_blank'
-      );
+      window.open(`https://wa.me/919876543210?text=${encodeURIComponent(text)}`, '_blank');
 
       localStorage.removeItem('contactForm');
 
@@ -140,7 +135,6 @@ ${input.message}
 
   return (
     <section className="relative bg-[#EAE0CF]/20 py-12 sm:py-16 lg:py-20 overflow-hidden">
-
       {/* Subtle background glow */}
       <div
         className="
@@ -180,10 +174,8 @@ ${input.message}
             lg:p-10
           "
         >
-
           {/* Heading */}
           <div className="text-center mb-7 sm:mb-10">
-
             <span
               className="
                 inline-block
@@ -236,13 +228,9 @@ ${input.message}
               gap-y-1
             "
           >
-
             {/* Name */}
             <div>
-              <label
-                htmlFor="name"
-                className="block mb-2 text-sm font-medium text-[#111844]"
-              >
+              <label htmlFor="name" className="block mb-2 text-sm font-medium text-[#111844]">
                 Full Name
               </label>
 
@@ -256,17 +244,12 @@ ${input.message}
                 className={inputClass('name')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">
-                {errors.name}
-              </p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors.name}</p>
             </div>
 
             {/* Email */}
             <div>
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-[#111844]"
-              >
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-[#111844]">
                 Email Address
               </label>
 
@@ -280,17 +263,12 @@ ${input.message}
                 className={inputClass('email')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">
-                {errors.email}
-              </p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors.email}</p>
             </div>
 
             {/* Phone */}
             <div>
-              <label
-                htmlFor="phone"
-                className="block mb-2 text-sm font-medium text-[#111844]"
-              >
+              <label htmlFor="phone" className="block mb-2 text-sm font-medium text-[#111844]">
                 Phone Number
               </label>
 
@@ -306,17 +284,12 @@ ${input.message}
                 className={inputClass('phone')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">
-                {errors.phone}
-              </p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors.phone}</p>
             </div>
 
             {/* Course */}
             <div>
-              <label
-                htmlFor="course"
-                className="block mb-2 text-sm font-medium text-[#111844]"
-              >
+              <label htmlFor="course" className="block mb-2 text-sm font-medium text-[#111844]">
                 Course
               </label>
 
@@ -330,17 +303,12 @@ ${input.message}
                 className={inputClass('course')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">
-                {errors.course}
-              </p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors.course}</p>
             </div>
 
             {/* Message */}
             <div className="md:col-span-2 mt-1">
-              <label
-                htmlFor="message"
-                className="block mb-2 text-sm font-medium text-[#111844]"
-              >
+              <label htmlFor="message" className="block mb-2 text-sm font-medium text-[#111844]">
                 Your Message
               </label>
 
@@ -374,9 +342,7 @@ ${input.message}
                 `}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">
-                {errors.message}
-              </p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors.message}</p>
             </div>
 
             {/* Submit */}

@@ -63,8 +63,8 @@ const CourseBanner = () => {
             mx-auto
           "
         >
-          Learn the latest technologies with practical training,
-          experienced trainers and industry-focused curriculum.
+          Learn the latest technologies with practical training, experienced trainers and
+          industry-focused curriculum.
         </p>
       </div>
     </section>

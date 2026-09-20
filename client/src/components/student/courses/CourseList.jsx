@@ -21,12 +21,7 @@ const CourseList = () => {
   useEffect(() => {
     const fetchAllCourse = async () => {
       try {
-        const data = await getAllCourse(
-          debounceSearch,
-          page,
-          duration,
-          limit
-        );
+        const data = await getAllCourse(debounceSearch, page, duration, limit);
 
         dispatch(setAllCourses(data));
       } catch (error) {
@@ -49,11 +44,9 @@ const CourseList = () => {
   return (
     <section className="bg-slate-50 py-10 sm:py-14 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Search + Filter */}
         <div className="bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 shadow-sm">
           <div className="flex flex-row items-center gap-2 sm:gap-4">
-
             {/* Search */}
             <div className="relative flex-1">
               <Search
@@ -72,7 +65,7 @@ const CourseList = () => {
                 onChange={(e) => setSearch(e.target.value)}
                 type="text"
                 placeholder="Search course..."
-               className="
+                className="
   w-full
   h-12
   pl-11
@@ -95,7 +88,7 @@ const CourseList = () => {
             <select
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
-             className="
+              className="
   shrink-0
   w-[105px]
   sm:w-44
@@ -166,7 +159,6 @@ const CourseList = () => {
               <div className="h-1 bg-[#4B5694]" />
 
               <div className="p-5 sm:p-6 flex flex-col flex-1">
-
                 {/* Category + Icon */}
                 <div className="flex items-center justify-between">
                   <span
@@ -247,9 +239,7 @@ const CourseList = () => {
               py-3
             "
                   >
-                    <p className="text-[11px] text-gray-400">
-                      Duration
-                    </p>
+                    <p className="text-[11px] text-gray-400">Duration</p>
 
                     <p
                       className="
@@ -273,9 +263,7 @@ const CourseList = () => {
               py-3
             "
                   >
-                    <p className="text-[11px] text-gray-400">
-                      Level
-                    </p>
+                    <p className="text-[11px] text-gray-400">Level</p>
 
                     <p
                       className="
@@ -301,9 +289,7 @@ const CourseList = () => {
             px-1
           "
                 >
-                  <span className="text-sm text-gray-500">
-                    Course Fee
-                  </span>
+                  <span className="text-sm text-gray-500">Course Fee</span>
 
                   <span
                     className="
@@ -318,9 +304,7 @@ const CourseList = () => {
 
                 {/* Button */}
                 <button
-                  onClick={() =>
-                    navigate(`/course-detail/${course.slug}`)
-                  }
+                  onClick={() => navigate(`/course-detail/${course.slug}`)}
                   className="
             w-full
             mt-5
@@ -337,11 +321,8 @@ const CourseList = () => {
           "
                 >
                   View Course
-                  <span className="transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
                 </button>
-
               </div>
             </div>
           ))}
@@ -349,7 +330,6 @@ const CourseList = () => {
         {/* Pagination */}
         <div className="mt-10 sm:mt-12 flex justify-center">
           <div className="flex items-center gap-2">
-
             {/* Previous */}
             <button
               disabled={page === 1}
@@ -370,9 +350,10 @@ const CourseList = () => {
                 font-medium
                 transition-all
 
-                ${page === 1
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
+                ${
+                  page === 1
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
                 }
               `}
             >
@@ -381,15 +362,14 @@ const CourseList = () => {
 
             {/* Page Numbers */}
             <div className="flex gap-1.5 sm:gap-2">
-              {[...Array(allCourses?.totalPage || 1)].map(
-                (_, index) => {
-                  const pageNumber = index + 1;
+              {[...Array(allCourses?.totalPage || 1)].map((_, index) => {
+                const pageNumber = index + 1;
 
-                  return (
-                    <button
-                      key={pageNumber}
-                      onClick={() => setPage(pageNumber)}
-                      className={`
+                return (
+                  <button
+                    key={pageNumber}
+                    onClick={() => setPage(pageNumber)}
+                    className={`
                         h-10
                         w-10
                         sm:h-11
@@ -401,17 +381,17 @@ const CourseList = () => {
                         font-semibold
                         transition-all
 
-                        ${page === pageNumber
-                          ? 'bg-[#111844] text-white shadow-md'
-                          : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
+                        ${
+                          page === pageNumber
+                            ? 'bg-[#111844] text-white shadow-md'
+                            : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
                         }
                       `}
-                    >
-                      {pageNumber}
-                    </button>
-                  );
-                }
-              )}
+                  >
+                    {pageNumber}
+                  </button>
+                );
+              })}
             </div>
 
             {/* Next */}
@@ -434,18 +414,17 @@ const CourseList = () => {
                 font-medium
                 transition-all
 
-                ${page === allCourses?.totalPage
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
+                ${
+                  page === allCourses?.totalPage
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
                 }
               `}
             >
               Next
             </button>
-
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,8 +1,7 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -17,7 +16,6 @@ const Navbar = () => {
       <header className="sticky top-0 z-50 relative bg-white/95 backdrop-blur-md shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="h-[72px] lg:h-20 flex items-center justify-between">
-
             {/* Logo + Brand */}
             <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <img
@@ -46,9 +44,7 @@ const Navbar = () => {
                   Jankalyan Computer Center
                 </h1>
 
-                <p className="text-xs sm:text-sm text-[#7288AE] mt-0.5">
-                  Learn • Build • Grow
-                </p>
+                <p className="text-xs sm:text-sm text-[#7288AE] mt-0.5">Learn • Build • Grow</p>
               </div>
             </div>
 
@@ -68,10 +64,7 @@ const Navbar = () => {
         font-semibold
         transition-colors
         duration-300
-        ${isActive
-                      ? 'text-[#111844]'
-                      : 'text-[#111844]/70 hover:text-[#4B5694]'
-                    }
+        ${isActive ? 'text-[#111844]' : 'text-[#111844]/70 hover:text-[#4B5694]'}
 
         after:absolute
         after:left-0
@@ -82,10 +75,7 @@ const Navbar = () => {
         after:transition-all
         after:duration-300
 
-        ${isActive
-                      ? 'after:w-full'
-                      : 'after:w-0 hover:after:w-full'
-                    }
+        ${isActive ? 'after:w-full' : 'after:w-0 hover:after:w-full'}
         `
                   }
                 >
@@ -184,10 +174,11 @@ const Navbar = () => {
             rounded-lg
             font-medium
             transition
-            ${isActive
-                        ? 'bg-[#EAE0CF]/50 text-[#111844]'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
-                      }
+            ${
+              isActive
+                ? 'bg-[#EAE0CF]/50 text-[#111844]'
+                : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
+            }
             `
                     }
                   >
