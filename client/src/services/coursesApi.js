@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 export const getCourseApi = async (slug) => {
-  const res = await axios.get(`${import.meta.env.BACKEND_URL}/api/v1/${slug}`);
+  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/${slug}`);
   return res.data;
 };
 
 export const getLatestCourse = async () => {
-  const res = await axios.get(`${import.meta.env.BACKEND_URL}/api/v1/get/courses`);
+  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/get/courses`);
   return res.data;
 };
 export const getAllCourse = async (debounceSearch, page, duration, limit) => {
-  const res = await axios.get(`${import.meta.env.BACKEND_URL}/api/v1/get/all/courses`, {
+  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/get/all/courses`, {
     params: {
       debounceSearch,
       page,
@@ -22,6 +22,6 @@ export const getAllCourse = async (debounceSearch, page, duration, limit) => {
 };
 
 export const getAllCourseTitleApi = async () => {
-  const res = await axios.get(`${import.meta.env.BACKEND_URL}/api/v1/get/all/courses/title`);
+  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/get/all/courses/title`);
   return res.data;
 };

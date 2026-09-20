@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import logo from "@/svg/logo.png"
+import logo from '@/svg/logo.png';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -174,10 +174,11 @@ const Navbar = () => {
             rounded-lg
             font-medium
             transition
-            ${isActive
-                        ? 'bg-[#EAE0CF]/50 text-[#111844]'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
-                      }
+            ${
+              isActive
+                ? 'bg-[#EAE0CF]/50 text-[#111844]'
+                : 'text-gray-600 hover:bg-gray-50 hover:text-[#4B5694]'
+            }
             `
                     }
                   >
