@@ -3,14 +3,14 @@ import { Feedback } from '../utils/feedback.model.js';
 
 export const feedback = async (req, res) => {
   try {
-                           const feedbackSchema = z.object({
+    const feedbackSchema = z.object({
       name: z
         .string()
         .min(3, 'name must be at least 3 characters')
         .max(100, 'name title cannot exceed 100 characters'),
       comment: z
         .string()
-        .min(40, 'comment must be at least 20 characters')
+        .min(20, 'comment must be at least 20 characters')
         .max(2000, 'comment cannot exceed 2000 characters'),
       rating: z.number().min(1, 'Please select a rating').max(5, 'Rating cannot be more than 5'),
     });
@@ -40,7 +40,7 @@ export const feedback = async (req, res) => {
     console.log(error);
     return res.status(500).json({
       message: 'server error',
-      success: true,
+      success: false,
     });
   }
 };

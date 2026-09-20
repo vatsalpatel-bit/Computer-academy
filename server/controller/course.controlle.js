@@ -2,7 +2,7 @@ import { Course } from '../utils/course.model.js';
 
 export const getCourse = async (req, res) => {
   try {
-    const course = await Course.find({
+    const course = await Course.findOne({
       slug: req.params.slug,
     });
 

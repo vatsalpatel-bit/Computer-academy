@@ -3,15 +3,15 @@ import mongoose from 'mongoose';
 const feedbackSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   comment: {
     type: String,
-    require: true,
+    required: true,
   },
   rating: {
     type: Number,
-    require: true,
+    required: true,
     min: 1,
     max: 5,
   },

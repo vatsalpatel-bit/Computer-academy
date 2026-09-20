@@ -11,6 +11,6 @@ export const feedbackApi = async (input, rating) => {
 };
 
 export const getAllFeedback = async () => {
-  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/feedback`);
+  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/get/feedback`);
   return res.data;
 };
