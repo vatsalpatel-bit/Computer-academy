@@ -32,6 +32,15 @@ app.use(
     credentials: true,
   })
 );
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    status: "ok",
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.use('/api/v1', feedbackRouter);
 app.use('/api/v1', courseRouter);
 app.use('/api/v1', enquiryRouter);
