@@ -59,13 +59,12 @@ const WorkingHours = () => {
                 text-left
               "
             >
-              <span className="font-semibold text-[#111844]">Monday - Friday</span>
+              <span className="font-semibold text-[#111844]">Monday - Saturday</span>
 
-              <span className="text-sm sm:text-base text-[#7288AE]">8:00 AM - 8:00 PM</span>
+              <span className="text-sm sm:text-base text-[#7288AE]">8:00 AM - 7:00 PM</span>
             </div>
 
-            {/* Saturday */}
-            <div
+            {/* <div
               className="
                 flex flex-col
                 sm:flex-row
@@ -80,7 +79,7 @@ const WorkingHours = () => {
               <span className="font-semibold text-[#111844]">Saturday</span>
 
               <span className="text-sm sm:text-base text-[#7288AE]">8:00 AM - 6:00 PM</span>
-            </div>
+            </div> */}
 
             {/* Sunday */}
             <div

@@ -53,7 +53,7 @@ const ContactInfo = () => {
             leading-6
           "
             >
-              Chikhli, Navsari, Gujarat, India
+              Parshwa Complex, Opp. Bus Depo, Beside I.C.I.C. Bank, Vasad 388 306  
             </p>
           </div>
 
@@ -108,7 +108,7 @@ const ContactInfo = () => {
             transition-colors
           "
             >
-              +91 9876543210
+              +91 99988 68445
             </a>
           </div>
 
@@ -164,7 +164,7 @@ const ContactInfo = () => {
             break-all
           "
             >
-              info@computeracademy.com
+              jankayancomputercenter@gmail.com
             </a>
           </div>
         </div>

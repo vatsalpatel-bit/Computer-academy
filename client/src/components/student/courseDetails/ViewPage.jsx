@@ -113,7 +113,7 @@ const CourseView = () => {
               "
             >
               <ArrowLeft size={17} />
-              Back to Courses
+              Back
             </button>
 
             {/* Hero Content */}
