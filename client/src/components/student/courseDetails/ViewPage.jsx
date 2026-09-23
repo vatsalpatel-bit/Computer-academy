@@ -380,7 +380,7 @@ const CourseView = () => {
             gap-4
           "
           >
-            {course.topic?.map((topic, index) => (
+            {course.topics?.map((topic, index) => (
               <div
                 key={`${topic}-${index}`}
                 className="
