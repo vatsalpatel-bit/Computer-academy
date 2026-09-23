@@ -24,7 +24,7 @@ const CourseView = () => {
   const navigate = useNavigate();
 
   const courseData = useSelector((state) => state.course.singleCourse);
-
+  console.log(courseData)
   // Your current API appears to return an array
   const course = Array.isArray(courseData) ? courseData[0] : courseData;
 

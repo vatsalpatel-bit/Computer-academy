@@ -221,7 +221,7 @@ const PopularCourses = () => {
                       py-3
                     "
                   >
-                    <p className="text-[11px] text-gray-400">Level</p>
+                    <p className="text-[11px] text-gray-400">Eligibility</p>
 
                     <p
                       className="
@@ -232,7 +232,7 @@ const PopularCourses = () => {
                         truncate
                       "
                     >
-                      {course.level}
+                      {course.eligibility}
                     </p>
                   </div>
                 </div>

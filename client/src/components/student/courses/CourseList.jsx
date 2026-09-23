@@ -263,7 +263,7 @@ const CourseList = () => {
               py-3
             "
                   >
-                    <p className="text-[11px] text-gray-400">Level</p>
+                    <p className="text-[11px] text-gray-400">Eligibility</p>
 
                     <p
                       className="
