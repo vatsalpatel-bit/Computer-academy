@@ -13,7 +13,7 @@ import logo from '@/svg/logo.png';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
-   { name: 'Courses', path: '/courses' },
+  { name: 'Courses', path: '/courses' },
   { name: 'Branches', path: '/branches' },
   { name: 'Contact', path: '/contact' },
   // { name: "Enquiry Now", path: "/enquiry" },
@@ -41,7 +41,7 @@ const Footer = () => {
             <div className="flex gap-3 mt-6">
               <div className="flex items-center">
                 <a
-                  href="jankalyan_computer_centre"
+                  href="https://instagram.com/jankalyan_computer_centre"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Jankalyan Computer Center on Instagram"
@@ -144,9 +144,9 @@ const Footer = () => {
               <FaMapMarkerAlt className="text-[#7288AE] mt-1" />
 
               <p className="text-sm text-white/70 leading-6">
-               Parshwa Complex,
+                Parshwa Complex,
                 <br />
-                 Opp. Bus Depo,
+                Opp. Bus Depo,
                 <br />
                 Beside I.C.I.C. Bank,
                 <br />
