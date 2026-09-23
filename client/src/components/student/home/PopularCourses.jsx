@@ -68,10 +68,8 @@ const PopularCourses = () => {
               sm:leading-7
             "
           >
-            <p>
-              Explore our computer courses and build practical skills through hands-on
-              learning and guided training.
-            </p>
+            Explore our computer courses and build practical skills through hands-on
+            learning and guided training.
           </p>
         </div>
 

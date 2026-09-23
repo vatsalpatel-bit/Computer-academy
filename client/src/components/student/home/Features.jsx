@@ -1,4 +1,4 @@
-import { FaGraduationCap, FaUserTie, FaCertificate, FaHeadset } from 'react-icons/fa';
+import { FaGraduationCap, FaLaptopCode, FaCertificate, FaHeadset } from 'react-icons/fa';
 
 const features = [
   {
