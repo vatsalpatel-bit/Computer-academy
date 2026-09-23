@@ -13,8 +13,8 @@ import logo from '@/svg/logo.png';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
-  { name: 'About Us', path: '/about-us' },
-  { name: 'Courses', path: '/courses' },
+   { name: 'Courses', path: '/courses' },
+  { name: 'Branches', path: '/branches' },
   { name: 'Contact', path: '/contact' },
   // { name: "Enquiry Now", path: "/enquiry" },
 ];
@@ -39,23 +39,25 @@ const Footer = () => {
               Practical computer education, skill-based training, and guidance for a better future.
             </p>
             <div className="flex gap-3 mt-6">
-              {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map((Icon, i) => (
+              <div className="flex items-center">
                 <a
-                  key={i}
-                  href="#"
+                  href="jankalyan_computer_centre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Jankalyan Computer Center on Instagram"
                   className="
-                      w-10 h-10 rounded-xl
-                      bg-white/5
-                      border border-white/10
-                      hover:bg-[#4B5694]
-                      hover:border-[#4B5694]
-                      transition-all duration-300
-                      flex items-center justify-center
-                    "
+      w-11 h-11 rounded-xl
+      bg-white/5
+      border border-white/10
+      hover:bg-[#4B5694]
+      hover:border-[#4B5694]
+      transition-all duration-300
+      flex items-center justify-center
+    "
                 >
-                  <Icon size={15} />
+                  <FaInstagram size={18} />
                 </a>
-              ))}
+              </div>
             </div>
           </div>
 
@@ -106,14 +108,14 @@ const Footer = () => {
               >
                 <FaPhoneAlt className="text-[#7288AE]" />
 
-                <span className="text-sm text-white/80">+91 98765 43210</span>
+                <span className="text-sm text-white/80">+91 99988 68445</span>
               </a>
 
               <a
                 href="mailto:info@computeracademy.com"
                 className="
                   flex items-center gap-3
-                  p-3 rounded-xl
+                  p-1 rounded-xl
                   bg-white/5
                   border border-white/10
                   hover:border-[#4B5694]
@@ -122,7 +124,7 @@ const Footer = () => {
               >
                 <FaEnvelope className="text-[#7288AE]" />
 
-                <span className="text-sm text-white/80 break-all">info@computeracademy.com</span>
+                <span className="text-sm text-white/80 break-all">jankayancomputercenter@gmail.com</span>
               </a>
             </div>
           </div>
@@ -142,13 +144,13 @@ const Footer = () => {
               <FaMapMarkerAlt className="text-[#7288AE] mt-1" />
 
               <p className="text-sm text-white/70 leading-6">
-                Computer Academy,
+               Parshwa Complex,
                 <br />
-                First Floor, ABC Complex,
+                 Opp. Bus Depo,
                 <br />
-                Chikhli, Navsari,
+                Beside I.C.I.C. Bank,
                 <br />
-                Gujarat – 396521
+                Vasad 388 306
               </p>
             </div>
           </div>
