@@ -36,10 +36,8 @@ const Footer = () => {
             </div>
 
             <p className="text-sm text-white/70 leading-7">
-              Empowering students with practical computer education, professional guidance and
-              career-oriented training.
+              Practical computer education, skill-based training, and guidance for a better future.
             </p>
-
             <div className="flex gap-3 mt-6">
               {[FaFacebookF, FaInstagram, FaYoutube, FaTwitter].map((Icon, i) => (
                 <a

@@ -4,26 +4,30 @@ const features = [
   {
     id: 1,
     icon: <FaGraduationCap />,
-    title: 'Industry Oriented Courses',
-    description: 'Learn practical skills with industry-standard curriculum.',
+    title: 'Practical Computer Courses',
+    description:
+      'Learn essential computer skills through practical, hands-on training.',
   },
   {
     id: 2,
-    icon: <FaUserTie />,
-    title: 'Placement Assistance',
-    description: 'Get career guidance and placement support from experts.',
+    icon: <FaLaptopCode />,
+    title: 'Wide Range of Courses',
+    description:
+      'Choose from courses in office tools, accounting, design, web development, and more.',
   },
   {
     id: 3,
     icon: <FaCertificate />,
-    title: 'Certified Programs',
-    description: 'Receive recognized certificates after course completion.',
+    title: 'Certificate Programs',
+    description:
+      'Complete your course and receive a certificate to support your learning journey.',
   },
   {
     id: 4,
     icon: <FaHeadset />,
-    title: 'Student Support',
-    description: 'Dedicated faculty and continuous learning support.',
+    title: 'Guided Learning',
+    description:
+      'Learn with guidance and support throughout your computer training.',
   },
 ];
 

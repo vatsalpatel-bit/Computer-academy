@@ -68,8 +68,10 @@ const PopularCourses = () => {
               sm:leading-7
             "
           >
-            Explore our industry-oriented courses designed to build practical skills and prepare
-            students for successful careers.
+            <p>
+              Explore our computer courses and build practical skills through hands-on
+              learning and guided training.
+            </p>
           </p>
         </div>
 

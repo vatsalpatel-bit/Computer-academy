@@ -23,13 +23,7 @@ const courseSchema = new mongoose.Schema(
 
     fees: Number,
 
-    level: String,
-
-    language: String,
-
-    batch: String,
-
-    certificate: Boolean,
+    eligibility: String,
 
     topics: [String],
   },

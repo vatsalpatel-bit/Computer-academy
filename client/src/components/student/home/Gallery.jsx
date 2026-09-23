@@ -27,11 +27,11 @@ const Gallery = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 text-[#111844] leading-tight">
               Our Campus Moments
             </h2>
-
+{/* 
             <p className="text-gray-500 text-sm sm:text-base mt-4 max-w-xl leading-6">
               Explore classroom sessions, workshops, seminars, events and memorable moments from our
               academy.
-            </p>
+            </p> */}
           </div>
         </div>
 

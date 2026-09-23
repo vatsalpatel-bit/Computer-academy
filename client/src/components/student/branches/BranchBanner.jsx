@@ -44,8 +44,8 @@ const BranchBanner = () => {
         text-white/75
       "
         >
-          Visit our modern training centers equipped with experienced faculty, practical labs and a
-          friendly learning environment.
+          Build practical computer skills through guided training and a supportive
+          learning environment.
         </p>
       </div>
     </section>

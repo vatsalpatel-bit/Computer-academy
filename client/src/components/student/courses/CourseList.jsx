@@ -274,7 +274,7 @@ const CourseList = () => {
                 truncate
               "
                     >
-                      {course.level}
+                      {course.eligibility}
                     </p>
                   </div>
                 </div>
@@ -350,10 +350,9 @@ const CourseList = () => {
                 font-medium
                 transition-all
 
-                ${
-                  page === 1
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
+                ${page === 1
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
                 }
               `}
             >
@@ -381,11 +380,10 @@ const CourseList = () => {
                         font-semibold
                         transition-all
 
-                        ${
-                          page === pageNumber
-                            ? 'bg-[#111844] text-white shadow-md'
-                            : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
-                        }
+                        ${page === pageNumber
+                        ? 'bg-[#111844] text-white shadow-md'
+                        : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
+                      }
                       `}
                   >
                     {pageNumber}
@@ -414,10 +412,9 @@ const CourseList = () => {
                 font-medium
                 transition-all
 
-                ${
-                  page === allCourses?.totalPage
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
+                ${page === allCourses?.totalPage
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-white border border-gray-200 text-[#111844] hover:border-[#4B5694]'
                 }
               `}
             >

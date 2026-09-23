@@ -94,6 +94,7 @@ export const getAllCourse = async (req, res) => {
 
 export const getAllCourseTitle = async (req, res) => {
   try {
+
     const course = await Course.find().select('title');
 
     if (!course) {
@@ -107,6 +108,7 @@ export const getAllCourseTitle = async (req, res) => {
       course,
       success: true,
     });
+
   } catch (error) {
     console.log(error);
     return res.status(500).json({

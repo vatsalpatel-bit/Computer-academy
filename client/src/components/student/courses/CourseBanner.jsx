@@ -63,8 +63,9 @@ const CourseBanner = () => {
             mx-auto
           "
         >
-          Learn the latest technologies with practical training, experienced trainers and
-          industry-focused curriculum.
+          Learn practical computer skills through a wide range of courses and
+          guided training.
+
         </p>
       </div>
     </section>

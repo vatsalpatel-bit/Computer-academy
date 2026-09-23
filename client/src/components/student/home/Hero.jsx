@@ -14,16 +14,17 @@ import 'swiper/css/pagination';
 const slides = [
   {
     id: 1,
-    title: 'Build Your Career In IT',
-    subtitle: 'Join industry-oriented courses and become job-ready with practical learning.',
+    title: 'Build Your IT Career',
+    subtitle:
+      'Build practical computer skills through industry-relevant courses and hands-on training.',
     image: image1,
     mobileImage: image1Mobile,
   },
   {
     id: 2,
-    title: 'Learn From Industry Experts',
+    title: 'Learn from Industry Experts',
     subtitle:
-      'Master programming, web development, and modern technologies through hands-on projects.',
+      'Develop practical skills in programming, web development, and modern technologies through hands-on projects.',
     image: image2,
     mobileImage: image2Mobile,
   },

@@ -77,23 +77,18 @@ const CourseView = () => {
     },
     {
       icon: GraduationCap,
-      label: 'Level',
-      value: course.level,
-    },
-    {
-      icon: Languages,
-      label: 'Language',
-      value: course.language,
-    },
-    {
-      icon: Users,
-      label: 'Batch',
-      value: course.batch,
+      label: 'Eligibility',
+      value: course.eligibility,
     },
     {
       icon: BadgeCheck,
       label: 'Certificate',
-      value: course.certificate ? 'Included' : 'Not Included',
+      value: 'Included',
+    },
+    {
+      icon: IndianRupee,
+      label: 'Course Fee',
+      value: `₹${course.fees}`,
     },
   ];
 
@@ -107,7 +102,7 @@ const CourseView = () => {
           <div className="py-12 sm:py-16 lg:py-20">
             {/* Back */}
             <button
-              onClick={() => navigate('/courses')}
+              onClick={() => navigate(-1)}
               className="
                 inline-flex items-center gap-2
                 text-white/70
