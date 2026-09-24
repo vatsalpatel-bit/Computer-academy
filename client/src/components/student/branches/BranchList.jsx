@@ -3,17 +3,17 @@ import BranchCard from './BranchCard';
 const branches = [
   {
     id: 1,
-    name: 'Head Office',
-    city: 'Chikhli',
-    address: 'Near Bus Stand, Chikhli, Navsari, Gujarat',
-    phone: '+91 9876543210',
+    name: 'Sarsa Branch',
+    city: 'Anand',
+    address: 'Sarsa Near Bus Stand Khabhodaj Road Virat Cinema',
+    phone: '+91 99247 63536',
   },
   {
     id: 2,
     name: 'Navsari Branch',
-    city: 'Navsari',
+    city: 'Anand',
     address: 'Station Road, Navsari, Gujarat',
-    phone: '+91 9876543211',
+    phone: '+91 97254 20986',
   },
   {
     id: 3,
