@@ -14,17 +14,17 @@ import 'swiper/css/pagination';
 const slides = [
   {
     id: 1,
-    title: 'Build Your IT Career',
+    title: 'Learn. Build. Grow.',
     subtitle:
-      'Build practical computer skills through industry-relevant courses and hands-on training.',
+      'Build practical computer skills through expert training and hands-on learning.',
     image: image1,
     mobileImage: image1Mobile,
   },
   {
     id: 2,
-    title: 'Learn from IT Experts',
+    title: 'Skills for Your Future',
     subtitle:
-      'Develop practical skills through industry-relevant courses and hands-on technology projects.',
+      'Learn essential digital skills through expert guidance and practical projects.',
     image: image2,
     mobileImage: image2Mobile,
   },
