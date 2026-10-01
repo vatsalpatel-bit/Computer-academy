@@ -24,7 +24,7 @@ const slides = [
     id: 2,
     title: 'Learn from IT Experts',
     subtitle:
-      'Develop practical skills in programming, web development, and modern technologies through hands-on projects.',
+      'Develop practical skills through industry-relevant courses and hands-on technology projects.',
     image: image2,
     mobileImage: image2Mobile,
   },
