@@ -22,7 +22,7 @@ const slides = [
   },
   {
     id: 2,
-    title: 'Learn from Industry Experts',
+    title: 'Learn from IT Experts',
     subtitle:
       'Develop practical skills in programming, web development, and modern technologies through hands-on projects.',
     image: image2,
@@ -151,20 +151,22 @@ const Hero = () => {
                   {/* Heading */}
                   <h1
                     className="
-                      text-[30px]
-                      leading-[1.1]
-                      font-bold
-                      tracking-tight
-                      text-[#EAE0CF]
-                      max-w-[340px]
+    text-[30px]
+    leading-[1.1]
+    font-bold
+    tracking-tight
+    text-[#EAE0CF]
+    max-w-[340px]
 
-                      sm:text-5xl
-                      sm:max-w-2xl
+    sm:text-5xl
+    sm:max-w-4xl
 
-                      md:text-6xl
+    md:text-6xl
+    md:max-w-4xl
 
-                      lg:text-7xl
-                    "
+    lg:text-7xl
+    lg:max-w-4xl
+  "
                   >
                     {slide.title}
                   </h1>
