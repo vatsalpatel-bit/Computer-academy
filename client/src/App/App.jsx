@@ -8,6 +8,7 @@ import Enquiry from '@/pages/Enquiry';
 import Home from '@/pages/Home';
 import { RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
+import NotFound from '@/pages/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
         path: '/course-detail/:slug',
         element: <CourseDetails />,
       },
+      {
+        path: '*',
+        element: <NotFound />
+      }
     ],
   },
 ]);
