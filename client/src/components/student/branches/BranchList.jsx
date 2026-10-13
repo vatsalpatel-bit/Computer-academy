@@ -4,23 +4,25 @@ const branches = [
   {
     id: 1,
     name: 'Sarsa Branch',
-    city: 'Anand',
-    address: 'Sarsa Near Bus Stand Khabhodaj Road Virat Cinema',
-    phone: '+91 99247 63536',
+    city: 'Sarsa',
+    address: 'Near Bus Stand, Sarsa, Gujarat',
+    phone: '+91 78254 20988',
   },
   {
     id: 2,
-    name: 'Navsari Branch',
-    city: 'Anand',
-    address: 'Station Road, Navsari, Gujarat',
-    phone: '+91 97254 20986',
+    name: 'Vadodara Branch',
+    city: 'Vadodara',
+    address:
+      'F–2, Aditya Enclave, Near Uma Crossing, Waghodia Road, Vadodara-390025, Gujarat, India',
+    phone: '+91 93775 36147',
   },
   {
     id: 3,
-    name: 'Valsad Branch',
-    city: 'Valsad',
-    address: 'Tithal Road, Valsad, Gujarat',
-    phone: '+91 9876543212',
+    name: 'Umreth Branch',
+    city: 'Umreth',
+    address:
+      'Vadalj Bazar, Near Bhidbhanjan Hanuman Temple, Bilimora Road, Umreth, Gujarat',
+    phone: '+91 78254 20988',
   },
 ];
 

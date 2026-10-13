@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock, ArrowRight } from 'lucide-react';
+import branchPoster from '@/svg/branches/branches.png';
 
 const BranchCard = ({ branch }) => {
   return (
@@ -14,9 +15,14 @@ const BranchCard = ({ branch }) => {
         hover:-translate-y-1
       "
     >
-      {/* Image */}
-      <div className="h-48 sm:h-56 lg:h-64 bg-[#EAE0CF] flex items-center justify-center">
-        <span className="text-[#7288AE] font-medium">Branch Image</span>
+      {/* Branch Poster */}
+      <div className="h-48 sm:h-56 lg:h-64 overflow-hidden bg-[#111844]">
+        <img
+          src={branchPoster}
+          alt={`${branch.name} - Jankalyan Computer Center`}
+          className="w-full h-full object-cover object-center"
+          loading="lazy"
+        />
       </div>
 
       {/* Content */}
@@ -76,29 +82,37 @@ const BranchCard = ({ branch }) => {
         </div>
 
         {/* Google Map Button */}
-        <button
+        <a
+          href={
+            branch.mapUrl ||
+            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              `${branch.name}, ${branch.address}`
+            )}`
+          }
+          target="_blank"
+          rel="noopener noreferrer"
           className="
-            mt-7 sm:mt-8
-            w-full
-            flex items-center justify-center gap-2
-            bg-[#111844]
-            hover:bg-[#4B5694]
-            text-white
-            px-5
-            py-3.5
-            rounded-xl
-            font-semibold
-            text-sm sm:text-base
-            transition-all duration-300
-            group
-          "
+    mt-7 sm:mt-8
+    w-full
+    flex items-center justify-center gap-2
+    bg-[#111844]
+    hover:bg-[#4B5694]
+    text-white
+    px-5 py-3.5
+    rounded-xl
+    font-semibold
+    text-sm sm:text-base
+    transition-all duration-300
+    group
+  "
         >
-          View On Google Map
+          View On Google Maps
+
           <ArrowRight
             size={18}
             className="transition-transform duration-300 group-hover:translate-x-1"
           />
-        </button>
+        </a>
       </div>
     </div>
   );

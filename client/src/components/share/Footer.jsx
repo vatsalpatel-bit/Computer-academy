@@ -23,31 +23,31 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:pr-6">
-  <div className="flex items-center gap-3 mb-5">
-    <img
-      src={logo}
-      alt="Jankalyan"
-      className="w-14 h-14 object-contain"
-    />
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src={logo}
+                alt="Jankalyan"
+                className="w-14 h-14 object-contain"
+              />
 
-    <div className="flex items-center gap-4">
-      <div>
-        <h2 className="text-lg font-bold text-[#EAE0CF] leading-tight">
-          Jankalyan
-        </h2>
+              <div className="flex items-center gap-4">
+                <div>
+                  <h2 className="text-lg font-bold text-[#EAE0CF] leading-tight">
+                    Jankalyan
+                  </h2>
 
-        <p className="text-sm text-[#7288AE]">
-          Computer Center
-        </p>
-      </div>
+                  <p className="text-sm text-[#7288AE]">
+                    Computer Center
+                  </p>
+                </div>
 
-      {/* Instagram */}
-      <a
-        href="https://instagram.com/jankalyan_computer_centre"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Follow Jankalyan Computer Center on Instagram"
-        className="
+                {/* Instagram */}
+                <a
+                  href="https://instagram.com/jankalyan_computer_centre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Jankalyan Computer Center on Instagram"
+                  className="
           w-10 h-10
           rounded-xl
           bg-white/5
@@ -57,17 +57,17 @@ const Footer = () => {
           transition-all duration-300
           flex items-center justify-center
         "
-      >
-        <FaInstagram size={17} />
-      </a>
-    </div>
-  </div>
+                >
+                  <FaInstagram size={17} />
+                </a>
+              </div>
+            </div>
 
-  <p className="text-sm text-white/70 leading-7">
-    Practical computer education, skill-based training, and guidance
-    for a better future.
-  </p>
-</div>
+            <p className="text-sm text-white/70 leading-7">
+              Practical computer education, skill-based training, and guidance
+              for a better future.
+            </p>
+          </div>
 
           {/* Quick Links */}
           <div>
