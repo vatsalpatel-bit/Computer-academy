@@ -12,30 +12,40 @@ const ContactForm = () => {
     return saveInput
       ? JSON.parse(saveInput)
       : {
-          name: '',
-          email: '',
-          phone: '',
-          course: '',
-          message: '',
-        };
+        name: '',
+        email: '',
+        phone: '',
+        course: '',
+        message: '',
+      };
   });
 
   const contactSchema = z.object({
     name: z
       .string()
+      .trim()
       .min(3, 'Name must be at least 3 characters')
-      .max(100, 'Name cannot exceed 100 characters'),
+      .max(50, 'Name cannot exceed 100 characters'),
 
-    email: z.email('Please enter a valid email address'),
+    email: z
+      .email('Please enter a valid email address')
+      .max(100, 'Email cannot exceed 254 characters'),
 
-    phone: z.string().regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit phone number'),
+    phone: z
+      .string()
+      .regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit phone number'),
 
-    course: z.string().min(1, 'Please select a course'),
+    course: z
+      .string()
+      .trim()
+      .min(1, 'Please select a course')
+      .max(50, 'Course cannot exceed 100 characters'),
 
     message: z
       .string()
+      .trim()
       .min(20, 'Message must be at least 20 characters')
-      .max(1000, 'Message cannot exceed 1000 characters'),
+      .max(500, 'Message cannot exceed 500 characters'),
   });
 
   useEffect(() => {
@@ -126,10 +136,9 @@ ${input.message}
     duration-200
     text-sm
     sm:text-base
-    ${
-      errors[field]
-        ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-        : 'border-gray-200 focus:border-[#4B5694] focus:ring-2 focus:ring-[#4B5694]/10'
+    ${errors[field]
+      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
+      : 'border-gray-200 focus:border-[#4B5694] focus:ring-2 focus:ring-[#4B5694]/10'
     }
   `;
 
@@ -334,10 +343,9 @@ ${input.message}
                   duration-200
                   text-sm
                   sm:text-base
-                  ${
-                    errors.message
-                      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#4B5694] focus:ring-2 focus:ring-[#4B5694]/10'
+                  ${errors.message
+                    ? 'border-red-500 focus:ring-2 focus:ring-red-100'
+                    : 'border-gray-200 focus:border-[#4B5694] focus:ring-2 focus:ring-[#4B5694]/10'
                   }
                 `}
               />

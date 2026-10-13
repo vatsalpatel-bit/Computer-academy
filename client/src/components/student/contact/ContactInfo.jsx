@@ -44,17 +44,21 @@ const ContactInfo = () => {
               Address
             </h3>
 
-            <p
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Parshwa+Complex%2C+Opp.+Bus+Depot%2C+Beside+ICICI+Bank%2C+Vasad+388306%2C+Gujarat"
+              target="_blank"
+              rel="noopener noreferrer"
               className="
-            text-sm
-            sm:text-base
-            text-[#7288AE]
-            mt-3
-            leading-6
-          "
+    block
+    text-sm
+    sm:text-base
+    text-[#7288AE]
+    mt-3
+    leading-6
+  "
             >
-              Parshwa Complex, Opp. Bus Depo, Beside I.C.I.C. Bank, Vasad 388 306  
-            </p>
+              Parshwa Complex, Opp. Bus Depo, Beside I.C.I.C. Bank, Vasad 388 306
+            </a>
           </div>
 
           {/* Phone */}

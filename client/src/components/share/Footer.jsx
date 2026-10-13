@@ -156,17 +156,27 @@ const Footer = () => {
 
           {/* Address */}
           <div>
-            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">Visit Us</h3>
+            <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">
+              Visit Us
+            </h3>
 
-            <div
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Parshwa+Complex%2C+Opp.+Bus+Depot%2C+Beside+ICICI+Bank%2C+Vasad+388306%2C+Gujarat"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Find Jankalyan Computer Center on Google Maps"
               className="
-                flex gap-3
-                p-4 rounded-xl
-                bg-white/5
-                border border-white/10
-              "
+      flex gap-3
+      p-4 rounded-xl
+      bg-white/5
+      border border-white/10
+      hover:border-[#4B5694]
+      hover:bg-white/10
+      transition-all duration-300
+      cursor-pointer
+    "
             >
-              <FaMapMarkerAlt className="text-[#7288AE] mt-1" />
+              <FaMapMarkerAlt className="text-[#7288AE] mt-1 shrink-0" />
 
               <p className="text-sm text-white/70 leading-6">
                 Parshwa Complex,
@@ -177,7 +187,7 @@ const Footer = () => {
                 <br />
                 Vasad 388 306
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </div>
