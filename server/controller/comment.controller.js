@@ -7,11 +7,11 @@ export const feedback = async (req, res) => {
       name: z
         .string()
         .min(3, 'name must be at least 3 characters')
-        .max(50, 'name title cannot exceed 100 characters'),
+        .max(75, 'name title cannot exceed 75 characters'),
       comment: z
         .string()
         .min(20, 'comment must be at least 20 characters')
-        .max(100, 'comment cannot exceed 2000 characters'),
+        .max(500, 'comment cannot exceed 500 characters'),
       rating: z.number().min(1, 'Please select a rating').max(5, 'Rating cannot be more than 5'),
     });
 
