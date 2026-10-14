@@ -238,7 +238,7 @@ const PopularCourses = () => {
                 </div>
 
                 {/* Fee */}
-                <div
+                {/* <div
                   className="
                     mt-4
                     flex
@@ -259,7 +259,7 @@ const PopularCourses = () => {
                   >
                     ₹{course.fees}
                   </span>
-                </div>
+                </div> */}
 
                 {/* View Course */}
                 <button

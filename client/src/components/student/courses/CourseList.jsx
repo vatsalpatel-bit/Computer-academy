@@ -280,7 +280,7 @@ const CourseList = () => {
                 </div>
 
                 {/* Fee */}
-                <div
+                {/* <div
                   className="
             mt-4
             flex
@@ -300,7 +300,7 @@ const CourseList = () => {
                   >
                     ₹{course.fees}
                   </span>
-                </div>
+                </div> */}
 
                 {/* Button */}
                 <button

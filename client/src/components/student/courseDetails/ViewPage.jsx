@@ -181,7 +181,7 @@ const CourseView = () => {
                   <ArrowRight size={17} />
                 </button>
 
-                <div
+                {/* <div
                   className="
                   flex items-center justify-center
                   px-6 py-3.5
@@ -195,7 +195,7 @@ const CourseView = () => {
                   <span className="text-lg font-bold">{course.fees}</span>
 
                   <span className="ml-1 text-sm text-white/50">course fee</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@ const CourseView = () => {
             })}
 
             {/* Fee Card */}
-            <div
+            {/* <div
               className="
               bg-[#111844]
               rounded-2xl
@@ -320,7 +320,7 @@ const CourseView = () => {
 
                 <p className="mt-1 text-xl font-bold text-white">₹{course.fees}</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
