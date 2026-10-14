@@ -6,8 +6,6 @@ import {
   Clock3,
   GraduationCap,
   IndianRupee,
-  Languages,
-  Users,
   CheckCircle,
   ArrowLeft,
   ArrowRight,
@@ -88,7 +86,7 @@ const CourseView = () => {
     {
       icon: IndianRupee,
       label: 'Course Fee',
-      value: `₹${course.fees}`,
+      value: `Contact Us`,
     },
   ];
 
@@ -243,7 +241,7 @@ const CourseView = () => {
             gap-4
           "
           >
-            {details.map((item) => {
+            {details?.map((item) => {
               const Icon = item.icon;
 
               return (
