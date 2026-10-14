@@ -179,11 +179,11 @@ const Footer = () => {
               <FaMapMarkerAlt className="text-[#7288AE] mt-1 shrink-0" />
 
               <p className="text-sm text-white/70 leading-6">
+                B-37-38,
+                <br />
                 Parshwa Complex,
                 <br />
                 Opp. Bus Depo,
-                <br />
-                Beside I.C.I.C. Bank,
                 <br />
                 Vasad 388 306
               </p>

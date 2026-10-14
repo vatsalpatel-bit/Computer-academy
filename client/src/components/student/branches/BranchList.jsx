@@ -6,7 +6,7 @@ const branches = [
     name: 'Sarsa Branch',
     city: 'Sarsa',
     address: 'Near Bus Stand, Sarsa, Gujarat',
-    phone: '+91 78254 20988',
+    phone: '+91 99247 63536',
   },
   {
     id: 2,
@@ -21,8 +21,8 @@ const branches = [
     name: 'Umreth Branch',
     city: 'Umreth',
     address:
-      'Vadalj Bazar, Near Bhidbhanjan Hanuman Temple, Bilimora Road, Umreth, Gujarat',
-    phone: '+91 78254 20988',
+      'Second Floor, Velkam Market, Vada Bazar, Near BOB Bank, Umreth.',
+    phone: '+91 97254 20986',
   },
 ];
 
