@@ -93,13 +93,13 @@ const ContactForm = () => {
       const text = `
 📚 Computer Academy Inquiry
 
-👤 Name: ${input.name}
+👤 Name: ${input?.name}
 
-📧 Email: ${input.email}
+📧 Email: ${input?.email}
 
-📱 Phone: ${input.phone}
+📱 Phone: ${input?.phone}
 
-💻 Course: ${input.course}
+💻 Course: ${input?.course}
 
 📝 Message:
 ${input.message}
@@ -234,14 +234,14 @@ ${input.message}
               <input
                 id="name"
                 name="name"
-                value={input.name}
+                value={input?.name}
                 onChange={eventHandler}
                 type="text"
                 placeholder="Enter your name"
                 className={inputClass('name')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">{errors.name}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors?.name}</p>
             </div>
 
             {/* Email */}
@@ -253,14 +253,14 @@ ${input.message}
               <input
                 id="email"
                 name="email"
-                value={input.email}
+                value={input?.email}
                 onChange={eventHandler}
                 type="email"
                 placeholder="Enter your email"
                 className={inputClass('email')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">{errors.email}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors?.email}</p>
             </div>
 
             {/* Phone */}
@@ -272,7 +272,7 @@ ${input.message}
               <input
                 id="phone"
                 name="phone"
-                value={input.phone}
+                value={input?.phone}
                 onChange={eventHandler}
                 type="tel"
                 inputMode="numeric"
@@ -281,7 +281,7 @@ ${input.message}
                 className={inputClass('phone')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">{errors.phone}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors?.phone}</p>
             </div>
 
             {/* Course */}
@@ -293,14 +293,14 @@ ${input.message}
               <input
                 id="course"
                 name="course"
-                value={input.course}
+                value={input?.course}
                 onChange={eventHandler}
                 type="text"
                 placeholder="Interested course"
                 className={inputClass('course')}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">{errors.course}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors?.course}</p>
             </div>
 
             {/* Message */}
@@ -312,7 +312,7 @@ ${input.message}
               <textarea
                 id="message"
                 name="message"
-                value={input.message}
+                value={input?.message}
                 onChange={eventHandler}
                 rows="5"
                 placeholder="Tell us how we can help..."
@@ -331,14 +331,14 @@ ${input.message}
                   duration-200
                   text-sm
                   sm:text-base
-                  ${errors.message
+                  ${errors?.message
                     ? 'border-red-500 focus:ring-2 focus:ring-red-100'
                     : 'border-gray-200 focus:border-[#4B5694] focus:ring-2 focus:ring-[#4B5694]/10'
                   }
                 `}
               />
 
-              <p className="text-red-500 text-xs mt-1 h-5">{errors.message}</p>
+              <p className="text-red-500 text-xs mt-1 h-5">{errors?.message}</p>
             </div>
 
             {/* Submit */}

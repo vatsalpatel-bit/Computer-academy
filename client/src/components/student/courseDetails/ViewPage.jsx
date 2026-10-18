@@ -23,7 +23,6 @@ const CourseView = () => {
 
   const courseData = useSelector((state) => state.course.singleCourse);
 
-  // Your current API appears to return an array
   const course = Array.isArray(courseData) ? courseData[0] : courseData;
 
   useEffect(() => {
@@ -91,12 +90,9 @@ const CourseView = () => {
   ];
 
   return (
-    <main className="bg-white">
+    <main className="bg-[#EAE0CF]/20">
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
+      {/*HERO*/}
       <section className="relative overflow-hidden bg-[#111844]">
         {/* Subtle Galaxy Glow */}
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#4B5694]/20 blur-3xl" />
@@ -126,12 +122,12 @@ const CourseView = () => {
 
             {/* Heading */}
             <h1 className="text-3xl font-bold leading-tight tracking-tight text-[#EAE0CF] sm:text-4xl lg:text-5xl">
-              {course.title}
+              {course?.title}
             </h1>
 
             {/* Description */}
             <p className="mt-4 max-w-2xl text-sm leading-6 text-white/75 sm:text-base sm:leading-7">
-              {course.description}
+              {course?.description}
             </p>
 
             {/* Contact Button */}
@@ -148,9 +144,7 @@ const CourseView = () => {
         </div>
       </section>
 
-      {/* =====================================================
-          COURSE OVERVIEW
-      ===================================================== */}
+      {/*COURSE OVERVIEW*/}
 
       <section className="py-12 sm:py-16 lg:py-20 bg-[#F5F6FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,11 +185,11 @@ const CourseView = () => {
           "
           >
             {details?.map((item) => {
-              const Icon = item.icon;
+              const Icon = item?.icon;
 
               return (
                 <div
-                  key={item.label}
+                  key={item?.label}
                   className="
                     bg-white
                     rounded-2xl
@@ -221,7 +215,7 @@ const CourseView = () => {
                   </div>
 
                   <div className="min-w-0">
-                    <p className="text-xs text-gray-400 uppercase tracking-wide">{item.label}</p>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide">{item?.label}</p>
 
                     <p
                       className="
@@ -232,49 +226,18 @@ const CourseView = () => {
                       truncate
                     "
                     >
-                      {item.value}
+                      {item?.value}
                     </p>
                   </div>
                 </div>
               );
             })}
-
-            {/* Fee Card */}
-            {/* <div
-              className="
-              bg-[#111844]
-              rounded-2xl
-              p-5
-              flex items-center gap-4
-              shadow-sm
-            "
-            >
-              <div
-                className="
-                w-11 h-11
-                shrink-0
-                rounded-xl
-                bg-white/10
-                text-[#EAE0CF]
-                flex items-center justify-center
-              "
-              >
-                <IndianRupee size={20} />
-              </div>
-
-              <div>
-                <p className="text-xs text-white/50 uppercase tracking-wide">Course Fee</p>
-
-                <p className="mt-1 text-xl font-bold text-white">₹{course.fees}</p>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
 
-      {/* =====================================================
-          CURRICULUM
-      ===================================================== */}
+      {/*CURRICULUM*/}
+
       <section className="py-14 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -327,7 +290,7 @@ const CourseView = () => {
             gap-4
           "
           >
-            {course.topics?.map((topic, index) => (
+            {course?.topics?.map((topic, index) => (
               <div
                 key={`${topic}-${index}`}
                 className="

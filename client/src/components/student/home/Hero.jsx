@@ -53,12 +53,12 @@ const Hero = () => {
   lg:min-h-[650px]
 "
       >
-        {slides.map((slide) => (
+        {slides?.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div className="relative h-full overflow-hidden">
               {/* Background */}
               <picture className="absolute inset-0 block">
-                <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
+                <source media="(max-width: 768px)" srcSet={slide?.mobileImage} />
 
                 <img
                   src={slide.image}
@@ -168,7 +168,7 @@ const Hero = () => {
     lg:max-w-4xl
   "
                   >
-                    {slide.title}
+                    {slide?.title}
                   </h1>
 
                   {/* Subtitle */}
@@ -188,7 +188,7 @@ const Hero = () => {
                       lg:text-xl
                     "
                   >
-                    {slide.subtitle}
+                    {slide?.subtitle}
                   </p>
 
                   {/* Buttons */}

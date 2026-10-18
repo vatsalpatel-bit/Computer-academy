@@ -6,8 +6,6 @@ const Branches = () => {
     <>
       <BranchBanner />
       <BranchList />
-      {/* <WhyVisit /> */}
-      {/* <BranchCTA /> */}
     </>
   );
 };

@@ -89,7 +89,7 @@ const PopularCourses = () => {
         >
           {allCourses?.map((course) => (
             <div
-              key={course._id}
+              key={course?._id}
               className="
                 group
                 relative
@@ -162,7 +162,7 @@ const PopularCourses = () => {
                     min-h-[48px]
                   "
                 >
-                  {course.title}
+                  {course?.title}
                 </h3>
 
                 {/* Description */}
@@ -176,7 +176,7 @@ const PopularCourses = () => {
                     min-h-[72px]
                   "
                 >
-                  {course.description}
+                  {course?.description}
                 </p>
 
                 {/* Details */}
@@ -232,34 +232,10 @@ const PopularCourses = () => {
                         truncate
                       "
                     >
-                      {course.eligibility}
+                      {course?.eligibility}
                     </p>
                   </div>
                 </div>
-
-                {/* Fee */}
-                {/* <div
-                  className="
-                    mt-4
-                    flex
-                    items-center
-                    justify-between
-                    px-1
-                  "
-                >
-                  <span className="text-sm text-gray-500">Course Fee</span>
-
-                  <span
-                    className="
-                      text-lg
-                      sm:text-xl
-                      font-bold
-                      text-[#111844]
-                    "
-                  >
-                    ₹{course.fees}
-                  </span>
-                </div> */}
 
                 {/* View Course */}
                 <button

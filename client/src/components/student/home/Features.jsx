@@ -78,9 +78,9 @@ const Features = () => {
             lg:gap-7
           "
         >
-          {features.map((feature) => (
+          {features?.map((feature) => (
             <div
-              key={feature.id}
+              key={feature?.id}
               className="
                 group
                 bg-white
@@ -114,7 +114,7 @@ const Features = () => {
                   duration-300
                 "
               >
-                {feature.icon}
+                {feature?.icon}
               </div>
 
               {/* Title */}
@@ -128,7 +128,7 @@ const Features = () => {
                   leading-6
                 "
               >
-                {feature.title}
+                {feature?.title}
               </h3>
 
               {/* Description */}
@@ -140,7 +140,7 @@ const Features = () => {
                   leading-6
                 "
               >
-                {feature.description}
+                {feature?.description}
               </p>
             </div>
           ))}

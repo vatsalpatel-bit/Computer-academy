@@ -13,7 +13,6 @@ const quickLinks = [
   { name: 'Courses', path: '/courses' },
   { name: 'Branches', path: '/branches' },
   { name: 'Contact', path: '/contact' },
-  // { name: "Enquiry Now", path: "/enquiry" },
 ];
 
 const Footer = () => {
@@ -21,6 +20,7 @@ const Footer = () => {
     <footer className="bg-[#111844] text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
           {/* Brand */}
           <div className="lg:pr-6">
             <div className="flex items-center gap-3 mb-5">
@@ -74,10 +74,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-[#EAE0CF] mb-5">Quick Links</h3>
 
             <ul className="space-y-3">
-              {quickLinks.map((item) => (
-                <li key={item.name}>
+              {quickLinks?.map((item) => (
+                <li key={item?.name}>
                   <Link
-                    to={item.path}
+                    to={item?.path}
                     className="
                       group
                       flex items-center gap-2
@@ -91,7 +91,7 @@ const Footer = () => {
                       className="text-[#7288AE] group-hover:translate-x-1 transition"
                     />
 
-                    <span className="text-sm">{item.name}</span>
+                    <span className="text-sm">{item?.name}</span>
                   </Link>
                 </li>
               ))}
