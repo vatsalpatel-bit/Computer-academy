@@ -108,18 +108,10 @@ const CourseList = () => {
 "
             >
               <option value="">All Durations</option>
-              <option value="1 Months">1 month</option>
-              <option value="2 Months">2 months</option>
-              <option value="3 Months">3 months</option>
-              <option value="4 Months">4 months</option>
-              <option value="5 Months">5 months</option>
-              <option value="6 Months">6 months</option>
-              <option value="7 Months">7 months</option>
-              <option value="8 Months">8 months</option>
-              <option value="9 Months">9 months</option>
-              <option value="10 Months">10 months</option>
-              <option value="11 Months">11 months</option>
-              <option value="12 Months">12 months</option>
+              <option value="3 Months">Under 3 months</option>
+              <option value="6 Months">Under 6 months</option>
+              <option value="9 Months">Under 9 months</option>
+              <option value="12 Months">Under 12 months</option>
             </select>
           </div>
         </div>
@@ -278,7 +270,7 @@ const CourseList = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Button */}
                 <button
                   onClick={() => navigate(`/course-detail/${course.slug}`)}

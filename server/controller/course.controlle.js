@@ -69,7 +69,7 @@ export const getAllCourse = async (req, res) => {
     }
 
     if (duration) {
-      query.duration = duration;
+      query.duration = { $lt: Number(duration) };
     }
 
     const course = await Course.find(query).skip(skip).limit(limitNumber);
