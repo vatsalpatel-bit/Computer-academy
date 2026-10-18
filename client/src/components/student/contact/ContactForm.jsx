@@ -145,19 +145,7 @@ ${input.message}
   return (
     <section className="relative bg-[#EAE0CF]/20 py-12 sm:py-16 lg:py-20 overflow-hidden">
       {/* Subtle background glow */}
-      <div
-        className="
-          absolute
-          -top-32
-          -right-32
-          w-80
-          h-80
-          rounded-full
-          bg-[#4B5694]/10
-          blur-3xl
-          pointer-events-none
-        "
-      />
+    
 
       <div
         className="

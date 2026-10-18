@@ -14,7 +14,7 @@ const galleryImages = [gallery1, gallery2, gallery3];
 
 const Gallery = () => {
   return (
-    <section className="py-14 sm:py-16 lg:py-20 bg-white">
+    <section className="py-14 sm:py-16 lg:py-20 bg-[#EAE0CF]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-9 sm:mb-12">
@@ -66,7 +66,7 @@ const Gallery = () => {
                   relative
                   overflow-hidden
                   rounded-2xl
-                  bg-white
+                  bg-[#EAE0CF]/20
                   border border-gray-100
                   shadow-sm
                   hover:shadow-xl
@@ -106,7 +106,7 @@ const Gallery = () => {
                       top-4 left-4
                       w-9 h-9
                       rounded-lg
-                      bg-white/90
+                      bg-white
                       backdrop-blur-sm
                       flex items-center justify-center
                       text-[#111844]

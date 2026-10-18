@@ -30,7 +30,7 @@ const Testimonials = () => {
   }, [dispatch]);
 
   return (
-    <section className="py-14 sm:py-16 lg:py-20 bg-[#F5F6FA]">
+    <section className="py-14 sm:py-16 lg:py-20 bg-[#EAE0CF]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-9 sm:mb-12 lg:mb-14">

@@ -13,9 +13,10 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 relative bg-white/95 backdrop-blur-md shadow-sm">
+      <header className="sticky top-0 z-50 relative bg-white backdrop-blur-md shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="h-[72px] lg:h-20 flex items-center justify-between">
+            
             {/* Logo + Brand */}
             <div className="flex items-center gap-3 sm:gap-4 min-w-0">
               <img
@@ -49,12 +50,11 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation */}
-            {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <NavLink
-                  key={item.name}
-                  to={item.path}
+                  key={item?.name}
+                  to={item?.path}
                   className={({ isActive }) =>
                     `
         relative
@@ -79,32 +79,10 @@ const Navbar = () => {
         `
                   }
                 >
-                  {item.name}
+                  {item?.name}
                 </NavLink>
               ))}
             </nav>
-
-            {/* Desktop CTA */}
-            {/* <button
-              onClick={() => navigate('/enquiry')}
-              className="
-    hidden lg:inline-flex
-    items-center justify-center
-    bg-[#111844]
-    hover:bg-[#4B5694]
-    text-white
-    px-6 py-3
-    rounded-xl
-    font-semibold
-    shadow-md
-    shadow-[#111844]/15
-    transition-all duration-300
-    hover:-translate-y-0.5
-    active:scale-[0.98]
-  "
-            >
-              Enquire Now
-            </button> */}
 
             {/* Mobile Menu Button */}
             <button
@@ -163,10 +141,10 @@ const Navbar = () => {
     "
             >
               <nav className="flex flex-col gap-1 px-4">
-                {navItems.map((item) => (
+                {navItems?.map((item) => (
                   <NavLink
-                    key={item.name}
-                    to={item.path}
+                    key={item?.name}
+                    to={item?.path}
                     onClick={() => setIsMenuOpen(false)}
                     className={({ isActive }) =>
                       `
@@ -182,7 +160,7 @@ const Navbar = () => {
             `
                     }
                   >
-                    {item.name}
+                    {item?.name}
                   </NavLink>
                 ))}
               </nav>
@@ -190,26 +168,6 @@ const Navbar = () => {
           )}
         </div>
       </header>
-
-      {/* Mobile CTA */}
-      {/* <button
-        onClick={() => navigate('/enquiry')}
-        className="
-          lg:hidden
-          fixed bottom-4 left-4 right-4
-          z-50
-          bg-red-600
-          hover:bg-red-700
-          text-white
-          py-3.5
-          rounded-xl
-          font-semibold
-          shadow-lg
-          transition
-        "
-      >
-        Enquire Now
-      </button> */}
     </>
   );
 };

@@ -20,7 +20,7 @@ const branches = [
 
 const BranchList = () => {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-[#EAE0CF]/20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-3 gap-8">
           {branches.map((branch) => (

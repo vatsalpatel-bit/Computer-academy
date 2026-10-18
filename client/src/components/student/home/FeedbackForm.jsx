@@ -75,7 +75,7 @@ const FeedbackForm = () => {
   };
 
   return (
-    <section className="pt-0 pb-8 sm:pb-10 lg:pb-12 bg-[#F5F6FA]">
+    <section className="pt-0 pb-8 sm:pb-10 lg:pb-12 bg-[#EAE0CF]/20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Card */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm p-5 sm:p-8 lg:p-10">

@@ -24,8 +24,7 @@ const ContactBanner = () => {
 
         {/* Description */}
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/75 sm:text-base sm:leading-7">
-          Have questions about our courses? Contact us for course details,
-          admissions, and other enquiries.
+          Have questions about our courses? Contact us for admissions, course details, and guidance.
         </p>
       </div>
     </section>

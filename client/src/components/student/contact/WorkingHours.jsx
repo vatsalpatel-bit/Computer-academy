@@ -61,25 +61,8 @@ const WorkingHours = () => {
             >
               <span className="font-semibold text-[#111844]">Monday - Saturday</span>
 
-              <span className="text-sm sm:text-base text-[#7288AE]">8:00 AM - 7:00 PM</span>
-            </div>
-
-            {/* <div
-              className="
-                flex flex-col
-                sm:flex-row
-                sm:items-center
-                sm:justify-between
-                gap-1 sm:gap-4
-                px-5 sm:px-8
-                py-4 sm:py-5
-                text-left
-              "
-            >
-              <span className="font-semibold text-[#111844]">Saturday</span>
-
               <span className="text-sm sm:text-base text-[#7288AE]">8:00 AM - 6:00 PM</span>
-            </div> */}
+            </div>
 
             {/* Sunday */}
             <div

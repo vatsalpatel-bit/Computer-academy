@@ -42,7 +42,7 @@ const CourseList = () => {
   }, [search]);
 
   return (
-    <section className="bg-slate-50 py-10 sm:py-14 lg:py-16">
+    <section className="bg-[#EAE0CF]/20 py-10 sm:py-14 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search + Filter */}
         <div className="bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 shadow-sm">

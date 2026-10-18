@@ -26,7 +26,7 @@ const PopularCourses = () => {
   }, [dispatch]);
 
   return (
-    <section className="bg-slate-50 py-12 sm:py-16 lg:py-20">
+    <section className="bg-[#EAE0CF]/20 py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto">
