@@ -108,10 +108,10 @@ const CourseList = () => {
 "
             >
               <option value="">All Durations</option>
-              <option value="3 Months">Under 3 months</option>
-              <option value="6 Months">Under 6 months</option>
-              <option value="9 Months">Under 9 months</option>
-              <option value="12 Months">Under 12 months</option>
+              <option value="3">Under 3 months</option>
+              <option value="6">Under 6 months</option>
+              <option value="9">Under 9 months</option>
+              <option value="12">Under 12 months</option>
             </select>
           </div>
         </div>
