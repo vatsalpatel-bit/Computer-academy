@@ -294,17 +294,16 @@ const CourseView = () => {
               <div
                 key={`${topic}-${index}`}
                 className="
-                  group
-                  flex items-start gap-3
-                  p-4 sm:p-5
-                  rounded-2xl
-                  bg-[#F5F6FA]
-                  border border-transparent
-                  hover:border-[#EAE0CF]
-                  hover:bg-white
-                  hover:shadow-sm
-                  transition-all duration-300
-                "
+    group
+    flex items-start gap-3
+    p-4 sm:p-5
+    rounded-2xl
+    bg-white
+    border border-gray-100
+    shadow-sm
+    hover:shadow-md
+    transition
+  "
               >
                 <div
                   className="
