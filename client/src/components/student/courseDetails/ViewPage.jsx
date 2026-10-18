@@ -92,109 +92,57 @@ const CourseView = () => {
 
   return (
     <main className="bg-white">
+
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="relative bg-[#111844] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="py-12 sm:py-16 lg:py-20">
-            {/* Back */}
-            <button
-              onClick={() => navigate(-1)}
-              className="
-                inline-flex items-center gap-2
-                text-white/70
-                hover:text-white
-                text-sm
-                font-medium
-                transition
-              "
-            >
-              <ArrowLeft size={17} />
-              Back
-            </button>
 
-            {/* Hero Content */}
-            <div className="mt-8 sm:mt-10 max-w-4xl">
-              <span
-                className="
-                inline-flex
-                px-3 py-1.5
-                rounded-full
-                bg-white/10
-                border border-white/10
-                text-[#EAE0CF]
-                text-xs sm:text-sm
-                font-semibold
-              "
+      <section className="relative overflow-hidden bg-[#111844]">
+        {/* Subtle Galaxy Glow */}
+        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#4B5694]/20 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-[#7288AE]/15 blur-3xl" />
+
+        {/* Small Stars */}
+        <span className="absolute left-[18%] top-12 h-1 w-1 rounded-full bg-[#EAE0CF] opacity-70" />
+        <span className="absolute right-[22%] top-20 h-1.5 w-1.5 rounded-full bg-[#7288AE] opacity-60" />
+        <span className="absolute bottom-14 left-[30%] h-1 w-1 rounded-full bg-[#EAE0CF] opacity-50" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+          {/* Back Button */}
+          <button
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition hover:text-white"
+          >
+            <ArrowLeft size={17} />
+            Back
+          </button>
+
+          {/* Hero Content */}
+          <div className="mt-6 max-w-4xl">
+            {/* Label */}
+            <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-blue-300 sm:text-sm">
+              Professional Course
+            </span>
+
+            {/* Heading */}
+            <h1 className="text-3xl font-bold leading-tight tracking-tight text-[#EAE0CF] sm:text-4xl lg:text-5xl">
+              {course.title}
+            </h1>
+
+            {/* Description */}
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/75 sm:text-base sm:leading-7">
+              {course.description}
+            </p>
+
+            {/* Contact Button */}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <button
+                onClick={() => navigate('/contact')}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-700 sm:text-base"
               >
-                Professional Course
-              </span>
-
-              <h1
-                className="
-                mt-5
-                text-3xl sm:text-4xl lg:text-5xl
-                font-bold
-                text-white
-                leading-tight
-              "
-              >
-                {course.title}
-              </h1>
-
-              <p
-                className="
-                mt-5
-                max-w-3xl
-                text-sm sm:text-base lg:text-lg
-                text-white/65
-                leading-6 sm:leading-7
-              "
-              >
-                {course.description}
-              </p>
-
-              {/* Hero Actions */}
-              <div className="mt-7 flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    gap-2
-                    px-6
-                    py-3.5
-                    rounded-xl
-                    bg-red-600
-                    hover:bg-red-700
-                    text-white
-                    text-sm sm:text-base
-                    font-semibold
-                    transition
-                  "
-                >
-                  Contact
-                  <ArrowRight size={17} />
-                </button>
-
-                {/* <div
-                  className="
-                  flex items-center justify-center
-                  px-6 py-3.5
-                  rounded-xl
-                  bg-white/5
-                  border border-white/10
-                  text-white
-                "
-                >
-                  <IndianRupee size={18} className="mr-1 text-[#EAE0CF]" />
-                  <span className="text-lg font-bold">{course.fees}</span>
-
-                  <span className="ml-1 text-sm text-white/50">course fee</span>
-                </div> */}
-              </div>
+                Contact Us
+                <ArrowRight size={17} />
+              </button>
             </div>
           </div>
         </div>
@@ -203,6 +151,7 @@ const CourseView = () => {
       {/* =====================================================
           COURSE OVERVIEW
       ===================================================== */}
+
       <section className="py-12 sm:py-16 lg:py-20 bg-[#F5F6FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}

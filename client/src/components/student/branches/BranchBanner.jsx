@@ -1,51 +1,30 @@
 const BranchBanner = () => {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-[#111844]">
+    <section className="relative overflow-hidden bg-[#111844]">
       {/* Subtle Galaxy Glow */}
-      <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#4B5694]/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#7288AE]/15 rounded-full blur-3xl" />
+      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#4B5694]/20 blur-3xl" />
+      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-[#7288AE]/15 blur-3xl" />
 
       {/* Small Stars */}
-      <div className="absolute top-12 left-[18%] w-1 h-1 bg-[#EAE0CF] rounded-full opacity-70" />
-      <div className="absolute top-20 right-[22%] w-1.5 h-1.5 bg-[#7288AE] rounded-full opacity-60" />
-      <div className="absolute bottom-14 left-[30%] w-1 h-1 bg-[#EAE0CF] rounded-full opacity-50" />
+      <div className="absolute left-[18%] top-12 h-1 w-1 rounded-full bg-[#EAE0CF] opacity-70" />
+      <div className="absolute right-[22%] top-20 h-1.5 w-1.5 rounded-full bg-[#7288AE] opacity-60" />
+      <div className="absolute bottom-14 left-[30%] h-1 w-1 rounded-full bg-[#EAE0CF] opacity-50" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 mx-auto flex min-h-[220px] max-w-7xl flex-col items-center justify-center px-4 py-12 text-center sm:min-h-[260px] sm:px-6 sm:py-16">
         {/* Label */}
-        <span className="inline-block px-4 py-2 rounded-full bg-[#7288AE]/20 text-[#EAE0CF] text-xs sm:text-sm font-medium">
+        <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-blue-300 sm:text-sm">
           Our Locations
         </span>
 
         {/* Heading */}
-        <h1
-          className="
-        mt-5
-        text-3xl
-        sm:text-4xl
-        lg:text-5xl
-        font-bold
-        leading-tight
-        text-[#EAE0CF]
-      "
-        >
+        <h1 className="text-3xl font-bold leading-tight tracking-tight text-[#EAE0CF] sm:text-4xl lg:text-5xl">
           Our Branches
         </h1>
 
         {/* Description */}
-        <p
-          className="
-        mt-4 sm:mt-5
-        max-w-2xl
-        mx-auto
-        text-sm
-        sm:text-base
-        lg:text-lg
-        leading-7
-        text-white/75
-      "
-        >
-          Build practical computer skills through guided training and a supportive
-          learning environment.
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/75 sm:text-base sm:leading-7">
+          Build practical computer skills through guided training and a
+          supportive learning environment.
         </p>
       </div>
     </section>
