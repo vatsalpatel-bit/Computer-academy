@@ -19,7 +19,7 @@ const BranchCard = ({ branch }) => {
       <div className="h-48 sm:h-56 lg:h-64 overflow-hidden bg-[#111844]">
         <img
           src={branchPoster}
-          alt={`${branch.name} - Jankalyan Computer Center`}
+          alt={`${branch?.name} - Jankalyan Computer Center`}
           className="w-full h-full object-cover object-center"
           loading="lazy"
         />
@@ -28,7 +28,7 @@ const BranchCard = ({ branch }) => {
       {/* Content */}
       <div className="p-5 sm:p-6 lg:p-7">
         {/* City */}
-        <span className="inline-block text-sm font-semibold text-[#4B5694]">{branch.city}</span>
+        <span className="inline-block text-sm font-semibold text-[#4B5694]">{branch?.city}</span>
 
         {/* Branch Name */}
         <h3
@@ -41,7 +41,7 @@ const BranchCard = ({ branch }) => {
             leading-tight
           "
         >
-          {branch.name}
+          {branch?.name}
         </h3>
 
         {/* Details */}
@@ -52,7 +52,7 @@ const BranchCard = ({ branch }) => {
               <MapPin size={18} className="text-[#111844]" />
             </div>
 
-            <p className="text-sm sm:text-base text-[#7288AE] leading-6 pt-1">{branch.address}</p>
+            <p className="text-sm sm:text-base text-[#7288AE] leading-6 pt-1">{branch?.address}</p>
           </div>
 
           {/* Phone */}
@@ -62,10 +62,10 @@ const BranchCard = ({ branch }) => {
             </div>
 
             <a
-              href={`tel:${branch.phone}`}
+              href={`tel:${branch?.phone}`}
               className="text-sm sm:text-base text-[#111844] font-medium hover:text-[#4B5694] transition"
             >
-              {branch.phone}
+              {branch?.phone}
             </a>
           </div>
 
@@ -76,7 +76,7 @@ const BranchCard = ({ branch }) => {
             </div>
 
             <span className="text-sm sm:text-base text-[#7288AE] leading-6 pt-1">
-              Mon - Sat : 8:00 AM - 8:00 PM
+              Mon - Sat : 8:00 AM - 6:00 PM
             </span>
           </div>
         </div>
@@ -86,7 +86,7 @@ const BranchCard = ({ branch }) => {
           href={
             branch.mapUrl ||
             `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              `${branch.name}, ${branch.address}`
+              `${branch?.name}, ${branch?.address}`
             )}`
           }
           target="_blank"

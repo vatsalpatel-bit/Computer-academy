@@ -9,14 +9,6 @@ const branches = [
     phone: '+91 99247 63536',
   },
   {
-    id: 2,
-    name: 'Vadodara Branch',
-    city: 'Vadodara',
-    address:
-      'F–2, Aditya Enclave, Near Uma Crossing, Waghodia Road, Vadodara-390025, Gujarat, India',
-    phone: '+91 93775 36147',
-  },
-  {
     id: 3,
     name: 'Umreth Branch',
     city: 'Umreth',
