@@ -40,7 +40,7 @@ const CourseView = () => {
 
   if (!course) {
     return (
-      <div className="min-h-[70vh] flex items-center justify-center bg-[#F5F6FA] px-4">
+      <div className="min-h-[70vh] flex items-center justify-center bg-[#EAE0CF]/20 px-4">
         <div className="text-center">
           <h2 className="text-xl font-semibold text-[#111844]">Course not found</h2>
 
@@ -146,7 +146,7 @@ const CourseView = () => {
 
       {/*COURSE OVERVIEW*/}
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#F5F6FA]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#EAE0CF]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-8 sm:mb-10">
@@ -238,7 +238,7 @@ const CourseView = () => {
 
       {/*CURRICULUM*/}
 
-      <section className="py-14 sm:py-16 lg:py-20 bg-white">
+      <section className="py-14 sm:py-16 lg:py-20 bg-[#EAE0CF]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="max-w-2xl">
