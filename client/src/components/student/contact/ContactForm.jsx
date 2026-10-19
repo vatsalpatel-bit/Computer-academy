@@ -145,7 +145,7 @@ ${input.message}
   return (
     <section className="relative bg-[#EAE0CF]/20 py-12 sm:py-16 lg:py-20 overflow-hidden">
       {/* Subtle background glow */}
-    
+
 
       <div
         className="
@@ -346,42 +346,42 @@ ${input.message}
               type="submit"
               disabled={loading}
               className="
-                md:col-span-2
-                w-full
-                mt-3
-                h-12
-                sm:h-14
-                rounded-xl
-                bg-red-600
-                hover:bg-red-700
-                disabled:bg-red-400
-                disabled:cursor-not-allowed
-                text-white
-                font-semibold
-                text-sm
-                sm:text-base
-                transition-all
-                duration-300
-                shadow-md
-                hover:shadow-lg
-                flex
-                items-center
-                justify-center
-                gap-2
-              "
+    md:col-span-2
+    w-full
+    mt-3
+    h-12
+    sm:h-14
+    rounded-xl
+    bg-[#111844]
+    hover:bg-[#4B5694]
+    disabled:bg-[#7288AE]
+    disabled:cursor-not-allowed
+    text-white
+    font-semibold
+    text-sm
+    sm:text-base
+    transition-all
+    duration-300
+    shadow-md
+    hover:shadow-lg
+    flex
+    items-center
+    justify-center
+    gap-2
+  "
             >
               {loading ? (
                 <>
                   <span
                     className="
-                      w-5
-                      h-5
-                      border-2
-                      border-white
-                      border-t-transparent
-                      rounded-full
-                      animate-spin
-                    "
+          w-5
+          h-5
+          border-2
+          border-white
+          border-t-transparent
+          rounded-full
+          animate-spin
+        "
                   />
                   Sending...
                 </>
