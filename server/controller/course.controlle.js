@@ -53,7 +53,6 @@ export const getLatestCourse = async (req, res) => {
 export const getAllCourse = async (req, res) => {
   try {
     const { page = 1, duration, debounceSearch = '', limit = 8 } = req.query;
-
     const pageNumber = Number(page);
     const limitNumber = Number(limit);
 
@@ -69,10 +68,23 @@ export const getAllCourse = async (req, res) => {
     }
 
     if (duration) {
-      query.duration = { $lt: Number(duration) };
-    }
+      const [min, max] = duration.split("-").map(Number);
+      if (!Number.isFinite(min) ||
+        !Number.isFinite(max) ||
+        min < 0 ||
+        min > max) {
+        return res.status(400).json({
+          success: false,
+          message: "Invalid duration range",
+        });
+      }
+      query.duration = {
+        $gt: min,
+        $lte: max
+      };
+    };
 
-    const course = await Course.find(query).skip(skip).limit(limitNumber);
+    const course = await Course.find(query).skip(skip).limit(limitNumber).sort({ duration: 1 });
 
     const total = await Course.countDocuments(query);
 

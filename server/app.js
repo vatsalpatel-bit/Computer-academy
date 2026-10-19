@@ -7,7 +7,9 @@ import cookieParser from 'cookie-parser';
 import feedbackRouter from './router/feedback.router.js';
 import courseRouter from './router/course.router.js';
 import enquiryRouter from './router/enquiry.router.js';
+
 const app = express();
+
 const allowedOrigins = (process.env.FRONTEND_URL || '')
   .split(',')
   .map((origin) => origin.trim().replace(/\/+$/, ''))
@@ -18,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
+
 app.use(
   cors({
     origin(origin, callback) {

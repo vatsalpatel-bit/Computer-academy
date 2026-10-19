@@ -3,7 +3,7 @@ import { getAllCourse } from '@/services/coursesApi';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Search } from 'lucide-react';
+import { Search, X } from "lucide-react";
 
 const CourseList = () => {
   const [search, setSearch] = useState('');
@@ -51,13 +51,7 @@ const CourseList = () => {
             <div className="relative flex-1">
               <Search
                 size={19}
-                className="
-                  absolute
-                  left-4
-                  top-1/2
-                  -translate-y-1/2
-                  text-[#7288AE]
-                "
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#7288AE]"
               />
 
               <input
@@ -66,22 +60,40 @@ const CourseList = () => {
                 type="text"
                 placeholder="Search course..."
                 className="
-  w-full
-  h-12
-  pl-11
-  pr-4
-  rounded-xl
-  border border-gray-200
-  bg-gray-50
-  text-sm
-  text-[#111844]
-  outline-none
-  placeholder:text-gray-400
-  focus:bg-white
-  focus:border-[#4B5694]
-  transition
-"
+      h-12 w-full
+      rounded-xl
+      border border-gray-200
+      bg-gray-50
+      pl-11 pr-11
+      text-sm text-[#111844]
+      outline-none
+      placeholder:text-gray-400
+      focus:bg-white
+      focus:border-[#4B5694]
+      transition
+    "
               />
+
+              {/* Clear Search Button */}
+              {search && (
+                <button
+                  type="button"
+                  onClick={() => setSearch("")}
+                  aria-label="Clear search"
+                  title="Clear search"
+                  className="
+        absolute right-3 top-1/2
+        -translate-y-1/2
+        rounded-full p-1
+        text-gray-400
+        hover:bg-gray-200
+        hover:text-[#111844]
+        transition
+      "
+                >
+                  <X size={17} />
+                </button>
+              )}
             </div>
 
             {/* Duration */}
@@ -108,10 +120,10 @@ const CourseList = () => {
 "
             >
               <option value="">All Durations</option>
-              <option value="3">Under 3 months</option>
-              <option value="6">Under 6 months</option>
-              <option value="9">Under 9 months</option>
-              <option value="12">Under 12 months</option>
+              <option value="0-3">Under 0-3 months</option>
+              <option value="3-6">Under 3-6 months</option>
+              <option value="6-9">Under 6-9 months</option>
+              <option value="9-12">Under 9-12 months</option>
             </select>
           </div>
         </div>
