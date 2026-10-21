@@ -254,7 +254,7 @@ const CourseList = () => {
                 truncate
               "
                     >
-                      {course?.duration} Months
+                      {course?.duration} Month
                     </p>
                   </div>
 

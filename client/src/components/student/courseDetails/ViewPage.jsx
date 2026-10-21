@@ -226,7 +226,7 @@ const CourseView = () => {
                       truncate
                     "
                     >
-                      {item?.value}
+                      {item?.value || (item?.label === "duration" ? "Enter course duration" : "")}
                     </p>
                   </div>
                 </div>
