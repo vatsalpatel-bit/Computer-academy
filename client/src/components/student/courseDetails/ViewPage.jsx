@@ -226,7 +226,11 @@ const CourseView = () => {
                       truncate
                     "
                     >
-                      {item?.value || (item?.label === "duration" ? "Enter course duration" : "")}
+                      {item?.label?.toLowerCase() === "duration"
+                        ? item?.value
+                          ? `${item?.value} Month${Number(item?.value) > 1 ? "s" : ""}` :
+                          "Contact Us"
+                        : item?.value}
                     </p>
                   </div>
                 </div>
